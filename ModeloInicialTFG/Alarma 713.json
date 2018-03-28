@@ -1,0 +1,49 @@
+{
+	"Número": 713,
+	"Título":"AUTOMÁTICO BOMBA ASPIRACIÓN SALTADO",
+	"Descripción":"La entrada E461 ha cambiado a 0, indicando que el térmico G11-Q21 se ha saltado.",
+	"Preguntas":[
+		{
+			"Id":1.0,
+			"Texto":"¿Fisicamente, el térmico G11-Q21 se ha saltado por consumo?",
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si, está saltado.",
+					"Camino":1.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"No, no está saltado.",
+					"Camino":0.0,
+					"Mensaje":"Comprobar cableado circuito auxiliar del térmico y la entrada del autómata."
+				}			
+			]
+		},
+		{
+			"Id":1.1,
+			"Texto":"Si se rearma a mano, ¿se vuelve a saltar de nuevo al poco tiempo?",
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si, se vuelve a saltar.",
+					"Camino":0.0,
+					"Mensaje":"Comprobar consumo de bomba y/o cambiarla."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, no se vuelve a saltar.",
+					"Camino":0.0,
+					"Mensaje":"Dejar bomba en observación."
+				},
+				{
+					"Id":"C",
+					"Texto":"Respuesta de prueba",
+					"Camino":0.0,
+					"Mensaje":"Mensaje de prueba"
+				}			
+			]
+		}
+	]
+}
