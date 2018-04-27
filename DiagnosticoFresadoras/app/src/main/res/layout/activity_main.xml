@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.pc.diagnosticofresadoras.MainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <Button
+            android:id="@+id/bInicio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="83dp"
+            android:text="Aceptar"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="49dp"
+            android:text="Diagnóstico de fallos en fresadoras"
+            android:textColor="#00395D"
+            android:textSize="37sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvElige"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTitulo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="56dp"
+            android:text="Elige la alarma que se ha activado"
+            android:textColor="#00395D"
+            android:textSize="23sp" />
+
+        <Spinner
+            android:id="@+id/spAlarmas"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvElige"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:scrollbars="none" />
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

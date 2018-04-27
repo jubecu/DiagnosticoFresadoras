@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="alarmas">
+        <item>631</item>
+        <item>713</item>
+    </string-array>
+</resources>
