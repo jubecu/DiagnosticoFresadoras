@@ -56,17 +56,16 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="87dp"
-            android:text="La entrada E461 ha cambiado a 0, indicando que el térmico G11-Q21 se ha saltado."
+            android:text=""
             android:textSize="23sp"
             android:textColor="#000000"/>
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="125dp"
+            android:id="@+id/ivImage"
+            android:layout_width="300dp"
             android:layout_height="250dp"
             android:layout_below="@+id/tvDesc"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/a713" />
+            android:layout_centerHorizontal="true"/>
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
