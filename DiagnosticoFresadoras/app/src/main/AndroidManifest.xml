@@ -19,7 +19,6 @@
         <activity android:name=".InfoAlarmaActivity" />
         <activity android:name=".QuestionsActivity" />
         <activity android:name=".MessageFinalActivity" />
-        <activity android:name=".Questions2Activity"></activity>
     </application>
 
 </manifest>

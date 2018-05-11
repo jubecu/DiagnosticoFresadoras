@@ -60,12 +60,19 @@
             android:textSize="23sp"
             android:textColor="#000000"/>
 
-        <ImageView
-            android:id="@+id/ivImage"
-            android:layout_width="300dp"
-            android:layout_height="250dp"
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_below="@+id/tvDesc"
-            android:layout_centerHorizontal="true"/>
+            android:layout_above="@+id/bComenzar"
+            android:paddingTop="100dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/llImages" >
+            </LinearLayout>
+        </HorizontalScrollView>
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

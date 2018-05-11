@@ -5,49 +5,84 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.pc.diagnosticofresadoras.modeloAlarmas.AlarmTable;
+import com.example.pc.diagnosticofresadoras.modeloAlarmas.Answer;
+import com.example.pc.diagnosticofresadoras.modeloAlarmas.Question;
 
 public class QuestionsActivity extends AppCompatActivity {
 
-    TextView tvAlarmTitle;
-    Button ansA;
-    Button ansB;
+    TextView tvAlarmTitle, tvQues;
+    AlarmTable alarms;
+    Question question;
+    String cod;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questions);
 
-        ansA = (Button) findViewById(R.id.bAnsA);
-        ansB = (Button) findViewById(R.id.bAnsB);
+        Bundle extras = getIntent().getExtras();
+        cod = extras.getString("numAlarm");
+        double idQuestion = extras.getDouble("idQuestion");
 
-        agregarTitulo();
+        int num = Integer.parseInt(cod);
+        alarms = AlarmTable.getInstance();
+        question = alarms.getAlarm(num).getQuestion(idQuestion);
 
-        ansA.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i=new Intent(QuestionsActivity.this, Questions2Activity.class);
-                i.putExtra("dato1",tvAlarmTitle.getText());
-                startActivity(i);
-            }
-        });
+        fillData(cod);
 
-        ansB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i=new Intent(QuestionsActivity.this, MessageFinalActivity.class);
-                i.putExtra("dato1",tvAlarmTitle.getText());
-                i.putExtra("dato2","Comprobar cableado circuito auxiliar del térmico y la entrada del autómata.");
-                startActivity(i);
-            }
-        });
+        LinearLayout llKeypad = findViewById(R.id.llKeypad);
+
+        LinearLayout.LayoutParams llParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+
+        for (Answer answer : question.getAnswers()) {
+            Button ans = new Button(this);
+            ans.setLayoutParams(llParams);
+            ans.setText(answer.getText());
+            llKeypad.addView(ans);
+            ans.setOnClickListener(new ButtonsOnClickListener(answer.getNext(), answer.getMessage()));
+        }
     }
 
-    private void agregarTitulo(){
-        Bundle extras=getIntent().getExtras();
-        String d1=extras.getString("dato1");
+    private void fillData(String cod) {
+        String title;
+        int num = Integer.parseInt(cod);
 
-        tvAlarmTitle=(TextView) findViewById(R.id.tvAlarmaTitulo);
-        tvAlarmTitle.setText(d1);
+        title = alarms.getAlarm(num).getTitle();
+        tvAlarmTitle = findViewById(R.id.tvAlarmaTitulo);
+        tvAlarmTitle.setText("Alarma " + cod + ": " + title);
+
+        tvQues = findViewById(R.id.tvQues);
+        tvQues.setText(question.getText());
+    }
+
+    class ButtonsOnClickListener implements View.OnClickListener {
+
+        double next;
+        String finalMessage;
+
+        public ButtonsOnClickListener(double next, String finalMessage) {
+            this.next = next;
+            this.finalMessage = finalMessage;
+        }
+
+        @Override
+        public void onClick(View v) {
+            if (next == 0.0) {
+                Intent i = new Intent(QuestionsActivity.this, MessageFinalActivity.class);
+                i.putExtra("numAlarm", cod);
+                i.putExtra("finalMessage", finalMessage);
+                startActivity(i);
+            } else {
+                Intent i = new Intent(QuestionsActivity.this, QuestionsActivity.class);
+                i.putExtra("numAlarm", cod);
+                i.putExtra("idQuestion", next);
+                startActivity(i);
+            }
+        }
     }
 }

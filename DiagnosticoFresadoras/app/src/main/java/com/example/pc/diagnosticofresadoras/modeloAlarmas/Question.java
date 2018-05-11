@@ -6,12 +6,33 @@ import java.util.Iterator;
 public class Question {
     private double id;
     private String text;
+    private String image;
     private ArrayList<Answer> answers;
 
     public Question(double id, String text) {
         this.id = id;
         this.text = text;
         answers = new ArrayList<Answer>();
+    }
+
+    public double getId() {
+        return id;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public ArrayList<Answer> getAnswers() {
+        return answers;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String name) {
+        this.image = name;
     }
 
     public void addAnswer(Answer ans) {
@@ -29,9 +50,5 @@ public class Question {
             }
         }
         return answerReturn;
-    }
-
-    public double getId() {
-        return id;
     }
 }

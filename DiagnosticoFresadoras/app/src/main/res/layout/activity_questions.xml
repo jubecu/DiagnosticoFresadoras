@@ -45,29 +45,22 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="87dp"
-            android:text="¿Fisicamente, el térmico G11-Q21 se ha saltado por consumo?"
+            android:text=""
             android:textSize="23sp"
             android:textColor="#000000"/>
 
-        <Button
-            android:id="@+id/bAnsA"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_below="@+id/tvQues"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="47dp"
-            android:textSize="18sp"
-            android:text="Si, está saltado." />
-
-        <Button
-            android:id="@+id/bAnsB"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/bAnsA"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="47dp"
-            android:textSize="18sp"
-            android:text="No, no está saltado." />
+            android:paddingTop="100dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/llKeypad" >
+            </LinearLayout>
+        </ScrollView>
 
     </RelativeLayout>
 

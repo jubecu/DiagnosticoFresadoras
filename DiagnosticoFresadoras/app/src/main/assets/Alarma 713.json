@@ -6,6 +6,7 @@
 		{
 			"Id":1.0,
 			"Texto":"¿Fisicamente, el térmico G11-Q21 se ha saltado por consumo?",
+			"Imagen":"",
 			"Respuestas":[
 				{
 					"Id":"A",
@@ -24,6 +25,7 @@
 		{
 			"Id":1.1,
 			"Texto":"Si se rearma a mano, ¿se vuelve a saltar de nuevo al poco tiempo?",
+			"Imagen":"",
 			"Respuestas":[
 				{
 					"Id":"A",
@@ -36,14 +38,12 @@
 					"Texto":"No, no se vuelve a saltar.",
 					"Camino":0.0,
 					"Mensaje":"Dejar bomba en observación."
-				},
-				{
-					"Id":"C",
-					"Texto":"Respuesta de prueba",
-					"Camino":0.0,
-					"Mensaje":"Mensaje de prueba"
-				}			
+				}	
 			]
 		}
+	],
+	"Imágenes":[
+		"a713",
+		"a713_2"
 	]
 }

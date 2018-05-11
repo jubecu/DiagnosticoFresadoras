@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.pc.diagnosticofresadoras.modeloAlarmas.AlarmTable;
+
 public class MessageFinalActivity extends AppCompatActivity {
 
     TextView tvAlarmTitle;
@@ -19,29 +21,31 @@ public class MessageFinalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message_final);
 
-        home = (Button) findViewById(R.id.bHome);
-        back = (Button) findViewById(R.id.bVolver);
+        home = findViewById(R.id.bHome);
+        back = findViewById(R.id.bVolver);
 
-        agregarTitulo();
+        fillData();
 
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i=new Intent(MessageFinalActivity.this, MainActivity.class);
+                Intent i = new Intent(MessageFinalActivity.this, MainActivity.class);
                 startActivity(i);
             }
         });
     }
 
-    private void agregarTitulo(){
-        Bundle extras=getIntent().getExtras();
-        String d1=extras.getString("dato1");
-        String d2=extras.getString("dato2");
+    private void fillData() {
+        Bundle extras = getIntent().getExtras();
+        String cod = extras.getString("numAlarm");
+        int num = Integer.parseInt(cod);
+        String mess = extras.getString("finalMessage");
 
-        tvAlarmTitle=(TextView) findViewById(R.id.tvAlarmaTitulo);
-        tvAlarmTitle.setText(d1);
+        String title = AlarmTable.getInstance().getAlarm(num).getTitle();
+        tvAlarmTitle = findViewById(R.id.tvAlarmaTitulo);
+        tvAlarmTitle.setText("Alarma " + cod + ": " + title);
 
-        tvMess=(TextView) findViewById(R.id.tvMessage);
-        tvMess.setText(d2);
+        tvMess = findViewById(R.id.tvMessage);
+        tvMess.setText(mess);
     }
 }

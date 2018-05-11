@@ -6,6 +6,7 @@
 		{
 			"Id":1.0,
 			"Texto":"¿Se ha activado la alarma 631 sin que haya herramienta puesta?",
+			"Imagen":"",
 			"Respuestas":[
 				{
 					"Id":"A",
@@ -24,6 +25,7 @@
 		{
 			"Id":1.1,
 			"Texto":"Meter herramienta en el mandrino y ordenar el giro de nuevo. ¿Desaparece la alarma?",
+			"Imagen":"",
 			"Respuestas":[
 				{
 					"Id":"A",
@@ -42,6 +44,7 @@
 		{
 			"Id":2.0,
 			"Texto":"¿Ocurre con todas las herramientas?",
+			"Imagen":"",
 			"Respuestas":[
 				{
 					"Id":"A",
@@ -60,6 +63,7 @@
 		{
 			"Id":2.1,
 			"Texto":"Comprobar porta-herramientas y tirante. ¿Desaparece la alarma?",
+			"Imagen":"",
 			"Respuestas":[
 				{
 					"Id":"A",
@@ -78,6 +82,7 @@
 		{
 			"Id":3.0,
 			"Texto":"¿Es correcta la medida/expulsión de la pinza?",
+			"Imagen":"",
 			"Respuestas":[
 				{
 					"Id":"A",
@@ -96,6 +101,7 @@
 		{
 			"Id":3.1,
 			"Texto":"Reajustar y comprobar el tornillo de bloqueo y pinza y ajustarlo. ¿Desaparece la alarma?",
+			"Imagen":"",
 			"Respuestas":[
 				{
 					"Id":"A",
@@ -114,6 +120,7 @@
 		{
 			"Id":4.0,
 			"Texto":"¿Qué color tiene la pantalla del keyence? Rojo/Verde?",
+			"Imagen":"",
 			"Respuestas":[
 				{
 					"Id":"A",
@@ -132,6 +139,7 @@
 		{
 			"Id":4.1,
 			"Texto":"Poner el Keyence en RUN (con PC o con botones). ¿Desaparece la alarma?",
+			"Imagen":"",
 			"Respuestas":[
 				{
 					"Id":"A",
@@ -150,6 +158,7 @@
 		{
 			"Id":5.0,
 			"Texto":"¿Los pulsos de la turbina son excesivamente superiores al DM111 siempre o algunas veces?",
+			"Imagen":"a631q5",
 			"Respuestas":[
 				{
 					"Id":"A",
@@ -168,6 +177,7 @@
 		{
 			"Id":5.1,
 			"Texto":"Purgar el aire del circuito del amarre de herramienta. ¿Desaparece la alarma?",
+			"Imagen":"",
 			"Respuestas":[
 				{
 					"Id":"A",
@@ -186,6 +196,7 @@
 		{
 			"Id":6.0,
 			"Texto":"¿Problema de fuga de aceite del piston del sistema amarre o de algún latiguillo flojo?",
+			"Imagen":"",
 			"Respuestas":[
 				{
 					"Id":"A",
@@ -204,6 +215,7 @@
 		{
 			"Id":6.1,
 			"Texto":"Apretar latiguillos y uniones de latiguillos con elementos. ¿Desaparece la alarma?",
+			"Imagen":"",
 			"Respuestas":[
 				{
 					"Id":"A",
@@ -222,6 +234,7 @@
 		{
 			"Id":6.2,
 			"Texto":"Comprobar recorrido piston amarre.",
+			"Imagen":"",
 			"Respuestas":[
 				{
 					"Id":"A",
@@ -238,5 +251,8 @@
 			]
 		}
 
+	],
+	"Imágenes":[
+		"a631"
 	]
 }
