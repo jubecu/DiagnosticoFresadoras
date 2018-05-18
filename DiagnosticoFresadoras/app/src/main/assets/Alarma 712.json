@@ -1,0 +1,296 @@
+{
+	"Número": 712,
+	"Título":"ASPIRACIÓN ACEITE DEL CABEZAL INSUFICIENTE",
+	"Descripción":"El presostato G11-B13, que comprueba la presión de aspiración del cabezal, está detectando una presión errónea. Es importante saber dónde y cuantos vacuostatos tiene la máquina. Si tuviera dos, habría que comprobar el que de fallo. NOTA: Siempre que aparezca una alarma en el circuito de aspiración, se recomienda comprobar el aceite de retorno y comprobar los filtros de depósito y bomba.",
+	"Preguntas":[
+		{
+			"Id":1.0,
+			"Texto":"¿La pantalla del vacuostato marca algo o está apagada?",
+			"Imagen":"",
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Está apagada",
+					"Camino":1.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Está encendida.",
+					"Camino":2.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":1.1,
+			"Texto":"Comprobar el cable de alimentación y la tensión que le llega. ¿Desaparce la alarma?",
+			"Imagen":"",
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Sí, desaparece.",
+					"Camino":0.0,
+					"Mensaje":"Problema resuelto: [falso contacto]"
+				},
+				{
+					"Id":"B",
+					"Texto":"No, no desaparece.",
+					"Camino":0.0,
+					"Mensaje":"Cambiar el vacuostato"
+				}			
+			]
+		},
+		{
+			"Id":2.0,
+			"Texto":"¿La pantalla tiene los dígitos en verde o en rojo?",
+			"Imagen":"",
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"En verde.",
+					"Camino":2.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"En rojo.",
+					"Camino":3.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":2.1,
+			"Texto":"Comprobar cable desde el vacuostato hasta el armario eléctrico. ¿Desaparce la alarma?",
+			"Imagen":"",
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Sí, desaparece.",
+					"Camino":0.0,
+					"Mensaje":"Problema resuelto: [falso contacto]"
+				},
+				{
+					"Id":"B",
+					"Texto":"No, no desaparece.",
+					"Camino":3.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":3.0,
+			"Texto":" ¿Cuántos vacuostatos tiene el circuito?",
+			"Imagen":"",
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Uno en el depósito.",
+					"Camino":4.0,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Uno en el distribuidor en 'T'",
+					"Camino":6.0,
+					"Mensaje":""
+				},
+				{
+					"Id":"C",
+					"Texto":"Uno en cada circuito.",
+					"Camino":8.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":4.0,
+			"Texto":"Soltar la manguera de aspiración que viene de la máquina y tapar la entrada del depósito con la mano, ¿sube la presión del manómetro hasta aprox. -90?",
+			"Imagen":"",
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, sube poco.",
+					"Camino":4.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Si, sube hasta -90.",
+					"Camino":5.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":4.1,
+			"Texto":"Comprobar/cambiar la junta de cierre del depósito y los filtros. ¿Desaparce la alarma?",
+			"Imagen":"",
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Sí, desaparece.",
+					"Camino":0.0,
+					"Mensaje":"Problema resuelto: [junta/filtros mal]"
+				},
+				{
+					"Id":"B",
+					"Texto":"No, no desaparece.",
+					"Camino":0.0,
+					"Mensaje":"Cambiar la bomba de aspiración"
+				}			
+			]
+		},
+		{
+			"Id":5.0,
+			"Texto":"Soltar las mangueras 18 y 4 del cabezal y taparlas con las manos, ¿sube la presión hasta -90?",
+			"Imagen":"",
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, solo un poco.",
+					"Camino":5.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Si, sube hasta -90.",
+					"Camino":0.0,
+					"Mensaje":"Problema dentro del cabezal. Avisar a Post_Venta"
+				}			
+			]
+		},
+		{
+			"Id":5.1,
+			"Texto":"Comprobar mangueras, taco distribución y tubo espiral, alguna está floja o rota. ¿Desaparce la alarma?",
+			"Imagen":"",
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Sí, desaparece.",
+					"Camino":0.0,
+					"Mensaje":"Problema resuelto: [problema en mangueras]"
+				},
+				{
+					"Id":"B",
+					"Texto":"No, no desaparece.",
+					"Camino":4.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":6.0,
+			"Texto":"¿El vacuostato marca una presión de vacío entre -60 y -90? (circuito obstruido)",
+			"Imagen":"",
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Sí.",
+					"Camino":6.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"No.",
+					"Camino":7.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":6.1,
+			"Texto":"Soltar las mangueras 18 y 4 del cabezal. ¿Sigue marcando una presión -60 o -90?",
+			"Imagen":"",
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Sí.",
+					"Camino":0.0,
+					"Mensaje":"Manguera obstruida entre el cabezal y el taco."
+				},
+				{
+					"Id":"B",
+					"Texto":"No.",
+					"Camino":0.0,
+					"Mensaje":"Problema dentro del cabezal. Avisar a Post_Venta"
+				}			
+			]
+		},
+		{
+			"Id":7.0,
+			"Texto":"¿El vacuostato marca una presión de vacío entre 0 y -25?",
+			"Imagen":"",
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Sí.",
+					"Camino":7.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"No.",
+					"Camino":7.2,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":7.1,
+			"Texto":"Soltar las mangueras 18 y 4 del cabezal. ¿Sigue marcando una presión -60 o -90?",
+			"Imagen":"",
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Sí.",
+					"Camino":0.0,
+					"Mensaje":"Manguera obstruida entre el cabezal y el taco."
+				},
+				{
+					"Id":"B",
+					"Texto":"No.",
+					"Camino":0.0,
+					"Mensaje":"Problema dentro del cabezal. Avisar a Post_Venta"
+				}			
+			]
+		},
+		{
+			"Id":7.2,
+			"Texto":"Información errónea. Volver a repetir el proceso.",
+			"Imagen":"",
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Repetir.",
+					"Camino":1.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":8.0,
+			"Texto":"Seguir los pasos de comprobación  7 y 8, pero comprobando cada circuito independientemente (tiene un caudalímetro por circuito).",
+			"Imagen":"",
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Paso 7.",
+					"Camino":6.0,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Paso 8.",
+					"Camino":7.0,
+					"Mensaje":""
+				}			
+			]
+		}
+	],
+	"Imágenes":[
+		"a712",
+		"a712_2"
+	]
+}

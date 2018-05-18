@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button bInicio;
     String alarmNum[] = {"631: ORDEN DE GIRO MANDRINO SIN HTA.",
+            "712: ASPIRACIÓN ACEITE DEL CABEZAL INSUFICIENTE",
             "713: AUTOMÁTICO BOMBA ASPIRACIÓN SALTADO",
             "821: FALLO OPERACIÓN 21",
             "822: FALLO OPERACIÓN 22",
@@ -36,6 +37,16 @@ public class MainActivity extends AppCompatActivity {
 
         bInicio = findViewById(R.id.bInicio);
         alarmas = findViewById(R.id.spAlarmas);
+
+        /*File dir = getFilesDir();
+        File registry = new File(dir, "registry.csv");
+        try {
+            FileOutputStream registryEdit = new FileOutputStream(registry);
+            registryEdit.write("Alarma,Pregunta,Respuesta".getBytes());
+        }catch (IOException ex) {
+            Log.v("MainActivity", "Error: " + ex.getMessage());
+            ex.printStackTrace();
+        }*/
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_item_alarmas, alarmNum);
         alarmas.setAdapter(adapter);

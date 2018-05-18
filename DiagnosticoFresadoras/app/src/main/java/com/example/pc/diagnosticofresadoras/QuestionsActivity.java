@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -12,12 +13,15 @@ import com.example.pc.diagnosticofresadoras.modeloAlarmas.AlarmTable;
 import com.example.pc.diagnosticofresadoras.modeloAlarmas.Answer;
 import com.example.pc.diagnosticofresadoras.modeloAlarmas.Question;
 
+import uk.co.senab.photoview.PhotoViewAttacher;
+
 public class QuestionsActivity extends AppCompatActivity {
 
     TextView tvAlarmTitle, tvQues;
     AlarmTable alarms;
     Question question;
     String cod;
+    PhotoViewAttacher pAttacher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,20 @@ public class QuestionsActivity extends AppCompatActivity {
         question = alarms.getAlarm(num).getQuestion(idQuestion);
 
         fillData(cod);
+
+        LinearLayout llImageQuestion = findViewById(R.id.llImageQuestion);
+        LinearLayout.LayoutParams llImageParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        String nameImage = question.getImage();
+        if (!nameImage.isEmpty()) {
+            ImageView image = new ImageView(this);
+            image.setLayoutParams(llImageParams);
+            //image.setImageResource(alarms.getDiccImages().get(nameImage));
+            image.setImageResource(R.drawable.a631q5);
+            pAttacher = new PhotoViewAttacher(image);
+            llImageQuestion.addView(image);
+        }
+
 
         LinearLayout llKeypad = findViewById(R.id.llKeypad);
 

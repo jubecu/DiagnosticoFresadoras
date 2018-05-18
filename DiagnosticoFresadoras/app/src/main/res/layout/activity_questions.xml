@@ -49,11 +49,22 @@
             android:textSize="23sp"
             android:textColor="#000000"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_below="@+id/tvQues"
+            android:layout_above="@+id/svAnswers"
+            android:id="@+id/llImageQuestion" >
+        </LinearLayout>
+
         <ScrollView
+            android:id="@+id/svAnswers"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/tvQues"
             android:paddingTop="100dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

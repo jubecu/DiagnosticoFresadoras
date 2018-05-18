@@ -42,10 +42,8 @@ public class InfoAlarmaActivity extends AppCompatActivity {
         for (String nameImage : alarms.getAlarm(num).getImages()) {
             ImageView image = new ImageView(this);
             image.setLayoutParams(llParams);
-            String name = nameImage + ".png";
-            int resID = InfoAlarmaActivity.this.getResources().getIdentifier(name,
-                    "drawable", InfoAlarmaActivity.this.getPackageName());
-            image.setImageResource(R.drawable.a631);
+            //String name = nameImage + ".png";
+            image.setImageResource(alarms.getDiccImages().get(nameImage));
             pAttacher = new PhotoViewAttacher(image);
             llImages.addView(image);
         }
@@ -73,4 +71,6 @@ public class InfoAlarmaActivity extends AppCompatActivity {
         tvAlarmaTitulo.setText("Alarma " + cod + ": " + title);
         tvDesc.setText(desc);
     }
+
 }
+
