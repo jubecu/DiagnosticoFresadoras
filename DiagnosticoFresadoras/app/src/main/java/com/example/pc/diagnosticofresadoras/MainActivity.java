@@ -1,5 +1,6 @@
 package com.example.pc.diagnosticofresadoras;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,8 +16,12 @@ import org.json.JSONObject;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStreamWriter;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -29,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
             "822: FALLO OPERACIÓN 22",
             "846: PRESIÓN AIRE PARA ENGRASE AIRE/ACEITE INSUFICIENTE"};
     Spinner alarmas;
+    FileOutputStream fileEdit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,16 +44,36 @@ public class MainActivity extends AppCompatActivity {
         bInicio = findViewById(R.id.bInicio);
         alarmas = findViewById(R.id.spAlarmas);
 
-        /*File dir = getFilesDir();
-        File registry = new File(dir, "registry.csv");
-        try {
-            FileOutputStream registryEdit = new FileOutputStream(registry);
-            registryEdit.write("Alarma,Pregunta,Respuesta".getBytes());
-        }catch (IOException ex) {
-            Log.v("MainActivity", "Error: " + ex.getMessage());
-            ex.printStackTrace();
-        }*/
-
+        if (!existsFile("registry.csv")) {
+            File dir = getFilesDir();
+            File registry = new File(dir, "registry.csv");
+            try {
+                fileEdit = new FileOutputStream(registry);
+                //OutputStreamWriter osw = new OutputStreamWriter(fileEdit);
+                //BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fileEdit));
+                //fileEdit.write("Alarma,Pregunta,Respuesta".getBytes());
+                fileEdit.write("Alarma,Pregunta,Respuesta".getBytes());
+                //osw.write("Alarma,Pregunta,Respuesta");
+                //osw.close();
+                //fileEdit.close();
+            } catch (IOException ex) {
+                Log.v("MainActivity", "Error: " + ex.getMessage());
+                ex.printStackTrace();
+            }
+        } else {
+            try {
+                OutputStreamWriter osw = new OutputStreamWriter(openFileOutput("registry.csv", Context.MODE_PRIVATE));
+                //fileEdit=new FileOutputStream(getFile("registry.csv"));
+                //BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fileEdit));
+                osw.write("-------------------");
+                //bw.newLine();
+                osw.close();
+                //fileEdit.close();
+            } catch (IOException ex) {
+                Log.v("MainActivity", "Error: " + ex.getMessage());
+                ex.printStackTrace();
+            }
+        }
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_item_alarmas, alarmNum);
         alarmas.setAdapter(adapter);
 
@@ -67,6 +93,23 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    private File getFile(String filename) {
+        for (File file : getFilesDir().listFiles()) {
+            if (file.getName().equals(filename))
+                return file;
+        }
+        return null;
+    }
+
+
+    private boolean existsFile(String name) {
+        for (String file : fileList()) {
+            if (file.equals(name))
+                return true;
+        }
+        return false;
     }
 
     public String loadJSONFromAsset(String cod) {

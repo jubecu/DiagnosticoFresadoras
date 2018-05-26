@@ -1,9 +1,11 @@
 package com.example.pc.diagnosticofresadoras;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -11,6 +13,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.pc.diagnosticofresadoras.modeloAlarmas.AlarmTable;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 
 import uk.co.senab.photoview.PhotoViewAttacher;
 
@@ -57,6 +65,28 @@ public class InfoAlarmaActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        try {
+            //FileOutputStream fileEdit = new FileOutputStream(getFile("registry.csv"));
+            //BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fileEdit));
+            OutputStreamWriter osw = new OutputStreamWriter(openFileOutput("registry.csv", Context.MODE_PRIVATE));
+            //fileEdit.write(cod.getBytes());
+            osw.write(cod);
+            //bw.newLine();
+            osw.close();
+            //fileEdit.close();
+        } catch (IOException ex) {
+            Log.v("InfoAlarmaActivity", "Error: " + ex.getMessage());
+            ex.printStackTrace();
+        }
+    }
+
+    private File getFile(String filename) {
+        for (File file : getFilesDir().listFiles()) {
+            if (file.getName().equals(filename))
+                return file;
+        }
+        return null;
     }
 
     private void fillData(String cod) {
