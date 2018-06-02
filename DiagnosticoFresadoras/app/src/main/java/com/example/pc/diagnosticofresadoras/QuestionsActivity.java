@@ -1,8 +1,10 @@
 package com.example.pc.diagnosticofresadoras;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -12,6 +14,10 @@ import android.widget.TextView;
 import com.example.pc.diagnosticofresadoras.modeloAlarmas.AlarmTable;
 import com.example.pc.diagnosticofresadoras.modeloAlarmas.Answer;
 import com.example.pc.diagnosticofresadoras.modeloAlarmas.Question;
+
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.sql.Timestamp;
 
 import uk.co.senab.photoview.PhotoViewAttacher;
 
@@ -62,7 +68,8 @@ public class QuestionsActivity extends AppCompatActivity {
             ans.setLayoutParams(llParams);
             ans.setText(answer.getText());
             llKeypad.addView(ans);
-            ans.setOnClickListener(new ButtonsOnClickListener(answer.getNext(), answer.getMessage()));
+            ans.setOnClickListener(new ButtonsOnClickListener(answer.getNext(), answer.getMessage(),
+                    answer.getText()));
         }
     }
 
@@ -81,11 +88,12 @@ public class QuestionsActivity extends AppCompatActivity {
     class ButtonsOnClickListener implements View.OnClickListener {
 
         double next;
-        String finalMessage;
+        String finalMessage, text;
 
-        public ButtonsOnClickListener(double next, String finalMessage) {
+        public ButtonsOnClickListener(double next, String finalMessage, String text) {
             this.next = next;
             this.finalMessage = finalMessage;
+            this.text = text;
         }
 
         @Override
@@ -100,6 +108,23 @@ public class QuestionsActivity extends AppCompatActivity {
                 i.putExtra("numAlarm", cod);
                 i.putExtra("idQuestion", next);
                 startActivity(i);
+            }
+            writeRegistry();
+        }
+
+        private void writeRegistry() {
+            try {
+                OutputStreamWriter osw = new OutputStreamWriter(openFileOutput(
+                        "registry.csv", Context.MODE_APPEND));
+                int time = (int) (System.currentTimeMillis());
+                Timestamp tsTemp = new Timestamp(time);
+                String ts = tsTemp.toString();
+                osw.write(cod + "," + "\"" + question.getText() + "\"" + "," + "\"" + text +
+                        "\"" + "," + ts + "\n");
+                osw.close();
+            } catch (IOException ex) {
+                Log.v("InfoAlarmaActivity", "Error: " + ex.getMessage());
+                ex.printStackTrace();
             }
         }
     }

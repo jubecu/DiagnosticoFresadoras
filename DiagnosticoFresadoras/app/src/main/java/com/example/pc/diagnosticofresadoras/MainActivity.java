@@ -45,36 +45,18 @@ public class MainActivity extends AppCompatActivity {
         alarmas = findViewById(R.id.spAlarmas);
 
         if (!existsFile("registry.csv")) {
-            File dir = getFilesDir();
-            File registry = new File(dir, "registry.csv");
             try {
-                fileEdit = new FileOutputStream(registry);
-                //OutputStreamWriter osw = new OutputStreamWriter(fileEdit);
-                //BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fileEdit));
-                //fileEdit.write("Alarma,Pregunta,Respuesta".getBytes());
-                fileEdit.write("Alarma,Pregunta,Respuesta".getBytes());
-                //osw.write("Alarma,Pregunta,Respuesta");
-                //osw.close();
-                //fileEdit.close();
-            } catch (IOException ex) {
-                Log.v("MainActivity", "Error: " + ex.getMessage());
-                ex.printStackTrace();
-            }
-        } else {
-            try {
-                OutputStreamWriter osw = new OutputStreamWriter(openFileOutput("registry.csv", Context.MODE_PRIVATE));
-                //fileEdit=new FileOutputStream(getFile("registry.csv"));
-                //BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fileEdit));
-                osw.write("-------------------");
-                //bw.newLine();
+                OutputStreamWriter osw = new OutputStreamWriter(openFileOutput(
+                        "registry.csv", Context.MODE_APPEND));
+                osw.write("Alarma,Pregunta,Respuesta,Timestamp\n");
                 osw.close();
-                //fileEdit.close();
             } catch (IOException ex) {
                 Log.v("MainActivity", "Error: " + ex.getMessage());
                 ex.printStackTrace();
             }
         }
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_item_alarmas, alarmNum);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+                this, R.layout.spinner_item_alarmas, alarmNum);
         alarmas.setAdapter(adapter);
 
         bInicio.setOnClickListener(new View.OnClickListener() {

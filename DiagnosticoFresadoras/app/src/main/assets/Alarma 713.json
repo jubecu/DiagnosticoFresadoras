@@ -31,13 +31,13 @@
 					"Id":"A",
 					"Texto":"Si, se vuelve a saltar.",
 					"Camino":0.0,
-					"Mensaje":"Comprobar consumo de bomba y/o cambiarla."
+					"Mensaje":"Es necesario comprobar el consumo de la bomba de aspiración con una pinza amperimétrica. Si el consumo leído es superior al indicado en la placa de características habría que, cambiar el aceite del depósito de la bomba (cambiando los filtros) y volver a comprobar el consumo con la pinza, si sigue siendo elevado sería necesario cambiar la bomba entera."
 				},
 				{
 					"Id":"B",
 					"Texto":"No, no se vuelve a saltar.",
 					"Camino":0.0,
-					"Mensaje":"Dejar bomba en observación."
+					"Mensaje":"Comprobar llenado de aceite del depósito de la bomba, cambiar filtros y dejar la bomba funcionando en observación."
 				}	
 			]
 		}

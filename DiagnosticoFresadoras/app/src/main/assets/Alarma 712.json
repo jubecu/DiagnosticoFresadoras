@@ -1,22 +1,22 @@
 {
 	"Número": 712,
 	"Título":"ASPIRACIÓN ACEITE DEL CABEZAL INSUFICIENTE",
-	"Descripción":"El presostato G11-B13, que comprueba la presión de aspiración del cabezal, está detectando una presión errónea. Es importante saber dónde y cuantos vacuostatos tiene la máquina. Si tuviera dos, habría que comprobar el que de fallo. NOTA: Siempre que aparezca una alarma en el circuito de aspiración, se recomienda comprobar el aceite de retorno y comprobar los filtros de depósito y bomba.",
+	"Descripción":"El presostato G11-B13, que comprueba la presión de aspiración del cabezal, está detectando una presión errónea. Es importante saber dónde y cuantos vacuostatos tiene la máquina. Si tuviera más de uno, habría que comprobar el que dé fallo. NOTA: Siempre que aparezca una alarma en el circuito de aspiración, se recomienda comprobar el aceite de retorno y comprobar los filtros de depósito y bomba.",
 	"Preguntas":[
 		{
 			"Id":1.0,
-			"Texto":"¿La pantalla del vacuostato marca algo o está apagada?",
+			"Texto":"Esta alarma la dá el vacuostato G11-B13. Como primera comprobación sencilla vamos a ver cómo está la llave de vaciado del depósito. ¿Está la llave abierta?",
 			"Imagen":"",
 			"Respuestas":[
 				{
 					"Id":"A",
-					"Texto":"Está apagada",
+					"Texto":"Está abierta.",
 					"Camino":1.1,
 					"Mensaje":""
 				},
 				{
 					"Id":"B",
-					"Texto":"Está encendida.",
+					"Texto":"Está cerrada.",
 					"Camino":2.0,
 					"Mensaje":""
 				}			
@@ -24,37 +24,37 @@
 		},
 		{
 			"Id":1.1,
-			"Texto":"Comprobar el cable de alimentación y la tensión que le llega. ¿Desaparce la alarma?",
+			"Texto":"Si la llave de vaciado está abierta, la bomba de aspiración no creará presión de vacio suficiente. Cerrar la llave de vaciado y volver a probar. ¿Desaparece la alarma?",
 			"Imagen":"",
 			"Respuestas":[
 				{
 					"Id":"A",
-					"Texto":"Sí, desaparece.",
+					"Texto":"Si, desaparece",
 					"Camino":0.0,
-					"Mensaje":"Problema resuelto: [falso contacto]"
+					"Mensaje":"Si, el problema era que la llave de vaciado estaba abierta."
 				},
 				{
 					"Id":"B",
-					"Texto":"No, no desaparece.",
-					"Camino":0.0,
-					"Mensaje":"Cambiar el vacuostato"
+					"Texto":"No, no desaparece",
+					"Camino":2.0,
+					"Mensaje":""
 				}			
 			]
 		},
 		{
 			"Id":2.0,
-			"Texto":"¿La pantalla tiene los dígitos en verde o en rojo?",
+			"Texto":"Esta alarma la dá el vacuostato G11-B13. Como primera comprobación vamos a ver cómo está el propio vacuostato. ¿La pantalla del vacuostato marca algo o está apagada?",
 			"Imagen":"",
 			"Respuestas":[
 				{
 					"Id":"A",
-					"Texto":"En verde.",
+					"Texto":"Está apagada",
 					"Camino":2.1,
 					"Mensaje":""
 				},
 				{
 					"Id":"B",
-					"Texto":"En rojo.",
+					"Texto":"Está encendida.",
 					"Camino":3.0,
 					"Mensaje":""
 				}			
@@ -62,77 +62,115 @@
 		},
 		{
 			"Id":2.1,
-			"Texto":"Comprobar cable desde el vacuostato hasta el armario eléctrico. ¿Desaparce la alarma?",
+			"Texto":"Comprobar que el conector por donde le llega la alimentación (y las señales del salida del mismo) esté firmemente conectado y que le llegue la alimentación adecuada. ¿Desaparece la alarma?",
+			"Imagen":"a712q2_1",
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Sí, desaparece.",
+					"Camino":0.0,
+					"Mensaje":"Si, el problema era que el conector estaba flojo."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, no desaparece.",
+					"Camino":0.0,
+					"Mensaje":"Cambiar el vacuostato por uno nuevo."
+				}			
+			]
+		},
+		{
+			"Id":3.0,
+			"Texto":"Dependiendo del color como se muestran los valores en la pantalla nos indica si está en alarma (rojo) o dentro de los límites fijados (verde) ¿De qué color son los dígitos en la pantalla?",
+			"Imagen":"",
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Verde.",
+					"Camino":3.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Rojo.",
+					"Camino":4.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":3.1,
+			"Texto":"Si el color es verde, el vacuostato no está dando alarma. Estando el problema entre el vacuostato y el armario eléctrico. Comprobar cable desde el vacuostato hasta el armario eléctrico y cambiarlo si es necesario. ¿Desaparece la alarma?",
 			"Imagen":"",
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Sí, desaparece.",
 					"Camino":0.0,
-					"Mensaje":"Problema resuelto: [falso contacto]"
+					"Mensaje":"Si, el problema estaba en el cable desde el vacuostato al armario."
 				},
 				{
 					"Id":"B",
 					"Texto":"No, no desaparece.",
-					"Camino":3.0,
-					"Mensaje":""
-				}			
-			]
-		},
-		{
-			"Id":3.0,
-			"Texto":" ¿Cuántos vacuostatos tiene el circuito?",
-			"Imagen":"",
-			"Respuestas":[
-				{
-					"Id":"A",
-					"Texto":"Uno en el depósito.",
 					"Camino":4.0,
-					"Mensaje":""
-				},
-				{
-					"Id":"B",
-					"Texto":"Uno en el distribuidor en 'T'",
-					"Camino":6.0,
-					"Mensaje":""
-				},
-				{
-					"Id":"C",
-					"Texto":"Uno en cada circuito.",
-					"Camino":8.0,
 					"Mensaje":""
 				}			
 			]
 		},
 		{
 			"Id":4.0,
-			"Texto":"Soltar la manguera de aspiración que viene de la máquina y tapar la entrada del depósito con la mano, ¿sube la presión del manómetro hasta aprox. -90?",
+			"Texto":"Dependiendo de la configuración de la máquina, esta puede tener entre 1 a 4 vacuostatos (comprobar en el esquema hidráulico). ¿Cuántos vacuostatos tiene el circuito?",
 			"Imagen":"",
 			"Respuestas":[
 				{
 					"Id":"A",
-					"Texto":"No, sube poco.",
-					"Camino":4.1,
+					"Texto":"Uno en el depósito.",
+					"Camino":5.0,
 					"Mensaje":""
 				},
 				{
 					"Id":"B",
-					"Texto":"Si, sube hasta -90.",
-					"Camino":5.0,
+					"Texto":"Uno en el distribuidor en 'T'",
+					"Camino":7.0,
+					"Mensaje":""
+				},
+				{
+					"Id":"C",
+					"Texto":"Uno en cada circuito.",
+					"Camino":9.0,
 					"Mensaje":""
 				}			
 			]
 		},
 		{
-			"Id":4.1,
-			"Texto":"Comprobar/cambiar la junta de cierre del depósito y los filtros. ¿Desaparce la alarma?",
+			"Id":5.0,
+			"Texto":"Soltar la manguera de aspiración (tranparente) que viene de la máquina y tapar la entrada del depósito con la mano, ¿sube la presión del manómetro hasta aprox. -90?",
+			"Imagen":"a712q5",
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, sube poco.",
+					"Camino":5.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Si, sube hasta -90.",
+					"Camino":6.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":5.1,
+			"Texto":"La presión de vacío que genera la bomba de aspiración se está perdiendo. Esta pérdida de presión puede estar en al junta de la tapa del depósito de recogida del aceite o en el filtro azul de aspiación. Comprobar/cambiar la junta de cierre del depósito y los filtros. ¿Desaparece la alarma?",
 			"Imagen":"",
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Sí, desaparece.",
 					"Camino":0.0,
-					"Mensaje":"Problema resuelto: [junta/filtros mal]"
+					"Mensaje":"Si, el problema estaba en la junta o en el filtro azul."
 				},
 				{
 					"Id":"B",
@@ -143,85 +181,47 @@
 			]
 		},
 		{
-			"Id":5.0,
-			"Texto":"Soltar las mangueras 18 y 4 del cabezal y taparlas con las manos, ¿sube la presión hasta -90?",
+			"Id":6.0,
+			"Texto":"Volver a colocar la manguera quitada en el punto 5. Soltar las mangueras 18 y 4 del cabezal y taparlas con las mano, ¿sube la presión hasta -90?",
 			"Imagen":"",
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"No, solo un poco.",
-					"Camino":5.1,
+					"Camino":6.1,
 					"Mensaje":""
 				},
 				{
 					"Id":"B",
 					"Texto":"Si, sube hasta -90.",
 					"Camino":0.0,
-					"Mensaje":"Problema dentro del cabezal. Avisar a Post_Venta"
+					"Mensaje":"Problema dentro del cabezal. Es necesaria la intervención de Nicolás Correa (Post-Venta) para investigar el fallo dentro del cabezal. Avisar a Post_Venta"
 				}			
 			]
 		},
 		{
-			"Id":5.1,
-			"Texto":"Comprobar mangueras, taco distribución y tubo espiral, alguna está floja o rota. ¿Desaparce la alarma?",
+			"Id":6.1,
+			"Texto":"Si el fallo no está en la bomba de aspiración (punto 5), y en este punto 6 no sube la presión, significaría que el tubo, entre el depósito de aspiración y el cabezal está roto. Comprobar mangueras, taco distribución y tubo espiral transparente, alguna está floja o rota. ¿Desaparece la alarma?",
 			"Imagen":"",
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Sí, desaparece.",
 					"Camino":0.0,
-					"Mensaje":"Problema resuelto: [problema en mangueras]"
+					"Mensaje":"Si. El tubo entre el depósito y el cabezal estaba roto/flojo."
 				},
 				{
 					"Id":"B",
 					"Texto":"No, no desaparece.",
-					"Camino":4.0,
+					"Camino":5.0,
 					"Mensaje":""
-				}			
-			]
-		},
-		{
-			"Id":6.0,
-			"Texto":"¿El vacuostato marca una presión de vacío entre -60 y -90? (circuito obstruido)",
-			"Imagen":"",
-			"Respuestas":[
-				{
-					"Id":"A",
-					"Texto":"Sí.",
-					"Camino":6.1,
-					"Mensaje":""
-				},
-				{
-					"Id":"B",
-					"Texto":"No.",
-					"Camino":7.0,
-					"Mensaje":""
-				}			
-			]
-		},
-		{
-			"Id":6.1,
-			"Texto":"Soltar las mangueras 18 y 4 del cabezal. ¿Sigue marcando una presión -60 o -90?",
-			"Imagen":"",
-			"Respuestas":[
-				{
-					"Id":"A",
-					"Texto":"Sí.",
-					"Camino":0.0,
-					"Mensaje":"Manguera obstruida entre el cabezal y el taco."
-				},
-				{
-					"Id":"B",
-					"Texto":"No.",
-					"Camino":0.0,
-					"Mensaje":"Problema dentro del cabezal. Avisar a Post_Venta"
 				}			
 			]
 		},
 		{
 			"Id":7.0,
-			"Texto":"¿El vacuostato marca una presión de vacío entre 0 y -25?",
-			"Imagen":"",
+			"Texto":"¿El vacuostato marca una presión de vacío entre -60 y -90? (circuito obstruido)",
+			"Imagen":"a712q7",
 			"Respuestas":[
 				{
 					"Id":"A",
@@ -232,24 +232,68 @@
 				{
 					"Id":"B",
 					"Texto":"No.",
-					"Camino":7.2,
+					"Camino":8.0,
 					"Mensaje":""
 				}			
 			]
 		},
 		{
 			"Id":7.1,
-			"Texto":"Soltar las mangueras 18 y 4 del cabezal. ¿Sigue marcando una presión -60 o -90?",
+			"Texto":"Como el vacuostato está después del depósito, primero comprobamos al final del circuito (en la entrada al cabezal). Soltar las mangueras 18 y 4 del cabezal. ¿Sigue marcando una presión entre -60 y -90?",
 			"Imagen":"",
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Sí.",
 					"Camino":0.0,
-					"Mensaje":"Manguera obstruida entre el cabezal y el taco."
+					"Mensaje":"Si soltando los tubos (dejando el tubo abierto) seguimos teniendo excesiva presión de vacío, indicaría un problema entre el cabezal y el taco donde está el manómetro. Comprobar esta manguera y el taco de distribución en T.Manguera obstruida entre el cabezal y el taco."
 				},
 				{
 					"Id":"B",
+					"Texto":"No.",
+					"Camino":0.0,
+					"Mensaje":"Problema dentro del cabezal. Es necesaria la intervención de Nicolás Correa (Post-Venta) para investigar el fallo dentro del cabezal. Avisar a Post_Venta"
+				}			
+			]
+		},
+		{
+			"Id":8.0,
+			"Texto":"¿El vacuostato marca una presión de vacío entre 0 y -25?",
+			"Imagen":"a712q7",
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Sí.",
+					"Camino":8.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"No.",
+					"Camino":8.2,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":8.1,
+			"Texto":"Como el vacuostato está en medio del circuito, vamos a comprobar si desde el presostato hasta la bomba de aspiración está el circuito abierto. Soltar las mangueras 18 y 4 del taco en T y taponar con la mano las dos entradas al taco. ¿El vacuostato marca una presión entre -60 y -90?",
+			"Imagen":"",
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si y sube muy rápida la presión.",
+					"Camino":0.0,
+					"Mensaje":"Si desde el taco hasta la bomba está bien, coge presión rápidamente, el problema tiene que estar entre el taco y el caebzal. Comprobar los dos circuitos 4 y 18 hasta el cabezal. Si está bien el problema estaría dentro del cabezal."
+				},
+				{
+					"Id":"B",
+					"Texto":"Si, pero sube lentamente.",
+					"Camino":8.3,
+					"Mensaje":""
+				},
+				{
+					"Id":"C",
 					"Texto":"No.",
 					"Camino":0.0,
 					"Mensaje":"Problema dentro del cabezal. Avisar a Post_Venta"
@@ -257,33 +301,46 @@
 			]
 		},
 		{
-			"Id":7.2,
-			"Texto":"Información errónea. Volver a repetir el proceso.",
+			"Id":8.2,
+			"Texto":"Información errónea. Comprobar los parámetros ajustados en el vacuostato. Volver a repetir el proceso desde el punto 7.",
 			"Imagen":"",
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Repetir.",
-					"Camino":1.0,
+					"Camino":7.0,
 					"Mensaje":""
 				}			
 			]
 		},
 		{
-			"Id":8.0,
+			"Id":8.3,
+			"Texto":"Si sube lentamente indica que el filtro azul del depósito de recogida de aceite está obstruido. Cambiar el filtro y probar de nuevo. Ver foto para saber donde están los filtros.",
+			"Imagen":"a712q8_3",
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Fin",
+					"Camino":0.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":9.0,
 			"Texto":"Seguir los pasos de comprobación  7 y 8, pero comprobando cada circuito independientemente (tiene un caudalímetro por circuito).",
 			"Imagen":"",
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Paso 7.",
-					"Camino":6.0,
+					"Camino":7.0,
 					"Mensaje":""
 				},
 				{
 					"Id":"B",
 					"Texto":"Paso 8.",
-					"Camino":7.0,
+					"Camino":8.0,
 					"Mensaje":""
 				}			
 			]

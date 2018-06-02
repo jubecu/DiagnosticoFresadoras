@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.pc.diagnosticofresadoras.modeloAlarmas.AlarmTable;
@@ -50,10 +51,19 @@ public class InfoAlarmaActivity extends AppCompatActivity {
         for (String nameImage : alarms.getAlarm(num).getImages()) {
             ImageView image = new ImageView(this);
             image.setLayoutParams(llParams);
-            //String name = nameImage + ".png";
-            image.setImageResource(alarms.getDiccImages().get(nameImage));
+            int resImage = alarms.getDiccImages().get(nameImage);
+            image.setImageResource(resImage);
             pAttacher = new PhotoViewAttacher(image);
             llImages.addView(image);
+
+            /*image.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(InfoAlarmaActivity.this, ImageActivity.class);
+                    i.putExtra("Image", resImage);
+                    startActivity(i);
+                }
+            });*/
         }
 
         bComenzar.setOnClickListener(new View.OnClickListener() {
@@ -65,21 +75,23 @@ public class InfoAlarmaActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
-        try {
-            //FileOutputStream fileEdit = new FileOutputStream(getFile("registry.csv"));
-            //BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fileEdit));
-            OutputStreamWriter osw = new OutputStreamWriter(openFileOutput("registry.csv", Context.MODE_PRIVATE));
-            //fileEdit.write(cod.getBytes());
-            osw.write(cod);
-            //bw.newLine();
-            osw.close();
-            //fileEdit.close();
-        } catch (IOException ex) {
-            Log.v("InfoAlarmaActivity", "Error: " + ex.getMessage());
-            ex.printStackTrace();
-        }
     }
+
+    /*class ImageOnClickListener implements View.OnClickListener {
+
+        int resImage;
+
+        public ImageOnClickListener(int resImage) {
+            this.resImage = resImage;
+        }
+
+        @Override
+        public void onClick(View v) {
+            Intent i = new Intent(InfoAlarmaActivity.this, ImageActivity.class);
+            i.putExtra("Image", resImage);
+            startActivity(i);
+        }
+    }*/
 
     private File getFile(String filename) {
         for (File file : getFilesDir().listFiles()) {
