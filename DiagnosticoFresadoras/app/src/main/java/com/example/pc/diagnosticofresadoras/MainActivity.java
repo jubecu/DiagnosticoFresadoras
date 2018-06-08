@@ -2,6 +2,7 @@ package com.example.pc.diagnosticofresadoras;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,10 +19,17 @@ import org.json.JSONException;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStreamWriter;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Locale;
+
+import javax.net.ssl.HttpsURLConnection;
+//import java.lang.Thread;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -59,13 +67,19 @@ public class MainActivity extends AppCompatActivity {
                 this, R.layout.spinner_item_alarmas, alarmNum);
         alarmas.setAdapter(adapter);
 
+        getDataApiRest();
+
         bInicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Alarm alarm;
-                String cod = null, json;
+                String cod = null, json = null;
                 cod = alarmas.getSelectedItem().toString().substring(0, 3);
-                json = loadJSONFromAsset(cod);
+                try {
+                    json = loadJSONFromAsset(cod);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 alarm = getAlarm(json, cod);
                 AlarmTable.getInstance().addAlarm(alarm);
                 Intent i = new Intent(MainActivity.this, InfoAlarmaActivity.class);
@@ -94,22 +108,61 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
-    public String loadJSONFromAsset(String cod) {
+    public String loadJSONFromAsset(String cod) throws IOException {
         String json = null;
+        InputStream is = null;
         try {
-            InputStream is = this.getAssets().open("Alarma " + cod + ".json");
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            json = new String(buffer, "ISO-8859-1");
-            Log.v("MainActivity", "Load json ok");
-        } catch (IOException ex) {
+            String idioma = Locale.getDefault().getLanguage();
+            if (idioma.equals("es"))
+                is = this.getAssets().open("Alarma " + cod + ".json");
+            else
+                is = this.getAssets().open("Alarm " + cod + ".json");
+        } catch (FileNotFoundException ex) {
+            is = this.getAssets().open("Alarma " + cod + ".json");
+        /*} catch (IOException ex) {
             Log.v("MainActivity", "Error: " + ex.getMessage());
             ex.printStackTrace();
-            return null;
+            return null;*/
         }
+        int size = is.available();
+        byte[] buffer = new byte[size];
+        is.read(buffer);
+        is.close();
+        json = new String(buffer, "ISO-8859-1");
+        Log.v("MainActivity", "Load json ok");
         return json;
+    }
+
+    private void getDataApiRest() {
+        new Thread(new Runnable() {
+            public void run() {
+                URL githubEndpoint = null;
+                try {
+                    githubEndpoint = new URL("https://api.github.com/");
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    HttpsURLConnection myConnection =
+                            (HttpsURLConnection) githubEndpoint.openConnection();
+                    if (myConnection.getResponseCode() == 200) {
+                        //Log.i("Api Rest", "hola3");
+                        String json = null;
+                        InputStream responseBody = myConnection.getInputStream();
+                        int size = responseBody.available();
+                        byte[] buffer = new byte[size];
+                        responseBody.read(buffer);
+                        responseBody.close();
+                        json = new String(buffer, "UTF-8");
+                        Log.i("Api Rest OK", json);
+                    } else {
+                        Log.i("Error Api Rest", "No response");
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
 
     private Alarm getAlarm(String json, String cod) {
