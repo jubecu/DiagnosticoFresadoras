@@ -6,7 +6,7 @@
 		{
 			"Id":1.0,
 			"Texto":"Physically, the G11-Q21 circuit breaker is triggered by consumption?",
-			"Imagen":"",
+			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
@@ -17,7 +17,7 @@
 				{
 					"Id":"B",
 					"Texto":"No, it is not triggered.",
-					"Camino":0.0,
+					"Camino":-1.0,
 					"Mensaje":"Check the auxiliary circuit of the circuit breaker and the wiring of the PLC input."
 				}			
 			]
@@ -25,18 +25,18 @@
 		{
 			"Id":1.1,
 			"Texto":"If you rearm it by hand, does it trigger again in a short time?",
-			"Imagen":"",
+			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Yes, it triggeres again.",
-					"Camino":0.0,
+					"Camino":-1.0,
 					"Mensaje":"It is necessary to check the current of the vacuum pump with a clamp meter. If the current read is higher than the value showed in the nameplate, change the oil in the pump reservoir (changing the filters) and recheck the current again with the clamp. If it is still high, it would be necessary to change the entire pump."
 				},
 				{
 					"Id":"B",
 					"Texto":"No, it does't trigger again.",
-					"Camino":0.0,
+					"Camino":-1.0,
 					"Mensaje":"Check the oil of the pump reservoir, change filters and leave the pump running under observation."
 				}	
 			]

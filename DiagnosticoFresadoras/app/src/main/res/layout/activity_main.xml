@@ -17,9 +17,9 @@
             android:id="@+id/bInicio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/rgLanguage"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="83dp"
+            android:layout_marginTop="20dp"
             android:text="Aceptar"
             android:textSize="20sp" />
 
@@ -54,6 +54,30 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
             android:scrollbars="none" />
+
+        <RadioGroup
+            android:id="@+id/rgLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/spAlarmas">
+
+            <RadioButton
+                android:id="@+id/rbEsp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Español">
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/rbEng"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="English"
+                android:layout_below="@+id/rbEsp">
+            </RadioButton>
+
+        </RadioGroup>
 
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

@@ -6,13 +6,14 @@ import java.util.Iterator;
 public class Question {
     private double id;
     private String text;
-    private String image;
+    private ArrayList<String> images;
     private ArrayList<Answer> answers;
 
     public Question(double id, String text) {
         this.id = id;
         this.text = text;
         answers = new ArrayList<Answer>();
+        images = new ArrayList<String>();
     }
 
     public double getId() {
@@ -27,12 +28,12 @@ public class Question {
         return answers;
     }
 
-    public String getImage() {
-        return image;
+    public ArrayList<String> getImages() {
+        return images;
     }
 
-    public void setImage(String name) {
-        this.image = name;
+    public void addImage(String name) {
+        images.add(name);
     }
 
     public void addAnswer(Answer ans) {

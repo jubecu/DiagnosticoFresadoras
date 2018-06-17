@@ -31,48 +31,59 @@
             android:textSize="20sp" />
     </LinearLayout>
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp">
-
-        <TextView
-            android:id="@+id/tvQues"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="87dp"
-            android:text=""
-            android:textSize="23sp"
-            android:textColor="#000000"/>
-
-        <LinearLayout
+        android:layout_marginTop="80dp">
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_below="@+id/tvQues"
-            android:layout_above="@+id/svAnswers"
-            android:id="@+id/llImageQuestion" >
-        </LinearLayout>
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:orientation="vertical">
 
-        <ScrollView
-            android:id="@+id/svAnswers"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/tvQues"
-            android:paddingTop="100dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:id="@+id/llKeypad" >
-            </LinearLayout>
-        </ScrollView>
+                <TextView
+                    android:id="@+id/tvQues"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:text=""
+                    android:textSize="23sp"
+                    android:textColor="#000000"/>
 
-    </RelativeLayout>
+                <HorizontalScrollView
+                    android:id="@+id/hsvImages"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvQues"
+                    android:paddingTop="10dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/llImageQuestion" >
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <ScrollView
+                    android:id="@+id/svAnswers"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/hsvImages"
+                    android:paddingTop="50dp"
+                    android:paddingBottom="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/llKeypad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"></LinearLayout>
+                </ScrollView>
+
+        </RelativeLayout>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

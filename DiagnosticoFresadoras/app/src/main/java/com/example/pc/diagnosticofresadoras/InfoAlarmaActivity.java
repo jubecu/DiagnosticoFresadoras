@@ -43,28 +43,7 @@ public class InfoAlarmaActivity extends AppCompatActivity {
 
         fillData(cod);
 
-        LinearLayout llImages = findViewById(R.id.llImages);
-
-        LinearLayout.LayoutParams llParams = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-
-        for (String nameImage : alarms.getAlarm(num).getImages()) {
-            ImageView image = new ImageView(this);
-            image.setLayoutParams(llParams);
-            int resImage = alarms.getDiccImages().get(nameImage);
-            image.setImageResource(resImage);
-            pAttacher = new PhotoViewAttacher(image);
-            llImages.addView(image);
-
-            /*image.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent i = new Intent(InfoAlarmaActivity.this, ImageActivity.class);
-                    i.putExtra("Image", resImage);
-                    startActivity(i);
-                }
-            });*/
-        }
+        fillImages(num);
 
         bComenzar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,29 +56,13 @@ public class InfoAlarmaActivity extends AppCompatActivity {
         });
     }
 
-    /*class ImageOnClickListener implements View.OnClickListener {
-
-        int resImage;
-
-        public ImageOnClickListener(int resImage) {
-            this.resImage = resImage;
-        }
-
-        @Override
-        public void onClick(View v) {
-            Intent i = new Intent(InfoAlarmaActivity.this, ImageActivity.class);
-            i.putExtra("Image", resImage);
-            startActivity(i);
-        }
-    }*/
-
-    private File getFile(String filename) {
+   /* private File getFile(String filename) {
         for (File file : getFilesDir().listFiles()) {
             if (file.getName().equals(filename))
                 return file;
         }
         return null;
-    }
+    }*/
 
     private void fillData(String cod) {
         String title, desc;
@@ -112,6 +75,22 @@ public class InfoAlarmaActivity extends AppCompatActivity {
 
         tvAlarmaTitulo.setText("Alarma " + cod + ": " + title);
         tvDesc.setText(desc);
+    }
+
+    private void fillImages(int num) {
+        LinearLayout llImages = findViewById(R.id.llImages);
+
+        LinearLayout.LayoutParams llParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+
+        for (String nameImage : alarms.getAlarm(num).getImages()) {
+            ImageView image = new ImageView(this);
+            image.setLayoutParams(llParams);
+            int resImage = alarms.getDiccImages().get(nameImage);
+            image.setImageResource(resImage);
+            pAttacher = new PhotoViewAttacher(image);
+            llImages.addView(image);
+        }
     }
 
 }

@@ -5,18 +5,18 @@
 	"Preguntas":[
 		{
 			"Id":1.0,
-			"Texto":"¿Se ha activado la alarma 631 sin que haya herramienta puesta?",
-			"Imagen":"",
+			"Texto":"1. ¿Se ha activado la alarma 631 sin que haya una herramienta en el mandrino?",
+			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
-					"Texto":"Si, no hay herramienta",
+					"Texto":"Si, no hay ninguna herramienta en el mandrino.",
 					"Camino":1.1,
 					"Mensaje":""
 				},
 				{
 					"Id":"B",
-					"Texto":"No, si hay herramienta",
+					"Texto":"No, sí  hay una herrameinta en el mandrino",
 					"Camino":2.0,
 					"Mensaje":""
 				}			
@@ -24,14 +24,14 @@
 		},
 		{
 			"Id":1.1,
-			"Texto":"Meter herramienta en el mandrino y ordenar el giro de nuevo. ¿Desaparece la alarma?",
-			"Imagen":"",
+			"Texto":"1.1. Meter una herramienta cualquiera en el mandrino, a mano, y volver a programar un giro de mandrino. ¿Desaparece la alarma?",
+			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Si, desaparece.",
-					"Camino":0.0,
-					"Mensaje":"Problema resuelto: [faltaba herramienta]"
+					"Camino":-1.0,
+					"Mensaje":"Si. El problema era que no tenía una herramienta en el mandrino."
 				},
 				{
 					"Id":"B",
@@ -43,18 +43,18 @@
 		},
 		{
 			"Id":2.0,
-			"Texto":"¿Ocurre con todas las herramientas?",
-			"Imagen":"",
+			"Texto":"2. Independientemente de la herramiente que tenga el mandrino, ¿siempre sale la alarma?",
+			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
-					"Texto":"No, solo con algunas.",
+					"Texto":"No, solo con algunas herramientas.",
 					"Camino":2.1,
 					"Mensaje":""
 				},
 				{
 					"Id":"B",
-					"Texto":"Si, con todas las Htas.",
+					"Texto":"Si, con todas las herramientas.",
 					"Camino":3.0,
 					"Mensaje":""
 				}			
@@ -62,14 +62,14 @@
 		},
 		{
 			"Id":2.1,
-			"Texto":"Comprobar porta-herramientas y tirante. ¿Desaparece la alarma?",
-			"Imagen":"",
+			"Texto":"2.1. Si el cono está muy desgastado o el tirante de la herrameinta flojo, podrían ocasionar este problema. Comprobar ambas cosas. ¿Desaparece la alarma?",
+			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Si, desaparece.",
-					"Camino":0.0,
-					"Mensaje":"Portaherramientas y/o tirante no correctos."
+					"Camino":-1.0,
+					"Mensaje":"Si. El problema estaba en el cono o en el tirante de la herramienta."
 				},
 				{
 					"Id":"B",
@@ -81,12 +81,12 @@
 		},
 		{
 			"Id":3.0,
-			"Texto":"¿Es correcta la medida/expulsión de la pinza?",
-			"Imagen":"",
+			"Texto":"3. ¿Es correcta la medida/expulsión de la pinza?",
+			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
-					"Texto":"No, no es correcta .",
+					"Texto":"No, no es correcta.",
 					"Camino":3.1,
 					"Mensaje":""
 				},
@@ -100,14 +100,14 @@
 		},
 		{
 			"Id":3.1,
-			"Texto":"Reajustar y comprobar el tornillo de bloqueo y pinza y ajustarlo. ¿Desaparece la alarma?",
-			"Imagen":"",
+			"Texto":"3.1. Comprobar el tornillo de bloqueo de la pinza y la posición de la pinza del amarrador y, si es necesario, ajustarlo. ¿Desaparece la alarma?",
+			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Si, desaparece.",
-					"Camino":0.0,
-					"Mensaje":"Problema resuelto: [ajuste del prisionero]"
+					"Camino":-1.0,
+					"Mensaje":"Si. La pinza del amarrador no estaba bien ajustada."
 				},
 				{
 					"Id":"B",
@@ -119,8 +119,11 @@
 		},
 		{
 			"Id":4.0,
-			"Texto":"¿Qué color tiene la pantalla del keyence? Rojo/Verde?",
-			"Imagen":"",
+			"Texto":"4. La unidad KEYENCE, es la que se encarga de comprobar los pulsos de las turbinas para determinar el estado de la herramienta. ¿Qué color tiene la pantalla del KEYENCE? ¿Rojo ó Verde?",
+			"Imágenes":[
+				"a631q4a",
+				"a631q4b"
+			],
 			"Respuestas":[
 				{
 					"Id":"A",
@@ -138,14 +141,14 @@
 		},
 		{
 			"Id":4.1,
-			"Texto":"Poner el Keyence en RUN (con PC o con botones). ¿Desaparece la alarma?",
-			"Imagen":"",
+			"Texto":"4.1. El módulo KEYENCE está parado. Es necesario ponerlo en modo RUN para que lea los pulsos generados por las turbinas. Esto se puede hacer mediante el programa 'Ladder Builder' o usando los propios botones en el frontal del mismo. ¿Desaparece la alarma?",
+			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Si, desaparece.",
-					"Camino":0.0,
-					"Mensaje":"Problema resuelto: [KEYENCE en STOP]"
+					"Camino":-1.0,
+					"Mensaje":"Si. El módulo KEYENCE estaba parado."
 				},
 				{
 					"Id":"B",
@@ -157,8 +160,10 @@
 		},
 		{
 			"Id":5.0,
-			"Texto":"¿Los pulsos de la turbina son excesivamente superiores al DM111 siempre o algunas veces?",
-			"Imagen":"a631q5",
+			"Texto":"5. Los pulsos leídos durante una operación de bloqueo/desbloqueo de herramienta se ven en el DM810. Estos pulsos se comparan con ciertas constantes para saber en qué posición se encuentra el pistón. Para la alarma 631 el límite viene fijado en el DM111, si los pulsos leidos son superiores aparecerá la alarma. ¿Los pulsos de la turbina son excesivamente superiores al DM111 siempre o algunas veces?",
+			"Imágenes":[
+				"a631q5"
+			],
 			"Respuestas":[
 				{
 					"Id":"A",
@@ -176,27 +181,27 @@
 		},
 		{
 			"Id":5.1,
-			"Texto":"Purgar el aire del circuito del amarre de herramienta. ¿Desaparece la alarma?",
-			"Imagen":"",
+			"Texto":"5.1. Si por cualquier causa entra aire en el circuito de desbloqueo, los pulsos leidos por la turbina serán excesivos (el aire mueve la turbina). Normalmente purgando este aire se corrige el problema. Purgar el aire del circuito del amarre de herramienta. ¿Desaparece la alarma?",
+			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Si, desaparece.",
-					"Camino":0.0,
-					"Mensaje":"En observación: Fuga en amarrador, fallo esporádico…"
+					"Camino":-1.0,
+					"Mensaje":"A pesar de solucionarse el problema purgando el circuito, hay que ver, al cabo de unos dias, si vuelve a aparecer la alarma. Si volviera a aparecer habría que ver por donde entra aire al circuito. Normalmente es del amarrador, aunque habría que comprobar los latiguillos por si hay alguno flojo. En observación: Fuga en amarrador, fallo esporádico..."
 				},
 				{
 					"Id":"B",
 					"Texto":"No, no desaparece.",
-					"Camino":0.0,
-					"Mensaje":"Aumentar el valor del DM111 (en observación)."
+					"Camino":-1.0,
+					"Mensaje":"Al ser la diferencia de pulsos tan pequeña, podemos aumentar el valor del DM111 para corregir el problema, aunque habría que comprobar, en dias sucesivos, si estos pulsos leídos vuelven a aumentar. Si volviese a ocurrir, habría que comprobar los latiguillos, por si hay alguna fuga. Aumentar el valor del DM111 (en observación)."
 				}			
 			]
 		},
 		{
 			"Id":6.0,
-			"Texto":"¿Problema de fuga de aceite del piston del sistema amarre o de algún latiguillo flojo?",
-			"Imagen":"",
+			"Texto":"6. Si se ha llegado hasta aquí, es porque hay alguna fuga importante de aceite en el circuito. ¿Problema de fuga de aceite del piston del sistema amarre o de algún latiguillo flojo?",
+			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
@@ -214,39 +219,39 @@
 		},
 		{
 			"Id":6.1,
-			"Texto":"Apretar latiguillos y uniones de latiguillos con elementos. ¿Desaparece la alarma?",
-			"Imagen":"",
+			"Texto":"6.1. Apretar latiguillos y uniones de latiguillos con elementos. ¿Desaparece la alarma?",
+			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Si, desaparece la fuga",
-					"Camino":0.0,
+					"Camino":-1.0,
 					"Mensaje":"Problema resuelto: [latiguillos sueltos]"
 				},
 				{
 					"Id":"B",
 					"Texto":"No, no desaparece.",
-					"Camino":0.0,
-					"Mensaje":"¿cambiar amarrador?"
+					"Camino":-1.0,
+					"Mensaje":"Si, apretando los latiguillos no se soluciona el problema, lo más plausible es que el amarrador pierda aceite. ¿Cambiar amarrador?"
 				}			
 			]
 		},
 		{
 			"Id":6.2,
-			"Texto":"Comprobar recorrido piston amarre.",
-			"Imagen":"",
+			"Texto":"6.2. Comprobar recorrido piston amarre.",
+			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Si, correcto.",
-					"Camino":0.0,
-					"Mensaje":"¿cambiar unidad KEYENCE?"
+					"Camino":-1.0,
+					"Mensaje":"Si nos hay fugas, tenemos que suponer que el circuito hydráulico está bien, por lo tanto está fallando la lectura del propio KEYENCE. Comprobar que durante el bloquéo de la herrameinta la entrada E004 del KEYENCE parpadea, si parpadea cambiar el módulo KEYENCE, si sí que parpadea, cambiar la turbina E15-B15."
 				},
 				{
 					"Id":"B",
 					"Texto":"No, no es correcto.. ",
-					"Camino":0.0,
-					"Mensaje":"¿cambiar amarrador?"
+					"Camino":-1.0,
+					"Mensaje":"Si el recorrido del pistón no es correcto, sería necesario cambiar todo el amarrador, cambiando las bellevilles."
 				}			
 			]
 		}

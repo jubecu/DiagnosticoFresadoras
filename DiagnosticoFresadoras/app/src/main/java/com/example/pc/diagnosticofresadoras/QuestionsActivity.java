@@ -47,17 +47,22 @@ public class QuestionsActivity extends AppCompatActivity {
         LinearLayout llImageQuestion = findViewById(R.id.llImageQuestion);
         LinearLayout.LayoutParams llImageParams = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-        String nameImage = question.getImage();
-        if (!nameImage.isEmpty()) {
-            ImageView image = new ImageView(this);
-            image.setLayoutParams(llImageParams);
-            //image.setImageResource(alarms.getDiccImages().get(nameImage));
-            image.setImageResource(R.drawable.a631q5);
-            pAttacher = new PhotoViewAttacher(image);
-            llImageQuestion.addView(image);
+        if (question.getImages() != null) {
+            for (String nameImage : question.getImages()) {
+                ImageView image = new ImageView(this);
+                image.setLayoutParams(llImageParams);
+                int resImage = alarms.getDiccImages().get(nameImage);
+                image.setImageResource(resImage);
+                pAttacher = new PhotoViewAttacher(image);
+                llImageQuestion.addView(image);
+            }
         }
 
 
+        fillButtons();
+    }
+
+    private void fillButtons() {
         LinearLayout llKeypad = findViewById(R.id.llKeypad);
 
         LinearLayout.LayoutParams llParams = new LinearLayout.LayoutParams(
@@ -98,7 +103,7 @@ public class QuestionsActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {
-            if (next == 0.0) {
+            if (next == -1.0) {
                 Intent i = new Intent(QuestionsActivity.this, MessageFinalActivity.class);
                 i.putExtra("numAlarm", cod);
                 i.putExtra("finalMessage", finalMessage);

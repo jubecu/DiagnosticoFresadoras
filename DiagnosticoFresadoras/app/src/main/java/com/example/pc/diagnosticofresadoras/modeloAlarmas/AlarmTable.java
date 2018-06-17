@@ -57,6 +57,8 @@ public class AlarmTable {
         diccImages.put("a712_2", R.drawable.a712_2);
         diccImages.put("a713", R.drawable.a713);
         diccImages.put("a713_2", R.drawable.a713_2);
-
+        diccImages.put("a631q4a", R.drawable.a631q4a);
+        diccImages.put("a631q4b", R.drawable.a631q4b);
+        diccImages.put("a631q5", R.drawable.a631q5);
     }
 }
