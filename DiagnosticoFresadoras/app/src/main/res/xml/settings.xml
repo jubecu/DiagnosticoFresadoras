@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ListPreference
+        android:key="idioma"
+        android:title="@string/pref_idioma_titulo"
+        android:defaultValue="Español"
+        android:entries="@array/pref_idioma_entradas"
+        android:entryValues="@array/pref_idioma_valores" />
+    <com.ubu.tfg.diagnosticofresadoras.DatePreference
+        android:key="fecha"/>
+
+</PreferenceScreen>

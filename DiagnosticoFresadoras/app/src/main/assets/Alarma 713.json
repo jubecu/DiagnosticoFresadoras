@@ -5,7 +5,7 @@
 	"Preguntas":[
 		{
 			"Id":1.0,
-			"Texto":"¿Fisicamente, el térmico G11-Q21 se ha saltado por consumo?",
+			"Texto":"1. ¿Fisicamente, el térmico G11-Q21 se ha saltado por consumo?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
@@ -24,7 +24,7 @@
 		},
 		{
 			"Id":1.1,
-			"Texto":"Si se rearma a mano, ¿se vuelve a saltar de nuevo al poco tiempo?",
+			"Texto":"1.1. Si se rearma a mano, ¿se vuelve a saltar de nuevo al poco tiempo?",
 			"Imágenes":[],
 			"Respuestas":[
 				{

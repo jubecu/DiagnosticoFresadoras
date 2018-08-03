@@ -5,7 +5,7 @@
 	"Preguntas":[
 		{
 			"Id":1.0,
-			"Texto":"Physically, the G11-Q21 circuit breaker is triggered by consumption?",
+			"Texto":"1. Physically, the G11-Q21 circuit breaker is triggered by consumption?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
@@ -24,7 +24,7 @@
 		},
 		{
 			"Id":1.1,
-			"Texto":"If you rearm it by hand, does it trigger again in a short time?",
+			"Texto":"1.1. If you rearm it by hand, does it trigger again in a short time?",
 			"Imágenes":[],
 			"Respuestas":[
 				{

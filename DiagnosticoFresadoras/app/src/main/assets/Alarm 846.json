@@ -1,0 +1,251 @@
+{
+	"Número": 846,
+	"Título":"AIR PRESSURE FOR AIR/OIL LUBRICATION INSUFFICIENT",
+	"Descripción":"The pressure switch G10-B16, which checks the air pressure of this circuit, is detecting an insufficient pressure.",
+	"Preguntas":[
+		{
+			"Id":1.0,
+			"Texto":"1. Has alarm 538 (General air line fault) appeared previously?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, sometimes.",
+					"Camino":1.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"No, never.",
+					"Camino":2.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":1.1,
+			"Texto":"1.1. Check the connection of the air inlet to the machine. Does the alarm disappear?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, it disappears.",
+					"Camino":-1.0,
+					"Mensaje":"Yes. There was a problem with the general air intake."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, it doesn't disappear.",
+					"Camino":2.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":2.0,
+			"Texto":"2. Is the general inlet ressure to the machine correct (6 bar)?",
+			"Imágenes":[
+				"img_circuito_general_aire",
+				"img_presostato_general_aire"
+			],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, it is lower.",
+					"Camino":2.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"It is the right one or even higher.",
+					"Camino":3.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":2.1,
+			"Texto":"2.1. Adjust the pressure builed by the compressor and / or adjust the pressure in the filter block. Does the alarm disappear?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, it disappears.",
+					"Camino":-1.0,
+					"Mensaje":"Yes. It was necessary to adjust the main air inlet pressure."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, it doesn't disappear.",
+					"Camino":3.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":3.0,
+			"Texto":"3. Are the filters, at the input of the machine, clean (no water or debris)?",
+			"Imágenes":[
+				"img_circuito_general_aire"
+			],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, they are not clean.",
+					"Camino":3.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Yes, they are clean.",
+					"Camino":4.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":3.1,
+			"Texto":"3.1. Clean / purge the filters and the vessels. Does the alarm disappear?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, it disappears.",
+					"Camino":-1.0,
+					"Mensaje":"Yes. To much dirtiness into the filters."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, it doesn't disappear.",
+					"Camino":4.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":4.0,
+			"Texto":"4. Is the solenoid valve, to put air into the circuit (G10-Y34), activated (with voltage)?",
+			"Imágenes":[
+				"img_presostato_levantar_pistón_off"
+			],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, it is not activated.",
+					"Camino":4.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Yes, it is activated.",
+					"Camino":5.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":4.1,
+			"Texto":"4.1. Is the S470 output activated (PLC activation of the solenoid valve)?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, it is activated.",
+					"Camino":-1.0,
+					"Mensaje":"Change the relay and / or its base (false relay contact) or check the solenoid valve circuit."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, it is not activated.",
+					"Camino":-1.0,
+					"Mensaje":"Check PLC"
+				}			
+			]
+		},
+		{
+			"Id":5.0,
+			"Texto":"5. See the photos to see that the manometer is in the same pressure regulator. Is the pressure that goes to the solenoid valve correct?",
+			"Imágenes":[
+				"img_presostato_levantar_pistón_off",
+				"img_valvula_ajuste_presión_levantar_piston"
+			],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, it is not right (< 5 bar).",
+					"Camino":5.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Yes, it is right (>= 5bar).",
+					"Camino":6.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":5.1,
+			"Texto":"5.1. Adjusting the presure to 5 bar, does the alarm disappears?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, it disappears.",
+					"Camino":-1.0,
+					"Mensaje":"Yes. The pressure was not properly adjusted."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, it doesn't disappear.",
+					"Camino":6.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":6.0,
+			"Texto":"6. If you have reached to this point, it meansthat the problem is in the pressure switch itself or in the wiring from the pressure switch to the cabinet. Is the pressure switch set to 3.5 bar?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"It is settled to a higher pressure.",
+					"Camino":6.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"It's good more or less.",
+					"Camino":-1.0,
+					"Mensaje":"Check the functionality of the pressure switch and the wiring to the cabinet. Change the the item according to the findings."
+				}			
+			]
+		},
+		{
+			"Id":6.1,
+			"Texto":"6.1. Adjust the pressure switch to 3.5 bar and check again. Does the alarm disappear?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, it disappears.",
+					"Camino":-1.0,
+					"Mensaje":"Yes, the pressure switch was wrongly adjusted."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, it doesn't disappear.",
+					"Camino":-1.0,
+					"Mensaje":"Check the functionality of the pressure switch and the wiring to the cabinet. Change the the item according to the findings."
+				}			
+			]
+		}
+	],
+	"Imágenes":[
+		"a846",
+		"a846_2",
+		"a846_3",
+		"a846_4"
+	]
+}

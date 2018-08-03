@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.pc.diagnosticofresadoras.InfoAlarmaActivity">
+    tools:context="com.ubu.tfg.diagnosticofresadoras.InfoAlarmaActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,49 +31,54 @@
             android:textSize="20sp" />
     </LinearLayout>
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        >
-
-        <Button
-            android:id="@+id/bComenzar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="25dp"
-            android:text="Comenzar"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/tvDesc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="87dp"
-            android:text=""
-            android:textSize="23sp"
-            android:textColor="#000000"/>
-
-        <HorizontalScrollView
+        android:layout_marginTop="80dp">
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/tvDesc"
-            android:layout_above="@+id/bComenzar"
-            android:paddingTop="100dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:orientation="horizontal"
-                android:id="@+id/llImages" >
-            </LinearLayout>
-        </HorizontalScrollView>
-    </RelativeLayout>
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            >
 
+            <Button
+                android:id="@+id/bComenzar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="30dp"
+                android:layout_below="@+id/hsvImagesInicio"
+                android:text="Comenzar"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="87dp"
+                android:text=""
+                android:textSize="23sp"
+                android:textColor="#000000"/>
+
+            <HorizontalScrollView
+                android:id="@+id/hsvImagesInicio"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/tvDesc"
+                android:paddingTop="100dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    android:id="@+id/llImages" >
+                </LinearLayout>
+            </HorizontalScrollView>
+        </RelativeLayout>
+    </ScrollView>
 </android.support.constraint.ConstraintLayout>

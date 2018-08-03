@@ -1,0 +1,285 @@
+{
+	"Número": 928,
+	"Título":"PRESIÓN PARA LEVANTAR PISTÓN DESBL. DE HTA INSUFICIENTE",
+	"Descripción":"El presostato E15-B17, que comprueba la presión de aire de este pistón, está detectando una presión insuficiente.",
+	"Preguntas":[
+		{
+			"Id":1.0,
+			"Texto":"1. Ver la foto para saber dónde está el presostato que detecta la presión general del aire. ¿Ha aparecido, con anterioridad la alarma 538 (Fallo general en linea de aire)?",
+			"Imágenes":[
+				"img_presostato_general_aire"
+			],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si, algunas veces",
+					"Camino":1.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"No, nunca.",
+					"Camino":2.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":1.1,
+			"Texto":"1.1. Comprobar la conexión de la entrada de aire a la máquina. ¿Desaparece la alarma?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si, desaparece.",
+					"Camino":-1.0,
+					"Mensaje":"Problema resuelto: [conexión defectuosa]"
+				},
+				{
+					"Id":"B",
+					"Texto":"No, no desaparece.",
+					"Camino":2.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":2.0,
+			"Texto":"2. ¿La presión general de entrada a la máquina es la estipulada (6 bar)?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, es más baja.",
+					"Camino":2.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Está OK o es más alta.",
+					"Camino":3.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":2.1,
+			"Texto":"2.1. Ajustar presión del compresor o ajustar en el bloque de los filtros. ¿Desaparece la alarma?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si, desaparece.",
+					"Camino":-1.0,
+					"Mensaje":"Problema resuelto: [presión demasiado baja]"
+				},
+				{
+					"Id":"B",
+					"Texto":"No, no desaparece.",
+					"Camino":3.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":3.0,
+			"Texto":"3. Ver la foto para saber dónde están los filtros del aire. ¿Están los filtros de entrada limpios (no tienen agua ni restos)? Si están sucios podrian obstruir el paso de aire y generar la alarma.",
+			"Imágenes":[
+				"img_circuito_general_aire"
+			],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, no están limpios.",
+					"Camino":3.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Si, están limpios.",
+					"Camino":4.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":3.1,
+			"Texto":"3.1. Limpiar los filtros y/o purgar los vasos. ¿Desaparece la alarma?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si, desaparece.",
+					"Camino":-1.0,
+					"Mensaje":"Problema resuelto: [limpieza de filtros]"
+				},
+				{
+					"Id":"B",
+					"Texto":"No, no desaparece.",
+					"Camino":4.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":4.0,
+			"Texto":"4. ¿La electroválvula para levantar el pistón (E14-Y28) está activada (con tensión)?",
+			"Imágenes":[
+				"img_circuito_general_aire"
+			],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, no está activada.",
+					"Camino":4.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Sí, si está activada.",
+					"Camino":5.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":4.1,
+			"Texto":"4.1. ¿Está el relé (E14-KA27) activado?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si, está activado.",
+					"Camino":4.2,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"No, no está activado.",
+					"Camino":-1.0,
+					"Mensaje":"Comprobar salida del autómata (O267) y el módulo que la activa. Comprobar las alimentaciones de este módulo."
+				}			
+			]
+		},
+		{
+			"Id":4.2,
+			"Texto":"4.2. Cambiar el relé y/o la base (falso contacto relé). Si el problema persiste continuar con el punto 5.",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Punto 5",
+					"Camino":5.0,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Problema solucionado.",
+					"Camino":-1.0,
+					"Mensaje":"Problema solucionado."
+				}			
+			]
+		},
+		{
+			"Id":5.0,
+			"Texto":"5. Comprobar con un manómetro la presión de aire que sale de la electroválvula. ¿Es correcta esta presión (6 bar)?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, no es correcta.",
+					"Camino":5.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Si, es correcta.",
+					"Camino":6.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":5.1,
+			"Texto":"5.1. Cambiar/limpiar la electroválvula (está obstruida o no abre bien). Comprobar la línea de aire desde la electroválvula hasta el amarre, puede estar rota u obstruida. ¿Desaparece el error?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Sí, desaparece el error.",
+					"Camino":-1.0,
+					"Mensaje":"Problema resuelto, fallo en la electroválvula."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, no desaparece.",
+					"Camino":6.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":6.0,
+			"Texto":"6. Si todo lo anterior está bien, el problema tiene que venir del propio presostato. ¿Está ajustado el presostato a 4 - 5 bar de presión?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Está a más presión.",
+					"Camino":6.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Está bien o a menos.",
+					"Camino":6.2,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":6.1,
+			"Texto":"6.1. Ajustar presostato a entre 4 y 5 bar. ¿Desaparece la alarma?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Sí, desaparece.",
+					"Camino":-1.0,
+					"Mensaje":"Problema resuelto: [presostato mal ajustado]"
+				},
+				{
+					"Id":"B",
+					"Texto":"No, no desaparece.",
+					"Camino":6.2,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":6.2,
+			"Texto":"6.2. Comprobar el cableado desde el presostato al armario eléctrico. ¿Hay algún fallo?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"El cableado está bien.",
+					"Camino":-1.0,
+					"Mensaje":"Cambiar el presostato."
+				},
+				{
+					"Id":"B",
+					"Texto":"Cambiar el cableado. Si el problema persiste volver al punto 1.",
+					"Camino":6.2,
+					"Mensaje":""
+				}			
+			]
+		},
+	],
+	"Imágenes":[
+		"a928",
+		"a928_2",
+		"a928_3",
+		"a928_4"
+	]
+}

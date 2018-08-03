@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme" />
+
+        <TextView
+            android:id="@+id/tvTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="2"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:text="Diagnóstico de fallos en fresadoras"
+            android:textColor="#00395D"
+            android:textSize="37dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvElige"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:text="Elige la alarma que se ha activado"
+            android:textColor="#00395D"
+            android:textSize="23sp" />
+
+        <Spinner
+            android:id="@+id/spAlarmas"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:scrollbars="none" />
+
+        <RadioGroup
+            android:id="@+id/rgLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp">
+
+            <RadioButton
+                android:id="@+id/rbEsp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Español"></RadioButton>
+
+            <RadioButton
+                android:id="@+id/rbEng"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="English"></RadioButton>
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/bInicio"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="Aceptar"
+            android:textSize="20sp" />
+
+
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

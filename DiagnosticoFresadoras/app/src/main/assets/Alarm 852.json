@@ -1,0 +1,310 @@
+{
+	"Número": 852,
+	"Título":"TOOL WRONGLY CLAMPED",
+	"Descripción":"The pulses read during a tool clamping operation indicate that the tool has not been locked correctly. First of all, check that there are no oil leaks in the tool clamping circuit.",
+	"Preguntas":[
+		{
+			"Id":1.0,
+			"Texto":"1. Since, normally, the tool must be placed in a certain position, if it is inserted by hand it could be placed incorrectly. Has the tool been inserted by hand or automatically?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Manually.",
+					"Camino":1.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Throughout the tool changer.",
+					"Camino":2.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":1.1,
+			"Texto":"1.1. Check that the tool is properlly inserted. Does the alarm disappear?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, it disappears.",
+					"Camino":-1.0,
+					"Mensaje":"Yes. The tool was wrongly inserted in the spindle."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, it does not disappear.",
+					"Camino":2.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":2.0,
+			"Texto":"2. The pull stud used in any tool has different measures, being possible that a wrong pull stud has been used. Does it happen with all the tools?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, just with few of them.",
+					"Camino":2.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Yes, with every tool.",
+					"Camino":3.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":2.1,
+			"Texto":"2.1. Check the pull stud and cone of every tool witch has problems. Does the alarm disappear?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, it disappears.",
+					"Camino":-1.0,
+					"Mensaje":"Yes, the pull stud used was not the right one."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, it does not disappear.",
+					"Camino":3.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":3.0,
+			"Texto":"3. If any chip has been stuck inside the cone, it will cause the tool clamping piston to have less travel. Is the surface of the spindle cone clean?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, it is not clean.",
+					"Camino":3.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Yes, it is clean.",
+					"Camino":4.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":3.1,
+			"Texto":"3.1. Clean the main spindle cone searching for markers on the surface. Does the alarm disappear?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, it disappears.",
+					"Camino":-1.0,
+					"Mensaje":"Yes, the main spindle was not in very good shape or it was dirty."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, it does not disappear.",
+					"Camino":4.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":4.0,
+			"Texto":"4. The position of the tool clamping gripper affect to the pulses read by the turbine. The position of this gripper is given by the expulsion that this apply to the tool. Is the measurement / ejection of the tool correct (approximately 1 mm)?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, it is not right.",
+					"Camino":4.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Yes, it is the right one.",
+					"Camino":5.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":4.1,
+			"Texto":"4.1. Check the locking set screw and adjust it according. Does the alarm disappear?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, it disappears.",
+					"Camino":-1.0,
+					"Mensaje":"Yes, the tool was not lock properly."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, it does not disappear.",
+					"Camino":5.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":5.0,
+			"Texto":"5a. If the hydraulic unit buid a lower pressure that we expect, when the tool is clamped, the returned oil will be lower than expected. Is the hydraulic pressure right?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, it is not right.",
+					"Camino":5.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Yes, it is the right one.",
+					"Camino":5.2,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":5.1,
+			"Texto":"5a.1. Adjust the main pressure and check everything again. Does the alarm disappear?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, it disappears.",
+					"Camino":-1.0,
+					"Mensaje":"Yes. The pressure buil by the hydraulic unit was not right."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, it does not disappear.",
+					"Camino":5.2,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":5.2,
+			"Texto":"5b. Is the level of the hydraulic unit full?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, the tank is not full.",
+					"Camino":5.3,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Yes, the tank is full.",
+					"Camino":7.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":5.3,
+			"Texto":"5b.1. Fill up the tank and check the main pressure build by the unit. Does the alarm disappear?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, it disappears.",
+					"Camino":-1.0,
+					"Mensaje":"Yes. The level of the oil was too low."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, it does not disappear.",
+					"Camino":7.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":7.0,
+			"Texto":"7. Are the pulses of the turbine (DM810) slightly lower than the value of the DM110?",
+			"Imágenes":[
+				"a852q7"
+			],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, just few pulses lower (1 - 9 pulses).",
+					"Camino":7.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"No, they are greater (+10).",
+					"Camino":8.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":7.1,
+			"Texto":"7.1. Adjust the DM111 and DM110 values to recognize the tools. Does the alarm disappear?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, it disappears.",
+					"Camino":-1.0,
+					"Mensaje":"Although the problem has been solved, it is possible that the tool clamping unit is defective. If this alarm come out again, the tool clamping unit should be changed."
+				}	
+			]
+		},
+		{
+			"Id":8.0,
+			"Texto":"8. Each tool clamping unit manufactured has its own characteristics. If the manufacturer has changed, this problem could happen. Is the tool clamping system been changed recently?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes.",
+					"Camino":-1.0,
+					"Mensaje":"Adjust the DM111 and DM110 values to recognize the tools."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, the manufacture is the same.",
+					"Camino":8.1,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":8.1,
+			"Texto":"8.1. Does the pulses read for 'Tool Clamped without Tool' are right?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes.",
+					"Camino":-1.0,
+					"Mensaje":"No. It would be useful to change the tool clamping unit, everything indicates that the piston stroke is not correct."
+				},
+				{
+					"Id":"B",
+					"Texto":"No.",
+					"Camino":-1.0,
+					"Mensaje":"Adjust the DM with proper values and try again."
+				}			
+			]
+		},
+	],
+	"Imágenes":[
+		"a852"
+	]
+}

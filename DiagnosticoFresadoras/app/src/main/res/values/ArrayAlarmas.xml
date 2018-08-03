@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="alarmas">
-        <item>631</item>
-        <item>713</item>
+        <item>631: ORDEN DE GIRO MANDRINO SIN HTA.</item>
+        <item>712: ASPIRACIÓN ACEITE DEL CABEZAL INSUFICIENTE</item>
+        <item>713: AUTOMÁTICO BOMBA ASPIRACIÓN SALTADO</item>
+        <item>821: FALLO OPERACIÓN 21</item>
+        <item>822: FALLO OPERACIÓN 22</item>
+        <item>846: PRESIÓN AIRE PARA ENGRASE AIRE/ACEITE INSUFICIENTE</item>
+        <item>852: HERRAMIENTA MAL BLOQUEADA</item>
+        <item>928: PRESIÓN PARA LEVANTAR PISTÓN DESBL. DE HTA INSUFICIENTE</item>
+        <item>968: EXCESO TIEMPO EN PERDER PRESIÓN CIRCUITO ENGRASE CABEZAL</item>
+        <item>969: EXCESO TIEMPO EN ALCANZAR PRESIÓN ACEITE ENGRASE CABEZAL</item>
+        <item>970: 1er FALLO DETECTOR 1 ENGRASE RODAMIENTOS/ENGRANES</item>
+        <item>971: 2º FALLO DETECTOR 1 ENGRASE RODAMIENTOS/ENGRANES</item>
+        <item>972: 1er FALLO DETECTOR 2 ENGRASE RODAMIENTOS/ENGRANES (G10-B12)</item>
+        <item>973: 2º FALLO DETECTOR 2 ENGRASE RODAMIENTOS/ENGRANES</item>
     </string-array>
 </resources>

@@ -1,0 +1,251 @@
+{
+	"Número": 846,
+	"Título":"PRESIÓN AIRE PARA ENGRASE AIRE/ACEITE INSUFICIENTE",
+	"Descripción":"El presostato G10-B16, que comprueba la presión de aire de este circuito, está detectando una presión insuficiente.",
+	"Preguntas":[
+		{
+			"Id":1.0,
+			"Texto":"1. ¿Ha aparecido, con anterioridad la alarma 538 (Fallo general en linea de aire)?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si, algunas veces",
+					"Camino":1.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"No, nunca.",
+					"Camino":2.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":1.1,
+			"Texto":"1.1. Comprobar la conexión de la entrada de aire a la máquina. ¿Desaparece la alarma?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si, desaparece.",
+					"Camino":-1.0,
+					"Mensaje":"Si. Había un problema con la entrada general del aire."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, no desaparece.",
+					"Camino":2.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":2.0,
+			"Texto":"2. ¿La presión general de entrada a la máquina es la estipulada (6 bar)?",
+			"Imágenes":[
+				"img_circuito_general_aire",
+				"img_presostato_general_aire"
+			],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, es mas baja.",
+					"Camino":2.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Está OK o es más alta.",
+					"Camino":3.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":2.1,
+			"Texto":"2.1. Ajustar presión del compresor y/o ajustar en el bloque de los filtros. ¿Desaparece la alarma?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si, desaparece.",
+					"Camino":-1.0,
+					"Mensaje":"Si. Presión general de aire en la entrada demasiado baja."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, no desaparece.",
+					"Camino":3.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":3.0,
+			"Texto":"3. ¿Están los filtros de entrada limpios (no tienen agua ni restos)?",
+			"Imágenes":[
+				"img_circuito_general_aire"
+			],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, no están limpios.",
+					"Camino":3.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Si, están limpios.",
+					"Camino":4.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":3.1,
+			"Texto":"3.1. Limpiar los filtros y/o purgar los vasos. ¿Desaparece la alarma?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si, desaparece.",
+					"Camino":-1.0,
+					"Mensaje":"Si. Los filtros obstruían el paso del aire."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, no desaparece.",
+					"Camino":4.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":4.0,
+			"Texto":"4. ¿La electroválvula para meter aire al circuito (G10-Y34) está activada (con tensión)?",
+			"Imágenes":[
+				"img_presostato_levantar_pistón_off"
+			],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, no está activada.",
+					"Camino":4.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Si, está activada.",
+					"Camino":5.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":4.1,
+			"Texto":"4.1. ¿Está la salida S470 activada (activación por PLC de la electroválvula)?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si, está activado.",
+					"Camino":-1.0,
+					"Mensaje":"Cambiar el relé y/o la base (falso contacto relé) o comprobar circuito electroválvula."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, no está activado.",
+					"Camino":-1.0,
+					"Mensaje":"Comprobar PLC"
+				}			
+			]
+		},
+		{
+			"Id":5.0,
+			"Texto":"5. Ver las fotos para ver que el manómetro está en el mismo regulador de presión.  ¿Es correcta la presión que le sale hacia la electroválvula?",
+			"Imágenes":[
+				"img_presostato_levantar_pistón_off",
+				"img_valvula_ajuste_presión_levantar_piston"
+			],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, no es correcta (< 5 bar).",
+					"Camino":5.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Si, es correcta (>= 5bar).",
+					"Camino":6.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":5.1,
+			"Texto":"5.1. Ajustar la presión a 5 bar. ¿Desaparece la alarma?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si, desaparece.",
+					"Camino":-1.0,
+					"Mensaje":"Si. Estaba mal ajustada la presión de entrada al pistón de amarre de herramienta."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, no desaparece.",
+					"Camino":6.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":6.0,
+			"Texto":"6. Si se ha llegado hasta este punto indica que el problema está en el propio presostato o en el cableado desde el presostato hasta el armario.¿Está ajustado el presostato a 3'5 bar de presión?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Está a más presión.",
+					"Camino":6.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Está bien o a menos.",
+					"Camino":-1.0,
+					"Mensaje":"Comprobar funcionamiento del presostato y el cableado hasta el armario. Cambiar lo que sea necesario."
+				}			
+			]
+		},
+		{
+			"Id":6.1,
+			"Texto":"6.1. Ajustar presostato a 3'5 bar. ¿Desaparece la alarma?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si, desaparece.",
+					"Camino":-1.0,
+					"Mensaje":"Si. Estaba mal ajustado el presostato."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, no desaparece.",
+					"Camino":-1.0,
+					"Mensaje":"Comprobar funcionamiento del presostato y el cableado hasta el armario. Cambiar lo que sea necesario."
+				}			
+			]
+		}
+	],
+	"Imágenes":[
+		"a846",
+		"a846_2",
+		"a846_3",
+		"a846_4"
+	]
+}

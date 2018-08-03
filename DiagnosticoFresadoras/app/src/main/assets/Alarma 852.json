@@ -1,0 +1,310 @@
+{
+	"Número": 852,
+	"Título":"HERRAMIENTA MAL BLOQUEADA",
+	"Descripción":"Los pulsos medidos en la operación de bloqueo de herramienta indican que esta no ha sido bloqueada correctamente. Antes de nada, comprobar que no se observen fugas de aceite en el circuito de amarre de la herramienta.",
+	"Preguntas":[
+		{
+			"Id":1.0,
+			"Texto":"1. Ya que, normalmente, la herramienta hay que colocarla en una determinada posición, si se mete a mano puede ser que se colocara incorrectamente. ¿Se ha metido la herramienta a mano o automaticamente?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Manualmente.",
+					"Camino":1.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Con el cargador.",
+					"Camino":2.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":1.1,
+			"Texto":"1.1. Comprobar que la herrameinta está correctamente metida. ¿Desaparece la alarma?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si, desaparece.",
+					"Camino":-1.0,
+					"Mensaje":"Problema solucionado. La herramienta estaba mal metida en el cabezal."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, no desaparece.",
+					"Camino":2.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":2.0,
+			"Texto":"2. El tirante de la herrameinta tiene diferentes medidas, siendo posible que se haya utilizado un tirante equivocado. ¿Ocurre con todas las herramientas?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, solo con algunas.",
+					"Camino":2.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Si, con todas las Htas.",
+					"Camino":3.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":2.1,
+			"Texto":"2.1. Comprobar porta-herramientas y tirante de las que fallan. ¿Desaparece la alarma?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si, desaparece.",
+					"Camino":-1.0,
+					"Mensaje":"Portaherramientas y/o tirante no correctos."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, no desaparece.",
+					"Camino":3.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":3.0,
+			"Texto":"3. Si dentro del cono se ha quedado alguna viruta metida, esta hará que el pistón de amarre tenga menos recorrido. ¿Está la superficie del cono del mandrino limpia?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, no está limpia.",
+					"Camino":3.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Si, está limpio.",
+					"Camino":4.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":3.1,
+			"Texto":"3.1. Limpiar el cono de virutas y ver posibles golpes. ¿Desaparece la alarma?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si, desaparece.",
+					"Camino":-1.0,
+					"Mensaje":"Problema solucionado. El cono no está en buenas condiciones o está sucio."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, no desaparece.",
+					"Camino":4.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":4.0,
+			"Texto":"4. La posición de la pinza de amarre de herrameinta influye en los pulsos leídos por las turbinas. La posición de este tirante viene dada por la expulsión que este realiza en la herramienta. ¿Es correcta la medida/expulsión de la pinza (aprox. 1 mm)?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, no es correcta.",
+					"Camino":4.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Si, es correcta.",
+					"Camino":5.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":4.1,
+			"Texto":"4.1. Reajustar y comprobar el tornillo de bloqueo y pinza y ajustarlo. ¿Desaparece la alarma?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si, desaparece.",
+					"Camino":-1.0,
+					"Mensaje":"Si, se había desajustado la pinza."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, no desaparece.",
+					"Camino":5.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":5.0,
+			"Texto":"5a. Si la central hidráulica tiene poca presión, cuando bloquee la herrameienta, el aceite retornado será inferior a lo esperado. ¿Es correcta la presión de la central hidráulica?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, no es correcta.",
+					"Camino":5.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Si, es correcta.",
+					"Camino":5.2,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":5.1,
+			"Texto":"5a.1. Ajustar la presión y volver a comprobar. ¿Desaparece la alarma?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si, desaparece.",
+					"Camino":-1.0,
+					"Mensaje":"Si, la presión de la C.H. era incorrecta."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, no desaparece.",
+					"Camino":5.2,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":5.2,
+			"Texto":"5b. ¿Está el nivel de la central hidráulica lleno?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, no está lleno.",
+					"Camino":5.3,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Si, está lleno.",
+					"Camino":7.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":5.3,
+			"Texto":"5b.1. Llenar central y comprobar presión. ¿Desaparece la alarma?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si, desaparece.",
+					"Camino":-1.0,
+					"Mensaje":"Problema resuelto: [poco aceite en CH]"
+				},
+				{
+					"Id":"B",
+					"Texto":"No, no desaparece.",
+					"Camino":7.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":7.0,
+			"Texto":"7. ¿Los pulsos de la turbina (DM810) son ligeramente inferiores al valor del DM110?",
+			"Imágenes":[
+				"a852q7"
+			],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si, solo un poco (1 - 9 pulsos).",
+					"Camino":7.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"No, son excesivos (+10).",
+					"Camino":8.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":7.1,
+			"Texto":"7.1. Ajustar los valores del DM111 y DM110 para un correcto reconocimiento de las herramientas. ¿Desaparece la alarma?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si, desaparece.",
+					"Camino":-1.0,
+					"Mensaje":"Aunque el problema se ha solucionada, es posible que el amarrador esté defectuoso. Si volviera a salir esta alarma habría que cambiar el amarrador."
+				}	
+			]
+		},
+		{
+			"Id":8.0,
+			"Texto":"8. Cada fabricante de amarradores tiene sus propias características. Si se ha cambiado de fabricante podría suceder esto. ¿Se acaba de cambiar el amarrador?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si.",
+					"Camino":-1.0,
+					"Mensaje":"Ajustar los valores del DM111 y DM110 para un correcto reconocimiento de las herramientas."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, es el mismo fabricante.",
+					"Camino":8.1,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":8.1,
+			"Texto":"8.1. ¿Los pulsos de 'Herramienta Bloqueada sin Herramienta' están bien?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si",
+					"Camino":-1.0,
+					"Mensaje":"Problema no solucionado. Convendría cambiar el amarrador, todo indica que el recorrido del pistón no es correcto."
+				},
+				{
+					"Id":"B",
+					"Texto":"No",
+					"Camino":-1.0,
+					"Mensaje":"Ajustar el sistema entero y volver a probar todo."
+				}			
+			]
+		},
+	],
+	"Imágenes":[
+		"a852"
+	]
+}
