@@ -1,0 +1,100 @@
+{
+	"Número": 969,
+	"Título":"EXCESO TIEMPO EN ALCANZAR PRESIÓN ACEITE ENGRASE CABEZAL",
+	"Descripción":"El presostato G10-B19, que comprueba la presión de aceite de este circuito, está detectando una presión insuficiente. NOTA: Siempre que aparezca una alarma en el circuito de engrase, se recomienda cambiar el aceite y comprobar los filtros.",
+	"Preguntas":[
+		{
+			"Id":1.0,
+			"Texto":"1. Para el buen funcionameinto del circuito de engrase del cabezal, la bomba tiene que generar una presión no inferior a 20 bar. Cuándo funciona la bomba G10-M31, ¿esta genera más de 20 bar de presión (si fuera necesario tapar la salida con una bola de acero)?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, menos de 20 bar.",
+					"Camino":1.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Si, más de 20 bar.",
+					"Camino":1.2,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":1.1,
+			"Texto":"1.1. Comprobar bomba (ajuste de la presión) y circuito y filtro de salida (¿fuga interna de la bomba?). ¿Desaparece la alarma?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si, desaparece.",
+					"Camino":-1.0,
+					"Mensaje":"Problema resuelto: [bomba desajustada o filtro sucio]"
+				},
+				{
+					"Id":"B",
+					"Texto":"No, no desaparece.",
+					"Camino":-1.0,
+					"Mensaje":"Fuga de aceite en la línea, entre la bomba y los dosificadores. Comprobar linea engrase."
+				}			
+			]
+		},
+		{
+			"Id":1.2,
+			"Texto":"1.2. Ajustar la bomba a 20 bar.",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Punto 2",
+					"Camino":2.0,
+					"Mensaje":""
+				}		
+			]
+		},
+		{
+			"Id":2.0,
+			"Texto":"2. ¿La presión a la entrada del presostato es de más de 20 bar?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si, más ó igual a 20 bar.",
+					"Camino":2.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"No, menos de 20 bar.",
+					"Camino":-1.0,
+					"Mensaje":"Fuga de aceite en la línea, entre la bomba y los dosificadores. Comprobar linea engrase."
+				}			
+			]
+		},
+		{
+			"Id":2.1,
+			"Texto":"2.1. Comprobar ajuste presostato G10-B19. ¿Desaparece la alarma?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si, desaparece.",
+					"Camino":-1.0,
+					"Mensaje":"Problema resuelto: [presostato desajustado]"
+				},
+				{
+					"Id":"B",
+					"Texto":"No, no desaparece.",
+					"Camino":-1.0,
+					"Mensaje":"Comprobar presostato y/o cambiarlo. Comprobar circuito mando."
+				}			
+			]
+		}
+	],
+	"Imágenes":[
+		"a969",
+		"a969_2"
+	]
+}

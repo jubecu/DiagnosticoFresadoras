@@ -1,0 +1,283 @@
+{
+	"Número": 928,
+	"Título":"AIR PRESSURE TO LIFT THE TOOL CLAMPING PISTON INSUFFICIENT.",
+	"Descripción":"E15-B17 pressure switch checks the pressure to lift the piston and it is detecting a low pressure.",
+	"Preguntas":[
+		{
+			"Id":1.0,
+			"Texto":"1. See the photo to know where is the pressure switch that detects the general air pressure. Has alarm 538 (General air line fault) appeared previously?",
+			"Imágenes":[
+				"img_presostato_general_aire"
+			],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, sometimes.",
+					"Camino":1.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"No, never.",
+					"Camino":2.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":1.1,
+			"Texto":"1.1. Check the main air fitting to the machine. Does the alarm dissappear?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, it dissappears.",
+					"Camino":-1.0,
+					"Mensaje":"Problem fixed: [connection defective]"
+				},
+				{
+					"Id":"B",
+					"Texto":"No, it doesn't dissappear.",
+					"Camino":2.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":2.0,
+			"Texto":"2. Is the general air pressure, at the entrance to the machine, the stipulated (6 bar)?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, it is lower than 6 bar.",
+					"Camino":2.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"It is OK or it is even higher.",
+					"Camino":3.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":2.1,
+			"Texto":"2.1. Adjust the pressure on the compressor or adjust in the filter block. Does the alarm dissappear?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, it dissappears.",
+					"Camino":-1.0,
+					"Mensaje":"Problem fixed: [pressure was too low]"
+				},
+				{
+					"Id":"B",
+					"Texto":"No, it doesn't dissappear.",
+					"Camino":3.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":3.0,
+			"Texto":"3. See the photo to know where the air filters are. Are the input filters clean (no water or debris)? If they are dirty they could obstruct the passage of air and generate the alarm.",
+			"Imágenes":[
+				"img_circuito_general_aire"
+			],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, they are not clean.",
+					"Camino":3.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Yes, they are clean.",
+					"Camino":4.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":3.1,
+			"Texto":"3.1. Clean the filters and/or drain the vessels. Does the alarm dissappear?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, it dissappears.",
+					"Camino":-1.0,
+					"Mensaje":"Problem fixed: [dirty filters]"
+				},
+				{
+					"Id":"B",
+					"Texto":"No, it doesn't dissappear.",
+					"Camino":4.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":4.0,
+			"Texto":"4. Is the solenoid E14-Y28 activated (with power)? This is the solenoid to lift the piston.",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, it is not activated.",
+					"Camino":4.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Yes, it is activated.",
+					"Camino":5.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":4.1,
+			"Texto":"4.1. Is the relay E14-KA27 activated?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, it is activated.",
+					"Camino":4.2,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"No, it is not activated.",
+					"Camino":-1.0,
+					"Mensaje":"Check PLC output (O267) and the PLC module. Check the power lines to this PLC module."
+				}			
+			]
+		},
+		{
+			"Id":4.2,
+			"Texto":"4.2. Change the relay and/or the base of the relay. If the alarm appears again keep with next point (point #5).",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Point 5",
+					"Camino":5.0,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Problem fixed",
+					"Camino":-1.0,
+					"Mensaje":"Problem fixed"
+				}			
+			]
+		},
+		{
+			"Id":5.0,
+			"Texto":"5. Check with a manometer the air pressure that comes out from the solenoid. Is this pressure right (6 bar)?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, it is not right.",
+					"Camino":5.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Yes, it is right.",
+					"Camino":6.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":5.1,
+			"Texto":"5.1. Change/clean the air solenoid (may be it doesn't open completelly). Check air line from the solenoid to the tool clamping piston, it could be broken. Does the alarm dissappear?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, it dissappears.",
+					"Camino":-1.0,
+					"Mensaje":"Problem fixed: [solenoid defect or air line dirty]."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, it doesn't dissappear.",
+					"Camino":6.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":6.0,
+			"Texto":"6. If everything is right, so far, the problem has to be because the same pressure switch. Is the pressure switch setting right (4 - 5 bar)?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Its setting is higher.",
+					"Camino":6.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Its setting is right or even lower.",
+					"Camino":6.2,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":6.1,
+			"Texto":"6.1. Adjust the pressure switch setting to 4-5 bar. Does the alarm dissappear?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, it dissappears.",
+					"Camino":-1.0,
+					"Mensaje":"Problem fixed: [solenoid defect or air line dirty]."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, it doesn't dissappear.",
+					"Camino":6.2,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":6.2,
+			"Texto":"6.2. Check the wiring from the pressure switch to the cabinet, Is there any fault?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, the wiring is right.",
+					"Camino":-1.0,
+					"Mensaje":"Replaced the pressure switch."
+				},
+				{
+					"Id":"B",
+					"Texto":"Yes, the wiring is defect.",
+					"Camino":-1.0,
+					"Mensaje":"Replace the wiring. If the same alarm appears again, jump to line 1."
+				}			
+			]
+		},
+	],
+	"Imágenes":[
+		"a928",
+		"a928_2",
+		"a928_3",
+		"a928_4"
+	]
+}

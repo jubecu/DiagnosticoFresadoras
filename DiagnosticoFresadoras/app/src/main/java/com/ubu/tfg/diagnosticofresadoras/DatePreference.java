@@ -2,11 +2,13 @@ package com.ubu.tfg.diagnosticofresadoras;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.preference.DialogPreference;
 import android.support.annotation.NonNull;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -73,6 +75,15 @@ public class DatePreference extends DialogPreference {
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                 month++;
                 String dato = day + "/" + month + "/" + year;
+                //Date d = new Date(year-1900, month, day);
+                //Log.i("Fecha",String.valueOf(d.getTime()));
+                //persistLong(d.getTime());
+                SharedPreferences prefs = getSharedPreferences();
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putInt("Día", day);
+                editor.putInt("Mes", month);
+                editor.putInt("Año", year);
+                editor.apply();
             }
         };
     }

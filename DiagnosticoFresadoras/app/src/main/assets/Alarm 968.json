@@ -1,0 +1,87 @@
+{
+	"Número": 968,
+	"Título":"TIME TOO LONG TO DROP THE HEAD LUBRICATION PRESSURE.",
+	"Descripción":"The pressure switch G10-B19, that checks the pressure of the head lubrication circuit, keeps detecting pressure. NOTE: we recommend to replace the filters periodically.",
+	"Preguntas":[
+		{
+			"Id":1.0,
+			"Texto":"1. When the pump stops, the pressure has to drop to 0 bar. When the pump G10-M31 stops, does the pressure drops to 0 bar?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"It drops too low or it doesn't drop at all.",
+					"Camino":1.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Yes, it drops as showed in the video.",
+					"Camino":1.2,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":1.1,
+			"Texto":"1.1. Check the internal circuit of the pump (clean and replace the filters). Does the alarm dissappear?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, it dissapears.",
+					"Camino":-1.0,
+					"Mensaje":"Problem is fixed: [dirty filters]"
+				},
+				{
+					"Id":"B",
+					"Texto":"No, it doesn't dissappears.",
+					"Camino":-1.0,
+					"Mensaje":"Replace the pump."
+				}			
+			]
+		},
+		{
+			"Id":1.2,
+			"Texto":"1.2. Check the setting of the pressure switch  to 20 bar.",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"It is settled too high.",
+					"Camino":-1.0,
+					"Mensaje":"Adjust the setting to 20 bar and repeat this point #1 again."
+				},
+				{
+					"Id":"B",
+					"Texto":"It is right adjusted.",
+					"Camino":2.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":2.0,
+			"Texto":"2. Release the pressure pipe, at the entrance of the pump and check that the PLC input (E458) changes to 0.",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, it changes to 0.",
+					"Camino":-1.0,
+					"Mensaje":"The pressure drops too low. Clean filters and/or replace the whoe pump."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, it stays at 1.",
+					"Camino":-1.0,
+					"Mensaje":"Check the functionality of the pressure switch and the wiring from this unit to the electrical cabinet. If everything looks right, replace the presure switch."
+				}			
+			]
+		}
+	],
+	"Imágenes":[
+		"a968",
+		"a968_2"
+	]
+}

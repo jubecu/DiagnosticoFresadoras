@@ -57,18 +57,22 @@ public class ChooseAlarmActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Alarm alarm;
-                String cod, json = null, lang;
-                cod = alarmas.getSelectedItem().toString().substring(0, 3);
+                String num, json = null, lang, cod;
+                num = alarmas.getSelectedItem().toString().substring(0, 3);
                 lang = getLanguage();
-                try {
-                    json = createJsonFromAssets(cod, lang);
-                } catch (IOException e) {
-                    e.printStackTrace();
+                ManagementJSON managementJSON = new ManagementJSON(num, lang);
+                cod = num + lang;
+                if (!AlarmTable.getInstance().containsAlarm(cod)) {
+                    try {
+                        json = managementJSON.createJsonFromAssets(ChooseAlarmActivity.this);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    alarm = managementJSON.getAlarm(json);
+                    AlarmTable.getInstance().addAlarm(alarm, lang);
                 }
-                alarm = getAlarm(json, cod);
-                AlarmTable.getInstance().addAlarm(alarm);
                 Intent i = new Intent(ChooseAlarmActivity.this, InfoAlarmaActivity.class);
-                i.putExtra("numAlarm", cod);
+                i.putExtra("codAlarm", cod);
                 startActivity(i);
             }
         });
@@ -115,81 +119,5 @@ public class ChooseAlarmActivity extends AppCompatActivity {
     private String getLanguage() {
         String language = preferences.getString("idioma", "");
         return language;
-    }
-
-    private String createJsonFromAssets(String cod, String language) throws IOException {
-        String json;
-        InputStream is;
-        try {
-            if (language.isEmpty())
-                language = Locale.getDefault().getLanguage();
-            if (language.equals("es"))
-                is = this.getAssets().open("Alarma " + cod + ".json");
-            else
-                is = this.getAssets().open("Alarm " + cod + ".json");
-        } catch (FileNotFoundException ex) {
-            is = this.getAssets().open("Alarma " + cod + ".json");
-        }
-        int size = is.available();
-        byte[] buffer = new byte[size];
-        is.read(buffer);
-        is.close();
-        json = new String(buffer, "ISO-8859-1");
-        Log.v("MainActivity", "Load json ok");
-        return json;
-    }
-
-    private Alarm getAlarm(String json, String cod) {
-        Alarm alarm = null;
-        int num = Integer.parseInt(cod);
-        try {
-            JSONObject jsonObject = new JSONObject(json);
-
-            String title = jsonObject.getString("Título");
-            String desp = jsonObject.getString("Descripción");
-            alarm = new Alarm(num, title, desp);
-
-            JSONArray questions = jsonObject.getJSONArray("Preguntas");
-            for (int i = 0; i < questions.length(); i++) {
-                JSONObject ques = questions.getJSONObject(i);
-
-                double idQues = ques.getDouble("Id");
-                String textQues = ques.getString("Texto");
-
-                Question question = new Question(idQues, textQues);
-
-
-                JSONArray images = ques.getJSONArray("Imágenes");
-                for (int k = 0; k < images.length(); k++) {
-                    String image = images.getString(k);
-                    question.addImage(image);
-                }
-
-                JSONArray answers = ques.getJSONArray("Respuestas");
-                for (int j = 0; j < answers.length(); j++) {
-                    JSONObject ans = answers.getJSONObject(j);
-
-                    String idAns = ans.getString("Id");
-                    String textAns = ans.getString("Texto");
-                    double next = ans.getDouble("Camino");
-
-                    Answer answer = new Answer(idAns, textAns, next);
-
-                    String message = ans.getString("Mensaje");
-                    answer.setMessage(message);
-
-                    question.addAnswer(answer);
-                }
-                alarm.addQuestion(question);
-            }
-            JSONArray images = jsonObject.getJSONArray("Imágenes");
-            for (int i = 0; i < images.length(); i++) {
-                String image = images.getString(i);
-                alarm.addImage(image);
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        return alarm;
     }
 }

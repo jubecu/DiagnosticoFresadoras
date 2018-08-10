@@ -9,12 +9,12 @@ import java.util.Map.Entry;
 public class AlarmTable {
 
     private static AlarmTable instance = null;
-    Map<Integer, Alarm> alarms;
-    Map<String, Integer> diccImages;
+    private Map<String, Alarm> alarms;
+    private Map<String, Integer> diccImages;
 
     private AlarmTable() {
-        alarms = new LinkedHashMap<Integer, Alarm>();
-        diccImages = new HashMap<String, Integer>();
+        alarms = new LinkedHashMap<>();
+        diccImages = new HashMap<>();
         fillDiccImages();
     }
 
@@ -24,20 +24,25 @@ public class AlarmTable {
         return instance;
     }
 
-    public void addAlarm(Alarm alarm) {
+    public void addAlarm(Alarm alarm, String language) {
         Integer num = (int) (long) alarm.getNum();
-        alarms.put(num, alarm);
+        String cod = num + language;
+        alarms.put(cod, alarm);
     }
 
-    public Alarm getAlarm(int num) {
-        return alarms.get(num);
+    public Alarm getAlarm(String cod) {
+        return alarms.get(cod);
+    }
+
+    public boolean containsAlarm(String cod) {
+        return alarms.containsKey(cod);
     }
 
     public Map<String, Integer> getDiccImages() {
         return diccImages;
     }
 
-    public int getOrderAlarm(int num) {
+   /* public int getOrderAlarm(int num) {
         int order = 1;
         for (Entry<Integer, Alarm> entry : alarms.entrySet()) {
             if (entry.getKey() == num) {
@@ -46,7 +51,7 @@ public class AlarmTable {
             order++;
         }
         return 0;
-    }
+    }*/
 
     private void fillDiccImages() {
         diccImages.put("a631", com.ubu.tfg.diagnosticofresadoras.R.drawable.a631);

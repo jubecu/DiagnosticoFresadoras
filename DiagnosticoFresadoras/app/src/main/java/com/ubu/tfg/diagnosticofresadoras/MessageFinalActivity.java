@@ -37,13 +37,12 @@ public class MessageFinalActivity extends AppCompatActivity {
 
     private void fillData() {
         Bundle extras = getIntent().getExtras();
-        String cod = extras.getString("numAlarm");
-        int num = Integer.parseInt(cod);
+        String cod = extras.getString("codAlarm");
         String mess = extras.getString("finalMessage");
 
-        String title = AlarmTable.getInstance().getAlarm(num).getTitle();
+        String title = AlarmTable.getInstance().getAlarm(cod).getTitle();
         tvAlarmTitle = findViewById(R.id.tvAlarmaTitulo);
-        tvAlarmTitle.setText("Alarma " + cod + ": " + title);
+        tvAlarmTitle.setText("Alarma " + cod.substring(0, 3) + ": " + title);
 
         tvMess = findViewById(R.id.tvMessage);
         tvMess.setText(mess);

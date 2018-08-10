@@ -35,14 +35,13 @@ public class QuestionsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_questions);
 
         Bundle extras = getIntent().getExtras();
-        cod = extras.getString("numAlarm");
+        cod = extras.getString("codAlarm");
         double idQuestion = extras.getDouble("idQuestion");
 
-        int num = Integer.parseInt(cod);
         alarms = AlarmTable.getInstance();
-        question = alarms.getAlarm(num).getQuestionById(idQuestion);
+        question = alarms.getAlarm(cod).getQuestionById(idQuestion);
 
-        fillData(cod);
+        fillData();
 
         LinearLayout llImageQuestion = findViewById(R.id.llImageQuestion);
         LinearLayout.LayoutParams llImageParams = new LinearLayout.LayoutParams(
@@ -78,13 +77,12 @@ public class QuestionsActivity extends AppCompatActivity {
         }
     }
 
-    private void fillData(String cod) {
+    private void fillData() {
         String title;
-        int num = Integer.parseInt(cod);
 
-        title = alarms.getAlarm(num).getTitle();
+        title = alarms.getAlarm(cod).getTitle();
         tvAlarmTitle = findViewById(R.id.tvAlarmaTitulo);
-        tvAlarmTitle.setText("Alarma " + cod + ": " + title);
+        tvAlarmTitle.setText("Alarma " + cod.substring(0, 3) + ": " + title);
 
         tvQues = findViewById(R.id.tvQues);
         tvQues.setText(question.getText());
@@ -105,12 +103,12 @@ public class QuestionsActivity extends AppCompatActivity {
         public void onClick(View v) {
             if (next == -1.0) {
                 Intent i = new Intent(QuestionsActivity.this, MessageFinalActivity.class);
-                i.putExtra("numAlarm", cod);
+                i.putExtra("codAlarm", cod);
                 i.putExtra("finalMessage", finalMessage);
                 startActivity(i);
             } else {
                 Intent i = new Intent(QuestionsActivity.this, QuestionsActivity.class);
-                i.putExtra("numAlarm", cod);
+                i.putExtra("codAlarm", cod);
                 i.putExtra("idQuestion", next);
                 startActivity(i);
             }
@@ -124,7 +122,8 @@ public class QuestionsActivity extends AppCompatActivity {
                 int time = (int) (System.currentTimeMillis());
                 Timestamp tsTemp = new Timestamp(time);
                 String ts = tsTemp.toString();
-                osw.write(cod + "," + "\"" + question.getText() + "\"" + "," + "\"" + text +
+                osw.write(cod.substring(0, 3) + "," + "\""
+                        + question.getText() + "\"" + "," + "\"" + text +
                         "\"" + "," + ts + "\n");
                 osw.close();
             } catch (IOException ex) {

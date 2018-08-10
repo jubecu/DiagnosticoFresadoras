@@ -1,0 +1,87 @@
+{
+	"Número": 968,
+	"Título":"EXCESO TIEMPO EN PERDER PRESIÓN CIRCUITO ENGRASE CABEZAL",
+	"Descripción":"El presostato G10-B19, que comprueba la presión de aceite de este circuito, está detectando que continúa con presión. NOTA: Siempre que aparezca una alarma en el circuito de engrase, se recomienda cambiar el aceite y comprobar los filtros.",
+	"Preguntas":[
+		{
+			"Id":1.0,
+			"Texto":"1. Cuando la bomba se para, la presión tiene que bajar a 0 lentamente. Cuándo se para la bomba de engrase G10-M31, ¿la presión baja a 0?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Baja muy lento o no baja.",
+					"Camino":1.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Si, baja rápidamente.",
+					"Camino":1.2,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":1.1,
+			"Texto":"1.1. Comprobar circuito interno de relajación (limpiar/cambiar filtro). ¿Desaparece la alarma?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si, desaparece.",
+					"Camino":-1.0,
+					"Mensaje":"Problema resuelto: [circuito relajación y/o filtro sucio]"
+				},
+				{
+					"Id":"B",
+					"Texto":"No, no desaparece.",
+					"Camino":-1.0,
+					"Mensaje":"Cambiar bomba entera."
+				}			
+			]
+		},
+		{
+			"Id":1.2,
+			"Texto":"1.2. Comprobar ajuste presostato a 20 bar.",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Está ajustado muy bajo.",
+					"Camino":-1.0,
+					"Mensaje":"Ajustar a 20 bar y volver a repetir desde el principio."
+				},
+				{
+					"Id":"B",
+					"Texto":"Está bien ajustado.",
+					"Camino":2.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":2.0,
+			"Texto":"2. ¿Si soltamos el tubo de entrada a la bomba, la entrada del PLC (E458) cae a 0?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si, baja a 0.",
+					"Camino":-1.0,
+					"Mensaje":"La presión cae muy despacio. Limpiar filtros y/o cambiar bomba entera."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, sigue a 1.",
+					"Camino":-1.0,
+					"Mensaje":"Comprobar presostato y cableado desde el presostato al armario eléctrico. Si está todo bien, cambiar el presostato."
+				}			
+			]
+		},
+	],
+	"Imágenes":[
+		"a968",
+		"a968_2"
+	]
+}

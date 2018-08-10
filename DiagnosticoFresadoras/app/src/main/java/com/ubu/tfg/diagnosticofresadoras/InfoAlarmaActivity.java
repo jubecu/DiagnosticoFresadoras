@@ -20,6 +20,7 @@ public class InfoAlarmaActivity extends AppCompatActivity {
     TextView tvAlarmaTitulo, tvDesc;
     PhotoViewAttacher pAttacher;
     AlarmTable alarms;
+    String cod;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,20 +29,19 @@ public class InfoAlarmaActivity extends AppCompatActivity {
 
         bComenzar = findViewById(R.id.bComenzar);
         Bundle extras = getIntent().getExtras();
-        final String cod = extras.getString("numAlarm");
-        final int num = Integer.parseInt(cod);
+        cod = extras.getString("codAlarm");
         alarms = AlarmTable.getInstance();
 
-        fillData(cod);
+        fillData();
 
-        fillImages(num);
+        fillImages();
 
         bComenzar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(InfoAlarmaActivity.this, QuestionsActivity.class);
-                i.putExtra("numAlarm", cod);
-                i.putExtra("idQuestion", alarms.getAlarm(num).getQuestionByPosition(0).getId());
+                i.putExtra("codAlarm", cod);
+                i.putExtra("idQuestion", alarms.getAlarm(cod).getQuestionByPosition(0).getId());
                 startActivity(i);
             }
         });
@@ -55,26 +55,25 @@ public class InfoAlarmaActivity extends AppCompatActivity {
         return null;
     }*/
 
-    private void fillData(String cod) {
+    private void fillData() {
         String title, desc;
-        int num = Integer.parseInt(cod);
 
         tvAlarmaTitulo = findViewById(R.id.tvAlarmaTitulo);
         tvDesc = findViewById(R.id.tvDesc);
-        title = alarms.getAlarm(num).getTitle();
-        desc = alarms.getAlarm(num).getDescription();
+        title = alarms.getAlarm(cod).getTitle();
+        desc = alarms.getAlarm(cod).getDescription();
 
-        tvAlarmaTitulo.setText("Alarma " + cod + ": " + title);
+        tvAlarmaTitulo.setText("Alarma " + cod.substring(0, 3) + ": " + title);
         tvDesc.setText(desc);
     }
 
-    private void fillImages(int num) {
+    private void fillImages() {
         LinearLayout llImages = findViewById(R.id.llImages);
 
         LinearLayout.LayoutParams llParams = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
-        for (String nameImage : alarms.getAlarm(num).getImages()) {
+        for (String nameImage : alarms.getAlarm(cod).getImages()) {
             ImageView image = new ImageView(this);
             image.setLayoutParams(llParams);
             int resImage = alarms.getDiccImages().get(nameImage);

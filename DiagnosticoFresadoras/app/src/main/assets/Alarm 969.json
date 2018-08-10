@@ -1,0 +1,100 @@
+{
+	"Número": 969,
+	"Título":"EXCESS OF TIME IN REACHING OIL PRESSURE THE HEAD LUBRICATION CIRCUIT",
+	"Descripción":"The pressure switch G10-B19, which checks the oil pressure of this circuit, is detecting an insufficient pressure. NOTE: we recommend to replace the filters periodically. ",
+	"Preguntas":[
+		{
+			"Id":1.0,
+			"Texto":"1. For the correct operation of the head lubrication, the pump must generate a pressure of not less than 20 bar. When the pump G10-M31 works, does it generate more than 20 bar of pressure (if necessary, plug the outlet with a steel ball)?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, less than 20 bar.",
+					"Camino":1.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Yes, 20 bar or higher.",
+					"Camino":1.2,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":1.1,
+			"Texto":"1.1. Check pump (pressure adjustment) and circuit and output filter (internal leakage of the pump?). Does the alarm dissappear?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, it dissappears.",
+					"Camino":-1.0,
+					"Mensaje":"Problem fixed: [pump wrongly adjusted or dirty filters]"
+				},
+				{
+					"Id":"B",
+					"Texto":"No, it doesn't dissappear.",
+					"Camino":-1.0,
+					"Mensaje":"Check lubrication line, between pump and dosifiers (AA3), may be there is an oil leaking."
+				}			
+			]
+		},
+		{
+			"Id":1.2,
+			"Texto":"1.2. Adjust pressure to 20 bar, remove the steel ball.",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Point 2",
+					"Camino":2.0,
+					"Mensaje":""
+				}		
+			]
+		},
+		{
+			"Id":2.0,
+			"Texto":"2. Is the pressure at the input of the pressure switch more than 20 bar? ",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, 20 bar or higher.",
+					"Camino":2.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"No, less that 20 bar.",
+					"Camino":-1.0,
+					"Mensaje":"Check lubrication pipe. May be there is any kind of oil leaking."
+				}			
+			]
+		},
+		{
+			"Id":2.1,
+			"Texto":"2.1. Check the setting of the pressure switch and its wiring. Does the alarm dissappear?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, it dissappears.",
+					"Camino":-1.0,
+					"Mensaje":"Problem fixed: [pressure switch wrongly adjusted or wiring defect]"
+				},
+				{
+					"Id":"B",
+					"Texto":"No, it doesn't dissappear.",
+					"Camino":-1.0,
+					"Mensaje":"Change pressure swith and its wiring, if necessary."
+				}			
+			]
+		}
+	],
+	"Imágenes":[
+		"a969",
+		"a969_2"
+	]
+}

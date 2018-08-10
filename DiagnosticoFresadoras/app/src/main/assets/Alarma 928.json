@@ -124,9 +124,7 @@
 		{
 			"Id":4.0,
 			"Texto":"4. ¿La electroválvula para levantar el pistón (E14-Y28) está activada (con tensión)?",
-			"Imágenes":[
-				"img_circuito_general_aire"
-			],
+			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
@@ -269,9 +267,9 @@
 				},
 				{
 					"Id":"B",
-					"Texto":"Cambiar el cableado. Si el problema persiste volver al punto 1.",
-					"Camino":6.2,
-					"Mensaje":""
+					"Texto":"El cableado está mal.",
+					"Camino":-1.0,
+					"Mensaje":"Cambiar el cableado. Si el problema persiste volver al punto 1."
 				}			
 			]
 		},

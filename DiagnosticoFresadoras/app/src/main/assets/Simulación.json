@@ -1,0 +1,330 @@
+[
+	{
+	    "_id": {
+	      "$oid": "5a60bea0dceefd49ba3e0543"
+	    },
+	    "_state": 1,
+	    "_machine": "Mill",
+	    "_update_date": 1516289830,
+	    "_from_date": 1516289830,
+	    "_version": 0,
+	    "ORDEN DE GIRO MANDRINO SIN HTA.": {
+	      "units": "",
+	      "data": "ORDEN DE GIRO MANDRINO SIN HTA.",
+	      "value": "{reaction: 7, group: 3, timestamp: 2018-03-25 15:35:42, location: 0, text: ORDEN DE GIRO MANDRINO SIN HTA., nr: PLC00631, id: 15561, channel: 0}"
+	    },
+	    "ASPIRACIÓN ACEITE DEL CABEZAL INSUFICIENTE": {
+	      "units": "",
+	      "data": "ASPIRACIÓN ACEITE DEL CABEZAL INSUFICIENTE",
+	      "value": "{reaction: 7, group: 3, timestamp: 2018-03-25 15:35:42, location: 0, text: ASPIRACIÓN ACEITE DEL CABEZAL INSUFICIENTE, nr: PLC00712, id: 15485, channel: 0}"
+	    },
+	    "_group": "ALARMAS",
+	    "_family": "MILL",
+	    "AUTOMÁTICO BOMBA ASPIRACIÓN SALTADO": {
+	      "units": "",
+	      "data": "AUTOMÁTICO BOMBA ASPIRACIÓN SALTADO",
+	      "value": "{reaction: 2, group: 3, timestamp: 2018-03-25 15:35:42, location: 0, text: AUTOMÁTICO BOMBA ASPIRACIÓN SALTADO, nr: PLC00713, id: 15542, channel: 0}"
+	    },
+	    "_origen": {
+	      "ip": "",
+	      "token": "3effe3e9a8ce5167fb4d6de17c3d1521",
+	      "hash_": "",
+	      "hash_m": "",
+	      "id": "(Linux, MainEmo, 3.14.79-rt85-heros5, #2 SMP PREEMPT RT Tue Apr 11 20:23:18 Local time zone must be se, i686"
+	    },
+	    "_to_date": 1516289830
+  	},
+  	{
+    "_id": {
+      "$oid": "5a60bf2ddceefd49ba3e0550"
+    },
+    "_state": 20,
+    "_machine": "Mill",
+    "_update_date": 1516289971,
+    "_from_date": 1516289971,
+    "_version": 0,
+    "2º FALLO DETECTOR 2 ENGRASE RODAMIENTOS/ENGRANES": {
+      "units": "",
+      "data": "2º FALLO DETECTOR 2 ENGRASE RODAMIENTOS/ENGRANES",
+      "value": "{reaction: 7, group: 3, timestamp: 2018-06-21 15:39:16, location: 0, text: 2º FALLO DETECTOR 2 ENGRASE RODAMIENTOS/ENGRANES, nr: PLC00973, id: 15770, channel: 0}"
+    },
+    "PARO_EMERGENCIA_externo": {
+      "units": "",
+      "data": "PARO_EMERGENCIA_externo",
+      "value": "{reaction: 4, group: 4, timestamp: 2018-06-21 15:37:34, location: 0, text: PARO EMERGENCIA externo, nr: 230-0005, id: 15675, channel: 0}"
+    },
+    "FALLO OPERACIÓN 21": {
+      "units": "",
+      "data": "FALLO OPERACIÓN 21",
+      "value": "{reaction: 7, group: 3, timestamp: 2018-06-21 15:37:34, location: 0, text: FALLO OPERACIÓN 21, nr: PLC00821, id: 15656, channel: 0}"
+    },
+    "ALARMA_ACTIVA": {
+      "units": "MG_ALARMA",
+      "nemo": "uni",
+      "data": "ALARMA_ACTIVA",
+      "value": "False"
+    },
+    "_group": "ALARMAS",
+    "_family": "MILL",
+    "EXCESO TIEMPO EN ALCANZAR PRESIÓN ACEITE ENGRASE CABEZAL": {
+      "units": "",
+      "data": "EXCESO TIEMPO EN ALCANZAR PRESIÓN ACEITE ENGRASE CABEZAL",
+      "value": "{reaction: 2, group: 3, timestamp: 2018-06-21 15:39:16, location: 0, text: EXCESO TIEMPO EN ALCANZAR PRESIÓN ACEITE ENGRASE CABEZAL, nr: PLC00969, id: 15751, channel: 0}"
+    },
+    "_origen": {
+      "ip": "",
+      "token": "3effe3e9a8ce5167fb4d6de17c3d1521",
+      "hash_": "",
+      "hash_m": "",
+      "id": "(Linux, MainEmo, 3.14.79-rt85-heros5, #2 SMP PREEMPT RT Tue Apr 11 20:23:18 Local time zone must be se, i686"
+    },
+    "_to_date": 1516289971,
+    "State": 3
+  },
+  {
+    "_id": {
+      "$oid": "5a60bf73dceefd49ba3e0559"
+    },
+    "_state": 20,
+    "_machine": "Mill",
+    "_update_date": 1516290112,
+    "_from_date": 1516290112,
+    "_version": 0,
+    "2º FALLO DETECTOR 2 ENGRASE RODAMIENTOS/ENGRANES": {
+      "units": "",
+      "data": "2º FALLO DETECTOR 2 ENGRASE RODAMIENTOS/ENGRANES",
+      "value": "{reaction: 7, group: 3, timestamp: 2018-05-11 15:39:31, location: 0, text: 2º FALLO DETECTOR 2 ENGRASE RODAMIENTOS/ENGRANES, nr: PLC00973, id: 15865, channel: 0}"
+    },
+    "1er FALLO DETECTOR 2 ENGRASE RODAMIENTOS/ENGRANES (G10-B12)": {
+      "units": "",
+      "data": "1er FALLO DETECTOR 2 ENGRASE RODAMIENTOS/ENGRANES (G10-B12)",
+      "value": "{reaction: 7, group: 3, timestamp: 2018-05-11 15:39:31, location: 0, text: 1er FALLO DETECTOR 2 ENGRASE RODAMIENTOS/ENGRANES (G10-B12), nr: PLC00972, id: 15789, channel: 0}"
+    },
+    "PARO_EMERGENCIA_externo": {
+      "units": "",
+      "data": "PARO_EMERGENCIA_externo",
+      "value": "{reaction: 4, group: 4, timestamp: 2018-05-11 15:39:31, location: 0, text: PARO EMERGENCIA externo, nr: 230-0005, id: 15808, channel: 0}"
+    },
+    "_group": "ALARMAS",
+    "_family": "MILL",
+    "FALLO OPERACIÓN 21": {
+      "units": "",
+      "data": "FALLO OPERACIÓN 21",
+      "value": "{reaction: 2, group: 3, timestamp: 2018-05-11 15:39:31, location: 0, text: FALLO OPERACIÓN 21, nr: PLC00821, id: 15846, channel: 0}"
+    },
+    "_origen": {
+      "ip": "",
+      "token": "3effe3e9a8ce5167fb4d6de17c3d1521",
+      "hash_": "",
+      "hash_m": "",
+      "id": "(Linux, MainEmo, 3.14.79-rt85-heros5, #2 SMP PREEMPT RT Tue Apr 11 20:23:18 Local time zone must be se, i686"
+    },
+    "_to_date": 1516290112,
+    "State": 3
+  },
+  {
+    "_id": {
+      "$oid": "5a60c045dceefd49ba3e0564"
+    },
+    "_state": 20,
+    "_machine": "Mill",
+    "_update_date": 1516290182,
+    "_from_date": 1516290182,
+    "_version": 0,
+    "EXCESO TIEMPO EN ALCANZAR PRESIÓN ACEITE ENGRASE CABEZAL": {
+      "units": "",
+      "data": "EXCESO TIEMPO EN ALCANZAR PRESIÓN ACEITE ENGRASE CABEZAL",
+      "value": "{reaction: 7, group: 3, timestamp: 2018-05-21 15:39:31, location: 0, text: EXCESO TIEMPO EN ALCANZAR PRESIÓN ACEITE ENGRASE CABEZAL, nr: PLC00969, id: 15865, channel: 0}"
+    },
+    "ASPIRACIÓN ACEITE DEL CABEZAL INSUFICIENTE": {
+      "units": "",
+      "data": "ASPIRACIÓN ACEITE DEL CABEZAL INSUFICIENTE",
+      "value": "{reaction: 7, group: 3, timestamp: 2018-05-21 15:39:31, location: 0, text: ASPIRACIÓN ACEITE DEL CABEZAL INSUFICIENTE, nr: PLC00712, id: 15789, channel: 0}"
+    },
+    "PARO_EMERGENCIA_externo": {
+      "units": "",
+      "data": "PARO_EMERGENCIA_externo",
+      "value": "{reaction: 4, group: 4, timestamp: 2018-05-21 15:39:31, location: 0, text: PARO EMERGENCIA externo, nr: 230-0005, id: 15808, channel: 0}"
+    },
+    "_group": "ALARMAS",
+    "_family": "MILL",
+    "PRESIÓN AIRE PARA ENGRASE AIRE/ACEITE INSUFICIENTE": {
+      "units": "",
+      "data": "PRESIÓN AIRE PARA ENGRASE AIRE/ACEITE INSUFICIENTE",
+      "value": "{reaction: 2, group: 3, timestamp: 2018-05-21 15:39:31, location: 0, text: PRESIÓN AIRE PARA ENGRASE AIRE/ACEITE INSUFICIENTE, nr: PLC00846, id: 15846, channel: 0}"
+    },
+    "_origen": {
+      "ip": "",
+      "token": "3effe3e9a8ce5167fb4d6de17c3d1521",
+      "hash_": "",
+      "hash_m": "",
+      "id": "(Linux, MainEmo, 3.14.79-rt85-heros5, #2 SMP PREEMPT RT Tue Apr 11 20:23:18 Local time zone must be se, i686"
+    },
+    "_to_date": 1516290182,
+    "State": 3
+  },
+  {
+    "_id": {
+      "$oid": "5a60c08bdceefd49ba3e0569"
+    },
+    "_state": 20,
+    "_machine": "Mill",
+    "_update_date": 1516290252,
+    "_from_date": 1516290252,
+    "_version": 0,
+    "EXCESO TIEMPO EN PERDER PRESIÓN CIRCUITO ENGRASE CABEZAL": {
+      "units": "",
+      "data": "EXCESO TIEMPO EN PERDER PRESIÓN CIRCUITO ENGRASE CABEZAL",
+      "value": "{reaction: 7, group: 3, timestamp: 2018-07-29 15:39:31, location: 0, text: EXCESO TIEMPO EN PERDER PRESIÓN CIRCUITO ENGRASE CABEZAL, nr: PLC00968, id: 15865, channel: 0}"
+    },
+    "1er FALLO DETECTOR 1 ENGRASE RODAMIENTOS/ENGRANES": {
+      "units": "",
+      "data": "1er FALLO DETECTOR 1 ENGRASE RODAMIENTOS/ENGRANES",
+      "value": "{reaction: 7, group: 3, timestamp: 2018-07-29 15:43:49, location: 0, text: 1er FALLO DETECTOR 1 ENGRASE RODAMIENTOS/ENGRANES, nr: PLC00970, id: 15884, channel: 0}"
+    },
+    "PARO_EMERGENCIA_externo": {
+      "units": "",
+      "data": "PARO_EMERGENCIA_externo",
+      "value": "{reaction: 4, group: 4, timestamp: 2018-07-29 15:39:31, location: 0, text: PARO EMERGENCIA externo, nr: 230-0005, id: 15808, channel: 0}"
+    },
+    "_group": "ALARMAS",
+    "_family": "MILL",
+    "FALLO OPERACIÓN 22": {
+      "units": "",
+      "data": "FALLO OPERACIÓN 22",
+      "value": "{reaction: 2, group: 3, timestamp: 2018-07-29 15:39:31, location: 0, text: FALLO OPERACIÓN 22, nr: PLC00822, id: 15846, channel: 0}"
+    },
+    "_origen": {
+      "ip": "",
+      "token": "3effe3e9a8ce5167fb4d6de17c3d1521",
+      "hash_": "",
+      "hash_m": "",
+      "id": "(Linux, MainEmo, 3.14.79-rt85-heros5, #2 SMP PREEMPT RT Tue Apr 11 20:23:18 Local time zone must be se, i686"
+    },
+    "_to_date": 1516290252,
+    "State": 3
+  },
+  {
+    "_id": {
+      "$oid": "5a60c0d1dceefd49ba3e056e"
+    },
+    "_state": 20,
+    "_machine": "Mill",
+    "_update_date": 1516290322,
+    "_from_date": 1516290322,
+    "_version": 0,
+    "1er FALLO DETECTOR 1 ENGRASE RODAMIENTOS/ENGRANES": {
+      "units": "",
+      "data": "1er FALLO DETECTOR 1 ENGRASE RODAMIENTOS/ENGRANES",
+      "value": "{reaction: 7, group: 3, timestamp: 2018-02-27 15:39:31, location: 0, text: 1er FALLO DETECTOR 1 ENGRASE RODAMIENTOS/ENGRANES, nr: PLC00970, id: 15865, channel: 0}"
+    },
+    "1er FALLO DETECTOR 1 ENGRASE RODAMIENTOS/ENGRANES": {
+      "units": "",
+      "data": "1er FALLO DETECTOR 1 ENGRASE RODAMIENTOS/ENGRANES",
+      "value": "{reaction: 7, group: 3, timestamp: 2018-02-27 15:43:49, location: 0, text: 1er FALLO DETECTOR 1 ENGRASE RODAMIENTOS/ENGRANES, nr: PLC00970, id: 15884, channel: 0}"
+    },
+    "PARO_EMERGENCIA_externo": {
+      "units": "",
+      "data": "PARO_EMERGENCIA_externo",
+      "value": "{reaction: 4, group: 4, timestamp: 2018-02-27 15:39:31, location: 0, text: PARO EMERGENCIA externo, nr: 230-0005, id: 15808, channel: 0}"
+    },
+    "_group": "ALARMAS",
+    "_family": "MILL",
+    "ORDEN DE GIRO MANDRINO SIN HTA.": {
+      "units": "",
+      "data": "ORDEN DE GIRO MANDRINO SIN HTA.",
+      "value": "{reaction: 2, group: 3, timestamp: 2018-02-27 15:39:31, location: 0, text: ORDEN DE GIRO MANDRINO SIN HTA., nr: PLC00631, id: 15846, channel: 0}"
+    },
+    "_origen": {
+      "ip": "",
+      "token": "3effe3e9a8ce5167fb4d6de17c3d1521",
+      "hash_": "",
+      "hash_m": "",
+      "id": "(Linux, MainEmo, 3.14.79-rt85-heros5, #2 SMP PREEMPT RT Tue Apr 11 20:23:18 Local time zone must be se, i686"
+    },
+    "_to_date": 1516290322,
+    "State": 3
+  },
+  {
+    "_id": {
+      "$oid": "5a60c117dceefd49ba3e0573"
+    },
+    "_state": 20,
+    "_machine": "Mill",
+    "_update_date": 1516290392,
+    "_from_date": 1516290392,
+    "_version": 0,
+    "1er FALLO DETECTOR 1 ENGRASE RODAMIENTOS/ENGRANES": {
+      "units": "",
+      "data": "1er FALLO DETECTOR 1 ENGRASE RODAMIENTOS/ENGRANES",
+      "value": "{reaction: 7, group: 3, timestamp: 2018-02-28 15:39:31, location: 0, text: 1er FALLO DETECTOR 1 ENGRASE RODAMIENTOS/ENGRANES, nr: PLC00970, id: 15865, channel: 0}"
+    },
+    "1er FALLO DETECTOR 2 ENGRASE RODAMIENTOS/ENGRANES (G10-B12)": {
+      "units": "",
+      "data": "1er FALLO DETECTOR 2 ENGRASE RODAMIENTOS/ENGRANES (G10-B12)",
+      "value": "{reaction: 7, group: 3, timestamp: 2018-02-28 15:43:49, location: 0, text: 1er FALLO DETECTOR 2 ENGRASE RODAMIENTOS/ENGRANES (G10-B12), nr: PLC00972, id: 15884, channel: 0}"
+    },
+    "PARO_EMERGENCIA_externo": {
+      "units": "",
+      "data": "PARO_EMERGENCIA_externo",
+      "value": "{reaction: 4, group: 4, timestamp: 2018-02-28 15:39:31, location: 0, text: PARO EMERGENCIA externo, nr: 230-0005, id: 15808, channel: 0}"
+    },
+    "_group": "ALARMAS",
+    "_family": "MILL",
+    "EXCESO TIEMPO EN ALCANZAR PRESIÓN ACEITE ENGRASE CABEZAL": {
+      "units": "",
+      "data": "EXCESO TIEMPO EN ALCANZAR PRESIÓN ACEITE ENGRASE CABEZAL",
+      "value": "{reaction: 2, group: 3, timestamp: 2018-02-28 15:39:31, location: 0, text: EXCESO TIEMPO EN ALCANZAR PRESIÓN ACEITE ENGRASE CABEZAL, nr: PLC00969, id: 15846, channel: 0}"
+    },
+    "_origen": {
+      "ip": "",
+      "token": "3effe3e9a8ce5167fb4d6de17c3d1521",
+      "hash_": "",
+      "hash_m": "",
+      "id": "(Linux, MainEmo, 3.14.79-rt85-heros5, #2 SMP PREEMPT RT Tue Apr 11 20:23:18 Local time zone must be se, i686"
+    },
+    "_to_date": 1516290392,
+    "State": 3
+  },
+  {
+    "_id": {
+      "$oid": "5a60c15ddceefd49ba3e0578"
+    },
+    "_state": 20,
+    "_machine": "Mill",
+    "_update_date": 1516290462,
+    "_from_date": 1516290462,
+    "_version": 0,
+    "2º FALLO DETECTOR 1 ENGRASE RODAMIENTOS/ENGRANES": {
+      "units": "",
+      "data": "2º FALLO DETECTOR 1 ENGRASE RODAMIENTOS/ENGRANES",
+      "value": "{reaction: 7, group: 3, timestamp: 2018-03-29 15:39:31, location: 0, text: 2º FALLO DETECTOR 1 ENGRASE RODAMIENTOS/ENGRANES, nr: PLC00971, id: 15865, channel: 0}"
+    },
+    "PRESIÓN AIRE PARA ENGRASE AIRE/ACEITE INSUFICIENTE": {
+      "units": "",
+      "data": "PRESIÓN AIRE PARA ENGRASE AIRE/ACEITE INSUFICIENTE",
+      "value": "{reaction: 7, group: 3, timestamp: 2018-03-29 15:43:49, location: 0, text: PRESIÓN AIRE PARA ENGRASE AIRE/ACEITE INSUFICIENTE, nr: PLC00846, id: 15884, channel: 0}"
+    },
+    "PARO_EMERGENCIA_externo": {
+      "units": "",
+      "data": "PARO_EMERGENCIA_externo",
+      "value": "{reaction: 4, group: 4, timestamp: 2018-03-29 15:39:31, location: 0, text: PARO EMERGENCIA externo, nr: 230-0005, id: 15808, channel: 0}"
+    },
+    "_group": "ALARMAS",
+    "_family": "MILL",
+    "HERRAMIENTA MAL BLOQUEADA": {
+      "units": "",
+      "data": "HERRAMIENTA MAL BLOQUEADA",
+      "value": "{reaction: 2, group: 3, timestamp: 2018-03-29 15:39:31, location: 0, text: HERRAMIENTA MAL BLOQUEADA, nr: PLC00973, id: 15846, channel: 0}"
+    },
+    "_origen": {
+      "ip": "",
+      "token": "3effe3e9a8ce5167fb4d6de17c3d1521",
+      "hash_": "",
+      "hash_m": "",
+      "id": "(Linux, MainEmo, 3.14.79-rt85-heros5, #2 SMP PREEMPT RT Tue Apr 11 20:23:18 Local time zone must be se, i686"
+    },
+    "_to_date": 1516290462,
+    "State": 3
+  },
+]
