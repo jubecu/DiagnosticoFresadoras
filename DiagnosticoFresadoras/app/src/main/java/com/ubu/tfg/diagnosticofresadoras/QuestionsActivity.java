@@ -18,6 +18,9 @@ import com.ubu.tfg.diagnosticofresadoras.modeloAlarmas.Question;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import uk.co.senab.photoview.PhotoViewAttacher;
 
@@ -45,7 +48,7 @@ public class QuestionsActivity extends AppCompatActivity {
 
         LinearLayout llImageQuestion = findViewById(R.id.llImageQuestion);
         LinearLayout.LayoutParams llImageParams = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                600, 600);
         if (question.getImages() != null) {
             for (String nameImage : question.getImages()) {
                 ImageView image = new ImageView(this);
@@ -71,6 +74,8 @@ public class QuestionsActivity extends AppCompatActivity {
             Button ans = new Button(this);
             ans.setLayoutParams(llParams);
             ans.setText(answer.getText());
+            ans.setTextSize(20);
+            ans.setAllCaps(false);
             llKeypad.addView(ans);
             ans.setOnClickListener(new ButtonsOnClickListener(answer.getNext(), answer.getMessage(),
                     answer.getText()));
@@ -119,12 +124,11 @@ public class QuestionsActivity extends AppCompatActivity {
             try {
                 OutputStreamWriter osw = new OutputStreamWriter(openFileOutput(
                         "registry.csv", Context.MODE_APPEND));
-                int time = (int) (System.currentTimeMillis());
-                Timestamp tsTemp = new Timestamp(time);
-                String ts = tsTemp.toString();
+                DateFormat dateFormat = DateFormat.getDateTimeInstance();
+                String ts = dateFormat.format(new Date());
                 osw.write(cod.substring(0, 3) + "," + "\""
                         + question.getText() + "\"" + "," + "\"" + text +
-                        "\"" + "," + ts + "\n");
+                        "\"" + "," + "\"" + ts + "\"" + "\n");
                 osw.close();
             } catch (IOException ex) {
                 Log.v("InfoAlarmaActivity", "Error: " + ex.getMessage());

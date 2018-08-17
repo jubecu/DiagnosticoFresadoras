@@ -71,7 +71,7 @@ public class InfoAlarmaActivity extends AppCompatActivity {
         LinearLayout llImages = findViewById(R.id.llImages);
 
         LinearLayout.LayoutParams llParams = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                600, 600);
 
         for (String nameImage : alarms.getAlarm(cod).getImages()) {
             ImageView image = new ImageView(this);

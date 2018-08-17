@@ -38,6 +38,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
+            android:layout_marginBottom="40dp"
             android:layout_weight="1"
             android:scrollbars="none" />
 

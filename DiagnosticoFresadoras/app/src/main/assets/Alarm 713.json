@@ -1,12 +1,12 @@
 {
-	"N˙mero": 713,
-	"TÌtulo":"VACUUM PUMP CIRCUIT BREAKER TRIGGERED.",
-	"DescripciÛn":"The input E461 has changed to 0, so it looks like the circuit breaker G11-Q21 is triggered.",
+	"N√∫mero": 713,
+	"T√≠tulo":"VACUUM PUMP CIRCUIT BREAKER TRIGGERED.",
+	"Descripci√≥n":"The input E461 has changed to 0, so it looks like the circuit breaker G11-Q21 is triggered.",
 	"Preguntas":[
 		{
 			"Id":1.0,
 			"Texto":"1. Physically, the G11-Q21 circuit breaker is triggered by consumption?",
-			"Im·genes":[],
+			"Im√°genes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
@@ -25,7 +25,7 @@
 		{
 			"Id":1.1,
 			"Texto":"1.1. If you rearm it by hand, does it trigger again in a short time?",
-			"Im·genes":[],
+			"Im√°genes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
@@ -42,7 +42,7 @@
 			]
 		}
 	],
-	"Im·genes":[
+	"Im√°genes":[
 		"a713",
 		"a713_2"
 	]

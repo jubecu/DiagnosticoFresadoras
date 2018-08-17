@@ -58,7 +58,7 @@ public class Alarm {
         return questionReturn;
     }
 
-    public Question getQuestionByPosition(int pos){
+    public Question getQuestionByPosition(int pos) {
         return questions.get(pos);
     }
 }

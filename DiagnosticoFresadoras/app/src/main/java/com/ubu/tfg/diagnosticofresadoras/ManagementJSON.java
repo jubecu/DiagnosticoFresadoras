@@ -42,7 +42,7 @@ public class ManagementJSON {
         byte[] buffer = new byte[size];
         is.read(buffer);
         is.close();
-        json = new String(buffer, "ISO-8859-1");
+        json = new String(buffer, "UTF-8");
         Log.v("MainActivity", "Load json ok");
         return json;
     }

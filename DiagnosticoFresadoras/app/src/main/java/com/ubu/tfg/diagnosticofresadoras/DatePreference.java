@@ -62,22 +62,10 @@ public class DatePreference extends DialogPreference {
             }
 
         });
-        /*SimpleDateFormat dateFormatter = new SimpleDateFormat("dd-MM-yyyy");
-        int day=datePicker.getDayOfMonth();
-        int month=datePicker.getMonth();
-        int year=datePicker.getYear();
-        Date d = new Date(year, month, day);
-        String date = dateFormatter.format(d);
-        Log.i("Fecha string",date);
-        persistString(date);*/
         dateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                 month++;
-                String dato = day + "/" + month + "/" + year;
-                //Date d = new Date(year-1900, month, day);
-                //Log.i("Fecha",String.valueOf(d.getTime()));
-                //persistLong(d.getTime());
                 SharedPreferences prefs = getSharedPreferences();
                 SharedPreferences.Editor editor = prefs.edit();
                 editor.putInt("Día", day);

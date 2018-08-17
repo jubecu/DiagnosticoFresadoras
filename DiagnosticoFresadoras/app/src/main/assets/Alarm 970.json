@@ -1,0 +1,148 @@
+{
+	"Número": 970,
+	"Título":"FIRST TIME THE HEAD LUBRICATION SYSTEM HAS FAILED (SENSOR G10-B11)",
+	"Descripción":"Flow switch G10-B11 is not detecting any kind of oil movement through the pipe (circuit 5+6). NOTE: we recommend to replace the filters periodically.",
+	"Preguntas":[
+		{
+			"Id":1.0,
+			"Texto":"1. The head lubrication circuit works with a mix of air and oil. If the air pressure is low, it can influence the appearance of any alarm related to the lubrication. Has the alarm 846 or 969 (Air or oil lubrication pressure failure) appeared previously?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, sometimes.",
+					"Camino":-1.0,
+					"Mensaje":"Check alarms 846 and 969."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, never.",
+					"Camino":2.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":2.0,
+			"Texto":"2. In the picture you can see the pressure gauges showing the air/oil pressure of the head's lubrication system. Are the air and oil pressures on the AA3 greasing block correct?",
+			"Imágenes":[
+				"img_presion_circuito_engrase"
+			],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, it is too low.",
+					"Camino":-1.0,
+					"Mensaje":"Check alarms 846 and 969."
+				},
+				{
+					"Id":"B",
+					"Texto":"Yes, it is right.",
+					"Camino":3.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":3.0,
+			"Texto":"3. Do you see the oil circulate along the pipe that pass through the flow switch G10-B11?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, the oil doesn't move.",
+					"Camino":3.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Yes, it is moving.",
+					"Camino":4.0,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":3.1,
+			"Texto":"3.1. The easy thing will be to replace the AA3 distribuitor block. Does the alarm dissappear?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, it dissappears.",
+					"Camino":-1.0,
+					"Mensaje":"Problem fixed: [distribuitor defect]"
+				},
+				{
+					"Id":"B",
+					"Texto":"No, it doesn't dissappear.",
+					"Camino":-1.0,
+					"Mensaje":"If the air/oil pressure is right, and the oild doesn't circulate along the pipe will mean that there is something wrong inside the head."
+				}			
+			]
+		},
+		{
+			"Id":4.0,
+			"Texto":"4. In the photo you can see the lights of the detectors, when it is OK (left) and when it fails (right). Does the G10-B11 flow switch have any light?",
+			"Imágenes":[
+				"img_sennales_detectores_flujo_aceite"
+			],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"No, it is OFF",
+					"Camino":4.1,
+					"Mensaje":""
+				},
+				{
+					"Id":"B",
+					"Texto":"Yes, the lights are right.",
+					"Camino":4.2,
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":4.1,
+			"Texto":"4.1. Check the wiring of flow switch G10-B11. You can swap the cables with the G10-B12 flow switch. Does the alarm dissappear?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, G10-B12 is OFF now.",
+					"Camino":-1.0,
+					"Mensaje":"Check the wiring from the flow switch to the cabinet. It is damage somewhere along the cable. Chan and replace the broken cable."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, G10-B11 is stil OFF.",
+					"Camino":-1.0,
+					"Mensaje":"Change G10-B11 flow switch."
+				}			
+			]
+		},
+		{
+			"Id":4.2,
+			"Texto":"4.2. Clean the transparent section of the pipe and/or replace it. Does the alarm dissappear?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes, it dissappears.",
+					"Camino":-1.0,
+					"Mensaje":"Problem fixed: [piep dirty]."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, it doesn't dissappear.",
+					"Camino":-1.0,
+					"Mensaje":"Change G10-B11 flow switch."
+				}			
+			]
+		}
+	],
+	"Imágenes":[
+		"a970",
+		"a970_2"
+	]
+}

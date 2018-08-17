@@ -7,8 +7,8 @@
 			"Id":1.0,
 			"Texto":"1. La unidad KEYENCE, es la que se encarga de comprobar los pulsos de las turbinas para determinar el estado de la herramienta. ¿Qué color tiene la pantalla del KEYENCE? ¿Rojo ó Verde?",
 			"Imágenes":[
-				"a631q4a",
-				"a631q4b"
+				"keyence_red",
+				"keyence_green"
 			],
 			"Respuestas":[
 				{

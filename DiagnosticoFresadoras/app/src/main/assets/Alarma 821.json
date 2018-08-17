@@ -1,14 +1,14 @@
 {
-	"Número": 821,
-	"Título":"FALLO OPERACIÓN 21",
-	"Descripción":"PULSOS DESBLOQUEO HERRAMIENTA INSUFICIENTES",
+	"NÃºmero": 821,
+	"TÃ­tulo":"FALLO OPERACIÃ“N 21",
+	"DescripciÃ³n":"PULSOS DESBLOQUEO HERRAMIENTA INSUFICIENTES",
 	"Preguntas":[
 		{
 			"Id":1.0,
-			"Texto":"1. La unidad KEYENCE, es la que se encarga de comprobar los pulsos de las turbinas para determinar el estado de la herramienta. ¿Qué color tiene la pantalla del KEYENCE? ¿Rojo ó Verde?",
-			"Imágenes":[
-				"a631q4a",
-				"a631q4b"
+			"Texto":"1. La unidad KEYENCE, es la que se encarga de comprobar los pulsos de las turbinas para determinar el estado de la herramienta. Â¿QuÃ© color tiene la pantalla del KEYENCE? Â¿Rojo Ã³ Verde?",
+			"ImÃ¡genes":[
+				"keyence_red",
+				"keyence_green"
 			],
 			"Respuestas":[
 				{
@@ -27,14 +27,14 @@
 		},
 		{
 			"Id":1.1,
-			"Texto":"1.1. El módulo KEYENCE está parado. Es necesario ponerlo en modo RUN para que lea los pulsos generados por las turbinas. Esto se puede hacer mediante el programa 'Ladder Builder' o usando los propios botones en el frontal del mismo. ¿Desaparece la alarma?",
-			"Imágenes":[],
+			"Texto":"1.1. El mÃ³dulo KEYENCE estÃ¡ parado. Es necesario ponerlo en modo RUN para que lea los pulsos generados por las turbinas. Esto se puede hacer mediante el programa 'Ladder Builder' o usando los propios botones en el frontal del mismo. Â¿Desaparece la alarma?",
+			"ImÃ¡genes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Si, desaparece.",
 					"Camino":-1.0,
-					"Mensaje":"Si. El módulo KEYENCE estaba parado."
+					"Mensaje":"Si. El mÃ³dulo KEYENCE estaba parado."
 				},
 				{
 					"Id":"B",
@@ -46,8 +46,8 @@
 		},
 		{
 			"Id":2.0,
-			"Texto":"2. ¿Es correcta la medida/expulsión de la pinza?",
-			"Imágenes":[],
+			"Texto":"2. Â¿Es correcta la medida/expulsiÃ³n de la pinza?",
+			"ImÃ¡genes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
@@ -65,8 +65,8 @@
 		},
 		{
 			"Id":2.1,
-			"Texto":"2.1. Comprobar el tornillo de bloqueo de la pinza y la posición de la pinza del amarrador y, si es necesario, ajustarlo. ¿Desaparece la alarma?",
-			"Imágenes":[],
+			"Texto":"2.1. Comprobar el tornillo de bloqueo de la pinza y la posiciÃ³n de la pinza del amarrador y, si es necesario, ajustarlo. Â¿Desaparece la alarma?",
+			"ImÃ¡genes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
@@ -84,8 +84,8 @@
 		},
 		{
 			"Id":3.0,
-			"Texto":"3. ¿Es correcta la presión de la central hidráulica o el nivel del mismo es bajo?",
-			"Imágenes":[],
+			"Texto":"3. Â¿Es correcta la presiÃ³n de la central hidrÃ¡ulica o el nivel del mismo es bajo?",
+			"ImÃ¡genes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
@@ -103,8 +103,8 @@
 		},
 		{
 			"Id":3.1,
-			"Texto":"3.1. Ajustar la presión y/o rellenar de aceite. ¿Desaparece la alarma?",
-			"Imágenes":[],
+			"Texto":"3.1. Ajustar la presiÃ³n y/o rellenar de aceite. Â¿Desaparece la alarma?",
+			"ImÃ¡genes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
@@ -122,18 +122,18 @@
 		},
 		{
 			"Id":4.0,
-			"Texto":"4. El amarrador, cuando la herramienta está bloqueada, tiene una presión de aire para levantar el pistón. Si cuando se desbloquéa la herrameinta esta presión de aire no cae, podría hacer que los pulsos leídos por la turbina fueran pocos. ¿Cuándo desbloquea la hta. tiene presión de aire el amarrador (levantar pistón)?",
-			"Imágenes":[],
+			"Texto":"4. El amarrador, cuando la herramienta estÃ¡ bloqueada, tiene una presiÃ³n de aire para levantar el pistÃ³n. Si cuando se desbloquÃ©a la herrameinta esta presiÃ³n de aire no cae, podrÃ­a hacer que los pulsos leÃ­dos por la turbina fueran pocos. Â¿CuÃ¡ndo desbloquea la hta. tiene presiÃ³n de aire el amarrador (levantar pistÃ³n)?",
+			"ImÃ¡genes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
-					"Texto":"Si, si tiene presión",
+					"Texto":"Si, si tiene presiÃ³n",
 					"Camino":4.1,
 					"Mensaje":""
 				},
 				{
 					"Id":"B",
-					"Texto":"No, no tiene presión",
+					"Texto":"No, no tiene presiÃ³n",
 					"Camino":5.0,
 					"Mensaje":""
 				}			
@@ -141,8 +141,8 @@
 		},
 		{
 			"Id":4.1,
-			"Texto":"4.1. Comprobar circuito de aire (electroválvula, relé..) ¿Desaparece la alarma?",
-			"Imágenes":[],
+			"Texto":"4.1. Comprobar circuito de aire (electrovÃ¡lvula, relÃ©..) Â¿Desaparece la alarma?",
+			"ImÃ¡genes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
@@ -160,8 +160,8 @@
 		},
 		{
 			"Id":5.0,
-			"Texto":"5. Ya que esta alarma indica que el pistón no ha hecho el recorrido completo, es posible que exista alguna fuga de aceite en el circuito del desbloquéo de herrameinta. ¿Problema de fuga de aceite del piston del sistema amarre o de algún latiguillo flojo?",
-			"Imágenes":[],
+			"Texto":"5. Ya que esta alarma indica que el pistÃ³n no ha hecho el recorrido completo, es posible que exista alguna fuga de aceite en el circuito del desbloquÃ©o de herrameinta. Â¿Problema de fuga de aceite del piston del sistema amarre o de algÃºn latiguillo flojo?",
+			"ImÃ¡genes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
@@ -179,8 +179,8 @@
 		},
 		{
 			"Id":5.1,
-			"Texto":"5.1. Apretar latiguillos y uniones de latiguillos con elementos. ¿Desaparece la fuga?",
-			"Imágenes":[],
+			"Texto":"5.1. Apretar latiguillos y uniones de latiguillos con elementos. Â¿Desaparece la fuga?",
+			"ImÃ¡genes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
@@ -198,8 +198,8 @@
 		},
 		{
 			"Id":6.0,
-			"Texto":"6. Los pulsos leídos durante una operación de desbloqueo de herramienta se ven en el DM810. Estos pulsos se comparan con ciertas constantes para saber en qué posición se encuentra el pistón. Para la alarma 821 el límite viene fijado en el DM112, si los pulsos leidos son inferiores, pero superiores al DM104 aparecerá la alarma.    ¿Los pulsos leidos en DM810 son menores de 40?",
-			"Imágenes":[
+			"Texto":"6. Los pulsos leÃ­dos durante una operaciÃ³n de desbloqueo de herramienta se ven en el DM810. Estos pulsos se comparan con ciertas constantes para saber en quÃ© posiciÃ³n se encuentra el pistÃ³n. Para la alarma 821 el lÃ­mite viene fijado en el DM112, si los pulsos leidos son inferiores, pero superiores al DM104 aparecerÃ¡ la alarma.    Â¿Los pulsos leidos en DM810 son menores de 40?",
+			"ImÃ¡genes":[
 				"a821q6"
 			],
 			"Respuestas":[
@@ -211,7 +211,7 @@
 				},
 				{
 					"Id":"B",
-					"Texto":"No, cuanta más de 40 pulsos.",
+					"Texto":"No, cuanta mÃ¡s de 40 pulsos.",
 					"Camino":-1.0,
 					"Mensaje":"Comprobar valor de DM0112, tiene que tener un valor de 40. Problema resuelto: [valor erroneo]"
 				}			
@@ -219,25 +219,25 @@
 		},
 		{
 			"Id":6.1,
-			"Texto":"6.1. Cuando se desbloqué la hta, ¿parpadea la luz de la E004?",
-			"Imágenes":[],
+			"Texto":"6.1. Cuando se desbloquÃ© la hta, Â¿parpadea la luz de la E004?",
+			"ImÃ¡genes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Si, parpadea.",
 					"Camino":-1.0,
-					"Mensaje":"Si la entrada parpadea indica que el módulo KEYENCE está contando pulsos correctamente, pero no los corrector. Es posible que el módulo KEYENCE esté defectuos. Es necesario, como mínimo, probar con un módulo nuevo."
+					"Mensaje":"Si la entrada parpadea indica que el mÃ³dulo KEYENCE estÃ¡ contando pulsos correctamente, pero no los corrector. Es posible que el mÃ³dulo KEYENCE estÃ© defectuos. Es necesario, como mÃ­nimo, probar con un mÃ³dulo nuevo."
 				},
 				{
 					"Id":"B",
 					"Texto":"No, no parpadea. ",
 					"Camino":-1.0,
-					"Mensaje":"Si la herrameinta desbloquéa correctamente, pero la luz de la entrada no parpadea, indica que la turbina no está mandando pulsos al KEYENCE. Habría que probar con otra turbina nueva, y si así tampoco luce, habría que cambiar el KEYENCE."
+					"Mensaje":"Si la herrameinta desbloquÃ©a correctamente, pero la luz de la entrada no parpadea, indica que la turbina no estÃ¡ mandando pulsos al KEYENCE. HabrÃ­a que probar con otra turbina nueva, y si asÃ­ tampoco luce, habrÃ­a que cambiar el KEYENCE."
 				}			
 			]
 		}
 	],
-	"Imágenes":[
+	"ImÃ¡genes":[
 		"a821"
 	]
 }

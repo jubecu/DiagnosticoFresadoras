@@ -14,7 +14,7 @@ public class MessageFinalActivity extends AppCompatActivity {
     TextView tvAlarmTitle;
     TextView tvMess;
     Button home;
-    Button back;
+    Button choose;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ public class MessageFinalActivity extends AppCompatActivity {
         setContentView(R.layout.activity_message_final);
 
         home = findViewById(R.id.bHome);
-        back = findViewById(R.id.bVolver);
+        choose = findViewById(R.id.bChoose);
 
         fillData();
 
@@ -30,6 +30,14 @@ public class MessageFinalActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MessageFinalActivity.this, MainActivity.class);
+                startActivity(i);
+            }
+        });
+        choose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MessageFinalActivity.this,
+                        ChooseAlarmActivity.class);
                 startActivity(i);
             }
         });

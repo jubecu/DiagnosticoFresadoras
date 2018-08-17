@@ -1,48 +1,48 @@
 {
-	"N˙mero": 713,
-	"TÌtulo":"AUTOM¡TICO BOMBA ASPIRACI”N SALTADO",
-	"DescripciÛn":"La entrada E461 ha cambiado a 0, indicando que el tÈrmico G11-Q21 se ha saltado.",
+	"N√∫mero": 713,
+	"T√≠tulo":"AUTOM√ÅTICO BOMBA ASPIRACI√ìN SALTADO",
+	"Descripci√≥n":"La entrada E461 ha cambiado a 0, indicando que el t√©rmico G11-Q21 se ha saltado.",
 	"Preguntas":[
 		{
 			"Id":1.0,
-			"Texto":"1. øFisicamente, el tÈrmico G11-Q21 se ha saltado por consumo?",
-			"Im·genes":[],
+			"Texto":"1. ¬øFisicamente, el t√©rmico G11-Q21 se ha saltado por consumo?",
+			"Im√°genes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
-					"Texto":"Si, est· saltado.",
+					"Texto":"Si, est√° saltado.",
 					"Camino":1.1,
 					"Mensaje":""
 				},
 				{
 					"Id":"B",
-					"Texto":"No, no est· saltado.",
+					"Texto":"No, no est√° saltado.",
 					"Camino":-1.0,
-					"Mensaje":"Comprobar cableado circuito auxiliar del tÈrmico y la entrada del autÛmata."
+					"Mensaje":"Comprobar cableado circuito auxiliar del t√©rmico y la entrada del aut√≥mata."
 				}			
 			]
 		},
 		{
 			"Id":1.1,
-			"Texto":"1.1. Si se rearma a mano, øse vuelve a saltar de nuevo al poco tiempo?",
-			"Im·genes":[],
+			"Texto":"1.1. Si se rearma a mano, ¬øse vuelve a saltar de nuevo al poco tiempo?",
+			"Im√°genes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Si, se vuelve a saltar.",
 					"Camino":-1.0,
-					"Mensaje":"Es necesario comprobar el consumo de la bomba de aspiraciÛn con una pinza amperimÈtrica. Si el consumo leÌdo es superior al indicado en la placa de caracterÌsticas habrÌa que, cambiar el aceite del depÛsito de la bomba (cambiando los filtros) y volver a comprobar el consumo con la pinza, si sigue siendo elevado serÌa necesario cambiar la bomba entera."
+					"Mensaje":"Es necesario comprobar el consumo de la bomba de aspiraci√≥n con una pinza amperim√©trica. Si el consumo le√≠do es superior al indicado en la placa de caracter√≠sticas habr√≠a que, cambiar el aceite del dep√≥sito de la bomba (cambiando los filtros) y volver a comprobar el consumo con la pinza, si sigue siendo elevado ser√≠a necesario cambiar la bomba entera."
 				},
 				{
 					"Id":"B",
 					"Texto":"No, no se vuelve a saltar.",
 					"Camino":-1.0,
-					"Mensaje":"Comprobar llenado de aceite del depÛsito de la bomba, cambiar filtros y dejar la bomba funcionando en observaciÛn."
+					"Mensaje":"Comprobar llenado de aceite del dep√≥sito de la bomba, cambiar filtros y dejar la bomba funcionando en observaci√≥n."
 				}	
 			]
 		}
 	],
-	"Im·genes":[
+	"Im√°genes":[
 		"a713",
 		"a713_2"
 	]

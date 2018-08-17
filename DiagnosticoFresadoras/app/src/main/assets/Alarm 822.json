@@ -7,8 +7,8 @@
 			"Id":1.0,
 			"Texto":"1. The KEYENCE unit, is the one in charge of checking the pulses of the turbines to determine the status of the tool. What color does the KEYENCE screen have? Red or green?",
 			"Imágenes":[
-				"a631q4a",
-				"a631q4b"
+				"keyence_red",
+				"keyence_green"
 			],
 			"Respuestas":[
 				{
