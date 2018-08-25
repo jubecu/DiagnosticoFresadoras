@@ -465,5 +465,209 @@
     },
     "_to_date": 1516791235,
     "State": 3
+  },
+  {
+    "_id": {
+      "$oid": "5a686577dceefd3ea4067bab"
+    },
+    "_state": 20,
+    "_machine": "Mill",
+    "_update_date": 1516791306,
+    "_from_date": 1516791306,
+    "_version": 0,
+    "2º FALLO DETECTOR 1 ENGRASE RODAMIENTOS/ENGRANES": {
+      "units": "",
+      "data": "2º FALLO DETECTOR 1 ENGRASE RODAMIENTOS/ENGRANES",
+      "value": "{reaction: 7, group: 3, timestamp: 2018-02-04 10:53:21, location: 0, text: 2º FALLO DETECTOR 1 ENGRASE RODAMIENTOS/ENGRANES, nr: PLC00971, id: 6593, channel: 0}"
+    },
+    "Lista_Force_E/S_activa": {
+      "units": "",
+      "data": "Lista_Force_E/S_activa",
+      "value": "{reaction: 7, group: 4, timestamp: 2018-02-04 10:47:33, location: 1, text: Lista Force E S activa, nr: 260-0025, id: 6289, channel: 0}"
+    },
+    "HERRAMIENTA MAL BLOQUEADA": {
+      "units": "",
+      "data": "HERRAMIENTA MAL BLOQUEADA",
+      "value": "{reaction: 7, group: 3, timestamp: 2018-02-04 10:53:21, location: 0, text: HERRAMIENTA MAL BLOQUEADA, nr: PLC00852, id: 6517, channel: 0}"
+    },
+    "PARO_EMERGENCIA_externo": {
+      "units": "",
+      "data": "PARO_EMERGENCIA_externo",
+      "value": "{reaction: 4, group: 4, timestamp: 2018-02-04 10:53:21, location: 0, text: PARO EMERGENCIA externo, nr: 230-0005, id: 6536, channel: 0}"
+    },
+    "_group": "ALARMAS",
+    "_origen": {
+      "ip": "",
+      "token": "3effe3e9a8ce5167fb4d6de17c3d1521",
+      "hash_": "",
+      "hash_m": "",
+      "id": "(Linux, MainEmo, 3.14.79-rt85-heros5, #2 SMP PREEMPT RT Tue Apr 11 20:23:18 Local time zone must be se, i686"
+    },
+    "_family": "MILL",
+    "PRESIÓN PARA LEVANTAR PISTÓN DESBL. DE HTA INSUFICIENTE": {
+      "units": "",
+      "data": "PRESIÓN PARA LEVANTAR PISTÓN DESBL. DE HTA INSUFICIENTE",
+      "value": "{reaction: 2, group: 3, timestamp: 2018-02-04 10:53:21, location: 0, text: PRESIÓN PARA LEVANTAR PISTÓN DESBL. DE HTA INSUFICIENTE, nr: PLC00928, id: 6574, channel: 0}"
+    },
+    "Final_de_carrera_AX_1_+": {
+      "units": "",
+      "data": "Final_de_carrera_AX_1_+",
+      "value": "{reaction: 7, group: 4, timestamp: 2018-02-04 10:53:20, location: 0, text: Final de carrera AX_1 +, nr: 230-00fd, id: 6498, channel: 0}"
+    },
+    "_to_date": 1516791306,
+    "State": 3
+  },
+  {
+    "_id": {
+      "$oid": "5a686577dceefd3ea4067bae"
+    },
+    "_state": 20,
+    "_machine": "Mill",
+    "_update_date": 1516791374,
+    "_from_date": 1516791374,
+    "_version": 0,
+    "PRESIÓN PARA LEVANTAR PISTÓN DESBL. DE HTA INSUFICIENTE": {
+      "units": "",
+      "data": "PRESIÓN PARA LEVANTAR PISTÓN DESBL. DE HTA INSUFICIENTE",
+      "value": "{reaction: 7, group: 3, timestamp: 2018-02-28 10:53:21, location: 0, text: PRESIÓN PARA LEVANTAR PISTÓN DESBL. DE HTA INSUFICIENTE, nr: PLC00928, id: 6593, channel: 0}"
+    },
+    "Lista_Force_E/S_activa": {
+      "units": "",
+      "data": "Lista_Force_E/S_activa",
+      "value": "{reaction: 7, group: 4, timestamp: 2018-02-28 10:47:33, location: 1, text: Lista Force E S activa, nr: 260-0025, id: 6289, channel: 0}"
+    },
+    "PRESIÓN PARA LEVANTAR PISTÓN DESBL. DE HTA INSUFICIENTE": {
+      "units": "",
+      "data": "PRESIÓN PARA LEVANTAR PISTÓN DESBL. DE HTA INSUFICIENTE",
+      "value": "{reaction: 7, group: 3, timestamp: 2018-02-28 10:53:21, location: 0, text: PRESIÓN PARA LEVANTAR PISTÓN DESBL. DE HTA INSUFICIENTE, nr: PLC00928, id: 6517, channel: 0}"
+    },
+    "PARO_EMERGENCIA_externo": {
+      "units": "",
+      "data": "PARO_EMERGENCIA_externo",
+      "value": "{reaction: 4, group: 4, timestamp: 2018-02-28 10:53:21, location: 0, text: PARO EMERGENCIA externo, nr: 230-0005, id: 6536, channel: 0}"
+    },
+    "_group": "ALARMAS",
+    "_origen": {
+      "ip": "",
+      "token": "3effe3e9a8ce5167fb4d6de17c3d1521",
+      "hash_": "",
+      "hash_m": "",
+      "id": "(Linux, MainEmo, 3.14.79-rt85-heros5, #2 SMP PREEMPT RT Tue Apr 11 20:23:18 Local time zone must be se, i686"
+    },
+    "_family": "MILL",
+    "FALLO OPERACIÓN 22": {
+      "units": "",
+      "data": "FALLO OPERACIÓN 22",
+      "value": "{reaction: 2, group: 3, timestamp: 2018-02-28 10:53:21, location: 0, text: FALLO OPERACIÓN 22, nr: PLC00822, id: 6574, channel: 0}"
+    },
+    "Final_de_carrera_AX_1_+": {
+      "units": "",
+      "data": "Final_de_carrera_AX_1_+",
+      "value": "{reaction: 7, group: 4, timestamp: 2018-02-28 10:53:20, location: 0, text: Final de carrera AX_1 +, nr: 230-00fd, id: 6498, channel: 0}"
+    },
+    "_to_date": 1516791374,
+    "State": 3
+  },
+  {
+    "_id": {
+      "$oid": "5a68663bdceefd3ea4067bbc"
+    },
+    "_state": 20,
+    "_machine": "Mill",
+    "_update_date": 1516791440,
+    "_from_date": 1516791440,
+    "_version": 0,
+    "ORDEN DE GIRO MANDRINO SIN HTA.": {
+      "units": "",
+      "data": "ORDEN DE GIRO MANDRINO SIN HTA.",
+      "value": "{reaction: 7, group: 3, timestamp: 2018-02-16 10:53:21, location: 0, text: ORDEN DE GIRO MANDRINO SIN HTA., nr: PLC00631, id: 6593, channel: 0}"
+    },
+    "Lista_Force_E/S_activa": {
+      "units": "",
+      "data": "Lista_Force_E/S_activa",
+      "value": "{reaction: 7, group: 4, timestamp: 2018-02-16 10:47:33, location: 1, text: Lista Force E S activa, nr: 260-0025, id: 6289, channel: 0}"
+    },
+    "FALLO OPERACIÓN 21": {
+      "units": "",
+      "data": "FALLO OPERACIÓN 21",
+      "value": "{reaction: 7, group: 3, timestamp: 2018-02-16 10:53:21, location: 0, text: FALLO OPERACIÓN 21, nr: PLC00821, id: 6517, channel: 0}"
+    },
+    "PARO_EMERGENCIA_externo": {
+      "units": "",
+      "data": "PARO_EMERGENCIA_externo",
+      "value": "{reaction: 4, group: 4, timestamp: 2018-02-16 10:53:21, location: 0, text: PARO EMERGENCIA externo, nr: 230-0005, id: 6536, channel: 0}"
+    },
+    "_group": "ALARMAS",
+    "_origen": {
+      "ip": "",
+      "token": "3effe3e9a8ce5167fb4d6de17c3d1521",
+      "hash_": "",
+      "hash_m": "",
+      "id": "(Linux, MainEmo, 3.14.79-rt85-heros5, #2 SMP PREEMPT RT Tue Apr 11 20:23:18 Local time zone must be se, i686"
+    },
+    "_family": "MILL",
+    "FALLO OPERACIÓN 21": {
+      "units": "",
+      "data": "FALLO OPERACIÓN 21",
+      "value": "{reaction: 2, group: 3, timestamp: 2018-02-16 10:53:21, location: 0, text: FALLO OPERACIÓN 21, nr: PLC00821, id: 6574, channel: 0}"
+    },
+    "Final_de_carrera_AX_1_+": {
+      "units": "",
+      "data": "Final_de_carrera_AX_1_+",
+      "value": "{reaction: 7, group: 4, timestamp: 2018-02-16 10:53:20, location: 0, text: Final de carrera AX_1 +, nr: 230-00fd, id: 6498, channel: 0}"
+    },
+    "_to_date": 1516791440,
+    "State": 3
+  },
+  {
+    "_id": {
+      "$oid": "5a686680dceefd3ea4067bc1"
+    },
+    "_state": 20,
+    "_machine": "Mill",
+    "_update_date": 1516791505,
+    "_from_date": 1516791505,
+    "_version": 0,
+    "PRESIÓN PARA LEVANTAR PISTÓN DESBL. DE HTA INSUFICIENTE": {
+      "units": "",
+      "data": "PRESIÓN PARA LEVANTAR PISTÓN DESBL. DE HTA INSUFICIENTE",
+      "value": "{reaction: 7, group: 3, timestamp: 2018-06-29 10:53:21, location: 0, text: PRESIÓN PARA LEVANTAR PISTÓN DESBL. DE HTA INSUFICIENTE, nr: PLC00928, id: 6593, channel: 0}"
+    },
+    "Lista_Force_E/S_activa": {
+      "units": "",
+      "data": "Lista_Force_E/S_activa",
+      "value": "{reaction: 7, group: 4, timestamp: 2018-06-29 10:47:33, location: 1, text: Lista Force E S activa, nr: 260-0025, id: 6289, channel: 0}"
+    },
+    "ASPIRACIÓN ACEITE DEL CABEZAL INSUFICIENTE": {
+      "units": "",
+      "data": "ASPIRACIÓN ACEITE DEL CABEZAL INSUFICIENTE",
+      "value": "{reaction: 7, group: 3, timestamp: 2018-06-29 10:53:21, location: 0, text: ASPIRACIÓN ACEITE DEL CABEZAL INSUFICIENTE, nr: PLC00712, id: 6517, channel: 0}"
+    },
+    "PARO_EMERGENCIA_externo": {
+      "units": "",
+      "data": "PARO_EMERGENCIA_externo",
+      "value": "{reaction: 4, group: 4, timestamp: 2018-06-29 10:53:21, location: 0, text: PARO EMERGENCIA externo, nr: 230-0005, id: 6536, channel: 0}"
+    },
+    "_group": "ALARMAS",
+    "_origen": {
+      "ip": "",
+      "token": "3effe3e9a8ce5167fb4d6de17c3d1521",
+      "hash_": "",
+      "hash_m": "",
+      "id": "(Linux, MainEmo, 3.14.79-rt85-heros5, #2 SMP PREEMPT RT Tue Apr 11 20:23:18 Local time zone must be se, i686"
+    },
+    "_family": "MILL",
+    "1er FALLO DETECTOR 1 ENGRASE RODAMIENTOS/ENGRANES": {
+      "units": "",
+      "data": "1er FALLO DETECTOR 1 ENGRASE RODAMIENTOS/ENGRANES",
+      "value": "{reaction: 2, group: 3, timestamp: 2018-06-29 10:53:21, location: 0, text: 1er FALLO DETECTOR 1 ENGRASE RODAMIENTOS/ENGRANES, nr: PLC00970, id: 6574, channel: 0}"
+    },
+    "Final_de_carrera_AX_1_+": {
+      "units": "",
+      "data": "Final_de_carrera_AX_1_+",
+      "value": "{reaction: 7, group: 4, timestamp: 2018-06-29 10:53:20, location: 0, text: Final de carrera AX_1 +, nr: 230-00fd, id: 6498, channel: 0}"
+    },
+    "_to_date": 1516791505,
+    "State": 3
   }
 ]

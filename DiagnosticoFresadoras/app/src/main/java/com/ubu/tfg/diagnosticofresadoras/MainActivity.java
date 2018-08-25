@@ -67,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getDataApiRest() {
-        //final String[] json = {null};
         AsyncTask.execute(new Runnable() {
             @Override
             public void run() {
@@ -111,6 +110,5 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-        //return json[0];
     }
 }

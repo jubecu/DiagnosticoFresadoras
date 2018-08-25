@@ -1,0 +1,49 @@
+{
+	"Número": 973,
+	"Título":"2º FALLO DETECTOR 2 ENGRASE RODAMIENTOS/ENGRANES",
+	"Descripción":"El flujostato G10-B12, a detectado, por segunda vez, que no hay movimiento de aceite por el circuito 2 (17). NOTA: Siempre que aparezca una alarma en el circuito de engrase, se recomienda cambiar el aceite y comprobar los filtros",
+	"Preguntas":[
+		{
+			"Id":1.0,
+			"Texto":"1. ¿Ha aparecido, con anterioridad, la alarma 972 ( 1er Fallo engrase rodamientos/engranes)?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si, algunas veces",
+					"Camino":-1.0,
+					"Mensaje":"Comprobar la alarma 972."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, nunca.",
+					"Camino":-1.0,
+					"Mensaje":"Comprobar la alarma 972."
+				}			
+			]
+		},
+		{
+			"Id":2.0,
+			"Texto":"2. ¿Ha aparecido, con anterioridad la alarma 846 ó 969 (Fallo presión aire ó aceite de engrase)?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Si, algunas veces",
+					"Camino":-1.0,
+					"Mensaje":"Comprobar las alarmas 846 y 969."
+				},
+				{
+					"Id":"B",
+					"Texto":"No, nunca.",
+					"Camino":-1.0,
+					"Mensaje":"Comprobar la alarma 972."
+				}			
+			]
+		}
+	],
+	"Imágenes":[
+		"a973",
+		"a973_2"
+	]
+}

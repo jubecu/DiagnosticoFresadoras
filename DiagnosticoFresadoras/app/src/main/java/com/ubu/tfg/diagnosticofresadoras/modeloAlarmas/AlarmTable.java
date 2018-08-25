@@ -84,6 +84,10 @@ public class AlarmTable {
         diccImages.put("a970_2", R.drawable.a970_2);
         diccImages.put("a971", R.drawable.a971);
         diccImages.put("a971_2", R.drawable.a971_2);
+        diccImages.put("a972", R.drawable.a972);
+        diccImages.put("a972_2", R.drawable.a972_2);
+        diccImages.put("a973", R.drawable.a973);
+        diccImages.put("a973_2", R.drawable.a973_2);
         diccImages.put("img_circuito_general_aire", R.drawable.img_circuito_general_aire);
         diccImages.put("img_filtros_deposito_recogida_aceite",
                 R.drawable.img_filtros_deposito_recogida_aceite);

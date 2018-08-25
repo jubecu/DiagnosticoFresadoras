@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -46,9 +47,21 @@ public class QuestionsActivity extends AppCompatActivity {
 
         fillData();
 
+        fillImages();
+
+        fillButtons();
+    }
+
+    private void fillImages() {
+
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        int heightPixels = metrics.heightPixels;
+        int widthPixels = metrics.widthPixels;
+
         LinearLayout llImageQuestion = findViewById(R.id.llImageQuestion);
         LinearLayout.LayoutParams llImageParams = new LinearLayout.LayoutParams(
-                600, 600);
+                widthPixels / 2, heightPixels / 3);
         if (question.getImages() != null) {
             for (String nameImage : question.getImages()) {
                 ImageView image = new ImageView(this);
@@ -59,9 +72,6 @@ public class QuestionsActivity extends AppCompatActivity {
                 llImageQuestion.addView(image);
             }
         }
-
-
-        fillButtons();
     }
 
     private void fillButtons() {

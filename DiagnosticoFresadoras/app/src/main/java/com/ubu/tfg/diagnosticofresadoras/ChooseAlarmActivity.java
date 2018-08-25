@@ -50,7 +50,7 @@ public class ChooseAlarmActivity extends AppCompatActivity {
         createRegistryFile();
 
         ArrayAdapter adapter = ArrayAdapter.createFromResource(
-                this, R.array.alarmas, android.R.layout.simple_spinner_dropdown_item);
+                this, R.array.alarmas, android.R.layout.simple_list_item_1);
         alarmas.setAdapter(adapter);
 
         bInicio.setOnClickListener(new View.OnClickListener() {

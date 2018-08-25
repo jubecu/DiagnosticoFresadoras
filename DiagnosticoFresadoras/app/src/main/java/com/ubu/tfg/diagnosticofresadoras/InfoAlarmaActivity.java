@@ -4,6 +4,8 @@ package com.ubu.tfg.diagnosticofresadoras;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -68,10 +70,16 @@ public class InfoAlarmaActivity extends AppCompatActivity {
     }
 
     private void fillImages() {
+
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        int heightPixels = metrics.heightPixels;
+        int widthPixels = metrics.widthPixels;
+
         LinearLayout llImages = findViewById(R.id.llImages);
 
         LinearLayout.LayoutParams llParams = new LinearLayout.LayoutParams(
-                600, 600);
+                widthPixels / 2, heightPixels / 3);
 
         for (String nameImage : alarms.getAlarm(cod).getImages()) {
             ImageView image = new ImageView(this);

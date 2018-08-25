@@ -21,7 +21,7 @@
 					"Mensaje":"Comprobar la alarma 970."
 				}			
 			]
-		}
+		},
 		{
 			"Id":2.0,
 			"Texto":"1. ¿Ha aparecido, con anterioridad la alarma 846 ó 969 (Fallo presión aire ó aceite de engrase)?",
@@ -40,7 +40,7 @@
 					"Mensaje":"Comprobar la alarma 970."
 				}			
 			]
-		},
+		}
 	],
 	"Imágenes":[
 		"a971",

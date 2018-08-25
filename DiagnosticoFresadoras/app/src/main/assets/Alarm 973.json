@@ -1,0 +1,49 @@
+{
+	"Número": 973,
+	"Título":"SECOND CONSECUTIVE FAIL OF G10-B12 FLOW SWITCH",
+	"Descripción":"Flow switch G10-B12 has detected, twice consecutive, that the air/oil mix is not circulating throug the pipe (17). NOTE: we recommend to replace the filters periodically.",
+	"Preguntas":[
+		{
+			"Id":1.0,
+			"Texto":"1. Has the alarm 972 (1st Fail lubrication of bearings / gears) appeared previously?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes.",
+					"Camino":-1.0,
+					"Mensaje":"Check alarm 972."
+				},
+				{
+					"Id":"B",
+					"Texto":"No.",
+					"Camino":-1.0,
+					"Mensaje":"Check alarm 972."
+				}			
+			]
+		},
+		{
+			"Id":2.0,
+			"Texto":"2. Has alarm 846 or 969 (Air pressure or lubrication oil failure) appeared previously?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes.",
+					"Camino":-1.0,
+					"Mensaje":"Check alarms 846 and 969"
+				},
+				{
+					"Id":"B",
+					"Texto":"No.",
+					"Camino":-1.0,
+					"Mensaje":"Check alarm 972."
+				}			
+			]
+		}
+	],
+	"Imágenes":[
+		"a973",
+		"a973_2"
+	]
+}
