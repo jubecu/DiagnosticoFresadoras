@@ -5,13 +5,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.ubu.tfg.diagnosticofresadoras.modeloAlarmas.Alarm;
 import com.ubu.tfg.diagnosticofresadoras.modeloAlarmas.AlarmTable;
 
 import uk.co.senab.photoview.PhotoViewAttacher;
@@ -22,6 +22,7 @@ public class InfoAlarmaActivity extends AppCompatActivity {
     TextView tvAlarmaTitulo, tvDesc;
     PhotoViewAttacher pAttacher;
     AlarmTable alarms;
+    Alarm alarm;
     String cod;
 
     @Override
@@ -33,6 +34,7 @@ public class InfoAlarmaActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         cod = extras.getString("codAlarm");
         alarms = AlarmTable.getInstance();
+        alarm = alarms.getAlarm(cod);
 
         fillData();
 
@@ -43,7 +45,7 @@ public class InfoAlarmaActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(InfoAlarmaActivity.this, QuestionsActivity.class);
                 i.putExtra("codAlarm", cod);
-                i.putExtra("idQuestion", alarms.getAlarm(cod).getQuestionByPosition(0).getId());
+                i.putExtra("idQuestion", alarm.getFirstQuestion().getId());
                 startActivity(i);
             }
         });
@@ -62,10 +64,11 @@ public class InfoAlarmaActivity extends AppCompatActivity {
 
         tvAlarmaTitulo = findViewById(R.id.tvAlarmaTitulo);
         tvDesc = findViewById(R.id.tvDesc);
-        title = alarms.getAlarm(cod).getTitle();
-        desc = alarms.getAlarm(cod).getDescription();
+        long num = alarm.getNum();
+        title = alarm.getTitle();
+        desc = alarm.getDescription();
 
-        tvAlarmaTitulo.setText("Alarma " + cod.substring(0, 3) + ": " + title);
+        tvAlarmaTitulo.setText("Alarma " + String.valueOf(num) + ": " + title);
         tvDesc.setText(desc);
     }
 
@@ -81,7 +84,7 @@ public class InfoAlarmaActivity extends AppCompatActivity {
         LinearLayout.LayoutParams llParams = new LinearLayout.LayoutParams(
                 widthPixels / 2, heightPixels / 3);
 
-        for (String nameImage : alarms.getAlarm(cod).getImages()) {
+        for (String nameImage : alarm.getImages()) {
             ImageView image = new ImageView(this);
             image.setLayoutParams(llParams);
             int resImage = alarms.getDiccImages().get(nameImage);

@@ -44,9 +44,6 @@ public class ApiRestActivity extends AppCompatActivity {
         int day = preferences.getInt("Día", 0);
         int month = preferences.getInt("Mes", 0);
         int year = preferences.getInt("Año", 0);
-        Log.i("Día", String.valueOf(day));
-        Log.i("Mes", String.valueOf(month));
-        Log.i("Año", String.valueOf(year));
         date = new Date(year, month, day);
         ArrayList<String> alarms = getAlarms();
         fillData(alarms);

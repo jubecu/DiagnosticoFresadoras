@@ -48,9 +48,10 @@ public class MessageFinalActivity extends AppCompatActivity {
         String cod = extras.getString("codAlarm");
         String mess = extras.getString("finalMessage");
 
+        long num = AlarmTable.getInstance().getAlarm(cod).getNum();
         String title = AlarmTable.getInstance().getAlarm(cod).getTitle();
         tvAlarmTitle = findViewById(R.id.tvAlarmaTitulo);
-        tvAlarmTitle.setText("Alarma " + cod.substring(0, 3) + ": " + title);
+        tvAlarmTitle.setText("Alarma " + String.valueOf(num) + ": " + title);
 
         tvMess = findViewById(R.id.tvMessage);
         tvMess.setText(mess);

@@ -6,55 +6,93 @@ import com.ubu.tfg.diagnosticofresadoras.R;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 
+/**
+ * Clase que almacena las alarmas que va parseando la aplicación y todas las imágenes que se
+ * usan.
+ *
+ * @author Juan Francisco Benito Cuesta
+ */
 public class AlarmTable {
-
+    /**
+     * Instancia de la clase
+     */
     private static AlarmTable instance = null;
+    /**
+     * Map que almacena las alarmas parseadas/consultadas. La clave es el número de la alarma
+     * seguido de “es” o “en” según el idioma, y el valor es el propio objeto Alarm.
+     */
     private Map<String, Alarm> alarms;
+    /**
+     * Map con todas las imágenes de las alarmas y preguntas. La clave es el nombre del archivo y el
+     * valor es la ruta donde se encuentra ese archivo.
+     */
     private Map<String, Integer> diccImages;
 
+    /**
+     * Constructor que inicializa los Map y rellena el de imágenes.
+     */
     private AlarmTable() {
         alarms = new LinkedHashMap<>();
         diccImages = new HashMap<>();
         fillDiccImages();
     }
 
+    /**
+     * Crea una instancia de AlarmTable si esta vacía y la devuelve.
+     *
+     * @return Instancia de AlarmTable
+     */
     public static AlarmTable getInstance() {
         if (instance == null)
             instance = new AlarmTable();
         return instance;
     }
 
+    /**
+     * Añade una alarma al Map.
+     *
+     * @param alarm    Alarma a añadir
+     * @param language Idioma de la alarma a añadir
+     */
     public void addAlarm(Alarm alarm, String language) {
         Integer num = (int) (long) alarm.getNum();
         String cod = num + language;
         alarms.put(cod, alarm);
     }
 
+    /**
+     * Devuelve una alarma del Map a partir de la clave.
+     *
+     * @param cod Clave que consta del número de la alarma seguido de "es" o "en"
+     * @return Una alarma concreta
+     */
     public Alarm getAlarm(String cod) {
         return alarms.get(cod);
     }
 
+    /**
+     * Devuelve true si ya hay un registro en el Map con una clave concreta.
+     *
+     * @param cod Clave a comprobar si se encuentra en el Map
+     * @return True si la clave se encuentra en el Map, false si no
+     */
     public boolean containsAlarm(String cod) {
         return alarms.containsKey(cod);
     }
 
+    /**
+     * Devuelve el Map con todas las imágenes de las alarmas y preguntas.
+     *
+     * @return Map de las imágenes
+     */
     public Map<String, Integer> getDiccImages() {
         return diccImages;
     }
 
-   /* public int getOrderAlarm(int num) {
-        int order = 1;
-        for (Entry<Integer, Alarm> entry : alarms.entrySet()) {
-            if (entry.getKey() == num) {
-                return order;
-            }
-            order++;
-        }
-        return 0;
-    }*/
-
+    /**
+     * Rellena el Map con todas las imágenes que se usan en la aplicación.
+     */
     private void fillDiccImages() {
         diccImages.put("a631", R.drawable.a631);
         diccImages.put("a631q5", R.drawable.a631q5);

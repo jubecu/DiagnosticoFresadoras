@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.ubu.tfg.diagnosticofresadoras.modeloAlarmas.Alarm;
 import com.ubu.tfg.diagnosticofresadoras.modeloAlarmas.AlarmTable;
 import com.ubu.tfg.diagnosticofresadoras.modeloAlarmas.Answer;
 import com.ubu.tfg.diagnosticofresadoras.modeloAlarmas.Question;
@@ -29,6 +30,7 @@ public class QuestionsActivity extends AppCompatActivity {
 
     TextView tvAlarmTitle, tvQues;
     AlarmTable alarms;
+    Alarm alarm;
     Question question;
     String cod;
     PhotoViewAttacher pAttacher;
@@ -43,7 +45,8 @@ public class QuestionsActivity extends AppCompatActivity {
         double idQuestion = extras.getDouble("idQuestion");
 
         alarms = AlarmTable.getInstance();
-        question = alarms.getAlarm(cod).getQuestionById(idQuestion);
+        alarm = alarms.getAlarm(cod);
+        question = alarm.getQuestionById(idQuestion);
 
         fillData();
 
@@ -93,11 +96,10 @@ public class QuestionsActivity extends AppCompatActivity {
     }
 
     private void fillData() {
-        String title;
-
-        title = alarms.getAlarm(cod).getTitle();
+        long num = alarm.getNum();
+        String title = alarm.getTitle();
         tvAlarmTitle = findViewById(R.id.tvAlarmaTitulo);
-        tvAlarmTitle.setText("Alarma " + cod.substring(0, 3) + ": " + title);
+        tvAlarmTitle.setText("Alarma " + String.valueOf(num) + ": " + title);
 
         tvQues = findViewById(R.id.tvQues);
         tvQues.setText(question.getText());
