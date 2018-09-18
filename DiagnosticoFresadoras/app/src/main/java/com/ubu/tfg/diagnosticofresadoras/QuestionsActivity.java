@@ -19,30 +19,51 @@ import com.ubu.tfg.diagnosticofresadoras.modeloAlarmas.Question;
 
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.sql.Timestamp;
 import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import uk.co.senab.photoview.PhotoViewAttacher;
 
+/**
+ * Activity de la pantalla donde se muestran las preguntas de la alarma.
+ *
+ * @author Juan Francisco Benito Cuesta
+ */
 public class QuestionsActivity extends AppCompatActivity {
-
-    TextView tvAlarmTitle, tvQues;
+    /**
+     * Conjunto de todas las alarmas
+     */
     AlarmTable alarms;
+    /**
+     * Alarma de la cual se muestran sus preguntas en la pantalla
+     */
     Alarm alarm;
+    /**
+     * Pregunta que se muestra en la pantalla
+     */
     Question question;
+    /**
+     * Código de la alarma
+     */
     String cod;
-    PhotoViewAttacher pAttacher;
 
+    /**
+     * Rellena la pantalla con el contenido de la pregunta.
+     *
+     * @param savedInstanceState Paquete que contiene el estado de la instancia del Activity
+     *                           previamente guardado
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questions);
 
+        double idQuestion = 0;
         Bundle extras = getIntent().getExtras();
-        cod = extras.getString("codAlarm");
-        double idQuestion = extras.getDouble("idQuestion");
+        if (extras != null) {
+            cod = extras.getString("codAlarm");
+            idQuestion = extras.getDouble("idQuestion");
+        }
 
         alarms = AlarmTable.getInstance();
         alarm = alarms.getAlarm(cod);
@@ -55,6 +76,9 @@ public class QuestionsActivity extends AppCompatActivity {
         fillButtons();
     }
 
+    /**
+     * Establece las imágenes de la pregunta para mostrarlas en la pantalla.
+     */
     private void fillImages() {
 
         DisplayMetrics metrics = new DisplayMetrics();
@@ -71,12 +95,15 @@ public class QuestionsActivity extends AppCompatActivity {
                 image.setLayoutParams(llImageParams);
                 int resImage = alarms.getDiccImages().get(nameImage);
                 image.setImageResource(resImage);
-                pAttacher = new PhotoViewAttacher(image);
+                new PhotoViewAttacher(image);
                 llImageQuestion.addView(image);
             }
         }
     }
 
+    /**
+     * Establece las respuestas de la pregunta en forma de botón para mostrarlos en la pantalla.
+     */
     private void fillButtons() {
         LinearLayout llKeypad = findViewById(R.id.llKeypad);
 
@@ -95,36 +122,63 @@ public class QuestionsActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Establece el número y título de la alarma y el enunciado de la pregunta para mostrarlos en la
+     * pantalla.
+     */
     private void fillData() {
         long num = alarm.getNum();
         String title = alarm.getTitle();
-        tvAlarmTitle = findViewById(R.id.tvAlarmaTitulo);
+        TextView tvAlarmTitle = findViewById(R.id.tvAlarmaTitulo);
         tvAlarmTitle.setText("Alarma " + String.valueOf(num) + ": " + title);
 
-        tvQues = findViewById(R.id.tvQues);
+        TextView tvQues = findViewById(R.id.tvQues);
         tvQues.setText(question.getText());
     }
 
+    /**
+     * Clase que implementa el código que se ejecuta al pulsar en una respuesta.
+     */
     class ButtonsOnClickListener implements View.OnClickListener {
-
+        /**
+         * Id de la siguiente pregunta a mostrar
+         */
         double next;
+        /**
+         * Mensaje final y texto de la respuesta elegida
+         */
         String finalMessage, text;
 
-        public ButtonsOnClickListener(double next, String finalMessage, String text) {
+        /**
+         * Constructor que asigna el id de la siguiente pregunta, el mensaje final y el texto de la
+         * respuesta.
+         *
+         * @param next         Id de la siguiente pregunta a mostrar
+         * @param finalMessage Mensaje final
+         * @param text         Texto de la respuesta elegida
+         */
+        ButtonsOnClickListener(double next, String finalMessage, String text) {
             this.next = next;
             this.finalMessage = finalMessage;
             this.text = text;
         }
 
+        /**
+         * Pasa a una pantalla u otra en función de lo que valga el id de la pregunta
+         *
+         * @param v Elemento View
+         */
         @Override
         public void onClick(View v) {
             if (next == -1.0) {
-                Intent i = new Intent(QuestionsActivity.this, MessageFinalActivity.class);
+                Intent i = new Intent(QuestionsActivity.this,
+                        MessageFinalActivity.class);
                 i.putExtra("codAlarm", cod);
                 i.putExtra("finalMessage", finalMessage);
                 startActivity(i);
             } else {
-                Intent i = new Intent(QuestionsActivity.this, QuestionsActivity.class);
+                Intent i = new Intent(QuestionsActivity.this,
+                        QuestionsActivity.class);
                 i.putExtra("codAlarm", cod);
                 i.putExtra("idQuestion", next);
                 startActivity(i);
@@ -132,6 +186,9 @@ public class QuestionsActivity extends AppCompatActivity {
             writeRegistry();
         }
 
+        /**
+         * Escribe en el fichero del registro de la actividad la información correspondiente.
+         */
         private void writeRegistry() {
             try {
                 OutputStreamWriter osw = new OutputStreamWriter(openFileOutput(

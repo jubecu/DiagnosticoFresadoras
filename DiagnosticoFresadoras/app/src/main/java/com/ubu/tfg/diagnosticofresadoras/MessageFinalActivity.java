@@ -9,20 +9,25 @@ import android.widget.TextView;
 
 import com.ubu.tfg.diagnosticofresadoras.modeloAlarmas.AlarmTable;
 
+/**
+ * Activity de la pantalla que muestra el mensaje final.
+ *
+ * @author Juan Francisco Benito Cuesta
+ */
 public class MessageFinalActivity extends AppCompatActivity {
-
-    TextView tvAlarmTitle;
-    TextView tvMess;
-    Button home;
-    Button choose;
-
+    /**
+     * Inicializa los dos botones y ejecuta el resto de métodos de la clase.
+     *
+     * @param savedInstanceState Paquete que contiene el estado de la instancia del Activity
+     *                           previamente guardado
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message_final);
 
-        home = findViewById(R.id.bHome);
-        choose = findViewById(R.id.bChoose);
+        Button home = findViewById(R.id.bHome);
+        Button choose = findViewById(R.id.bChoose);
 
         fillData();
 
@@ -43,17 +48,23 @@ public class MessageFinalActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Establece el mensaje final para mostrarlo en la pantalla.
+     */
     private void fillData() {
+        String mess = null, cod = null;
         Bundle extras = getIntent().getExtras();
-        String cod = extras.getString("codAlarm");
-        String mess = extras.getString("finalMessage");
+        if (extras != null) {
+            cod = extras.getString("codAlarm");
+            mess = extras.getString("finalMessage");
+        }
 
         long num = AlarmTable.getInstance().getAlarm(cod).getNum();
         String title = AlarmTable.getInstance().getAlarm(cod).getTitle();
-        tvAlarmTitle = findViewById(R.id.tvAlarmaTitulo);
+        TextView tvAlarmTitle = findViewById(R.id.tvAlarmaTitulo);
         tvAlarmTitle.setText("Alarma " + String.valueOf(num) + ": " + title);
 
-        tvMess = findViewById(R.id.tvMessage);
+        TextView tvMess = findViewById(R.id.tvMessage);
         tvMess.setText(mess);
     }
 }

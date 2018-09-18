@@ -6,13 +6,9 @@ import android.graphics.Color;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.SpannableString;
-import android.util.JsonReader;
-import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.ubu.tfg.diagnosticofresadoras.modeloAlarmas.Alarm;
 import com.ubu.tfg.diagnosticofresadoras.modeloAlarmas.AlarmTable;
@@ -23,17 +19,33 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
 
+/**
+ * Activity de la pantalla que muestra las últimas alarmas que se han activado en un cierto
+ * período de tiempo.
+ *
+ * @author Juan Francisco Benito Cuesta
+ */
 public class ApiRestActivity extends AppCompatActivity {
-
+    /**
+     * Preferencias compartidas de la aplicación
+     */
     SharedPreferences preferences;
+    /**
+     * Fecha límite hasta la cual se muestran las alarmas activadas
+     */
     Date date;
 
+    /**
+     * Obtiene la fecha de las preferencias y la inicializa. Obtiene las alarmas y las muestra en la
+     * pantalla.
+     *
+     * @param savedInstanceState Paquete que contiene el estado de la instancia del Activity
+     *                           previamente guardado
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -49,16 +61,24 @@ public class ApiRestActivity extends AppCompatActivity {
         fillData(alarms);
     }
 
+    /**
+     * Obtiene, a partir de un fichero de simulación, las alarmas que se han activado entre la fecha
+     * actual y la fecha límite.
+     *
+     * @return Lista de alarmas con su número y título
+     */
     private ArrayList<String> getAlarms() {
-        ArrayList<String> alarms = new ArrayList<String>();
+        ArrayList<String> alarms = new ArrayList<>();
         String[] alarmsName = getResources().getStringArray(R.array.alarms_no_number);
         try {
+            String json = null;
             InputStream is = this.getAssets().open("Simulación.json");
             int size = is.available();
             byte[] buffer = new byte[size];
-            is.read(buffer);
+            int rd = is.read(buffer);
             is.close();
-            String json = new String(buffer, "UTF-8");
+            if (rd != -1)
+                json = new String(buffer, "UTF-8");
             try {
                 JSONArray jsonArray = new JSONArray(json);
                 for (int i = 0; i < jsonArray.length(); i++) {
@@ -83,14 +103,29 @@ public class ApiRestActivity extends AppCompatActivity {
         return alarms;
     }
 
+    /**
+     * Devuelve true si el elemento se encuentra en el array y false si no.
+     *
+     * @param array Array de String donde buscar
+     * @param elem  Elemento a encontrar
+     * @return True si el elemento se encuentra en el array y false si no
+     */
     private boolean containsArray(String[] array, String elem) {
-        for (int i = 0; i < array.length; i++) {
-            if (array[i].compareTo(elem) == 0)
+        for (String anArray : array) {
+            if (anArray.compareTo(elem) == 0)
                 return true;
         }
         return false;
     }
 
+    /**
+     * Devuelve true si la fecha límite es anterior a la fecha obtenida de la cadena de valores.
+     * False si no.
+     *
+     * @param date   Fecha límite
+     * @param values Cadena con los valores de un elemento del fichero de simulación
+     * @return True si la fecha límite es anterior a la fecha obtenida y false si no
+     */
     private boolean compareDates(Date date, String values) {
         int n = values.indexOf("timestamp");
         int year = Integer.parseInt(values.substring(n + 11, n + 15));
@@ -100,11 +135,22 @@ public class ApiRestActivity extends AppCompatActivity {
         return date.before(date2);
     }
 
+    /**
+     * Obtiene el número de la alarma a partir de la cadena de valores.
+     *
+     * @param values Cadena con los valores de un elemento del fichero de simulación
+     * @return Número de la alarma
+     */
     private String getNumber(String values) {
         int n = values.indexOf("nr");
         return values.substring(n + 9, n + 12);
     }
 
+    /**
+     * Rellena la pantalla con el número y título de las alarmas separadas por líneas.
+     *
+     * @param alarms Lista de las alarmas a mostrar en la pantalla
+     */
     private void fillData(ArrayList<String> alarms) {
         LinearLayout llAlarms = findViewById(R.id.llAlarms);
 
@@ -129,14 +175,30 @@ public class ApiRestActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Clase que implementa el código que se ejecuta al pulsar en un TextView de una alarma.
+     */
     class ButtonsOnClickListener implements View.OnClickListener {
-
+        /**
+         * Número de la alarma
+         */
         String num;
 
-        public ButtonsOnClickListener(String num) {
+        /**
+         * Constructor que asigna el número de la alarma.
+         *
+         * @param num Número de la alarma
+         */
+        ButtonsOnClickListener(String num) {
             this.num = num;
         }
 
+        /**
+         * Parsea el json correspondiente y obtiene la alarma, si no está ya almacenada. Finalmente
+         * nos lleva a la pantalla de la información de la alarma. Código que se ejecuta al pulsar.
+         *
+         * @param v Elemento View
+         */
         @Override
         public void onClick(View v) {
             String lang, cod, json = null;
@@ -157,9 +219,13 @@ public class ApiRestActivity extends AppCompatActivity {
             startActivity(i);
         }
 
+        /**
+         * Obtiene el idioma de las preferencias.
+         *
+         * @return Idioma elegido en las preferencias
+         */
         private String getLanguage() {
-            String language = preferences.getString("idioma", "");
-            return language;
+            return preferences.getString("idioma", "");
         }
     }
 }

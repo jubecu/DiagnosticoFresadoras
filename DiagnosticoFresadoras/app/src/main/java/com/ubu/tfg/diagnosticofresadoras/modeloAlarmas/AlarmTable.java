@@ -4,7 +4,6 @@ package com.ubu.tfg.diagnosticofresadoras.modeloAlarmas;
 import com.ubu.tfg.diagnosticofresadoras.R;
 
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -33,7 +32,7 @@ public class AlarmTable {
      * Constructor que inicializa los Map y rellena el de imágenes.
      */
     private AlarmTable() {
-        alarms = new LinkedHashMap<>();
+        alarms = new HashMap<>();
         diccImages = new HashMap<>();
         fillDiccImages();
     }

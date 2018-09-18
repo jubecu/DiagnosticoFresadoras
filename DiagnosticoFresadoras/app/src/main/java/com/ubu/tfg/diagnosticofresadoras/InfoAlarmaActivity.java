@@ -16,23 +16,41 @@ import com.ubu.tfg.diagnosticofresadoras.modeloAlarmas.AlarmTable;
 
 import uk.co.senab.photoview.PhotoViewAttacher;
 
+/**
+ * Activity de la pantalla donde se muestra la información principal de una alarma.
+ *
+ * @author Juan Francisco Benito Cuesta
+ */
 public class InfoAlarmaActivity extends AppCompatActivity {
-
-    Button bComenzar;
-    TextView tvAlarmaTitulo, tvDesc;
-    PhotoViewAttacher pAttacher;
+    /**
+     * Conjunto de todas las alarmas
+     */
     AlarmTable alarms;
+    /**
+     * Alarma de la cual se muestra la información en la pantalla
+     */
     Alarm alarm;
+    /**
+     * Código de la alarma
+     */
     String cod;
 
+    /**
+     * Rellena la pantalla con toda la información de la alarma.
+     *
+     * @param savedInstanceState Paquete que contiene el estado de la instancia del Activity
+     *                           previamente guardado
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio_alarma);
 
-        bComenzar = findViewById(R.id.bComenzar);
+        Button bComenzar = findViewById(R.id.bComenzar);
         Bundle extras = getIntent().getExtras();
-        cod = extras.getString("codAlarm");
+        if (extras != null) {
+            cod = extras.getString("codAlarm");
+        }
         alarms = AlarmTable.getInstance();
         alarm = alarms.getAlarm(cod);
 
@@ -51,19 +69,14 @@ public class InfoAlarmaActivity extends AppCompatActivity {
         });
     }
 
-   /* private File getFile(String filename) {
-        for (File file : getFilesDir().listFiles()) {
-            if (file.getName().equals(filename))
-                return file;
-        }
-        return null;
-    }*/
-
+    /**
+     * Establece el número, título y descripción de la alarma para mostrarlo en la pantalla.
+     */
     private void fillData() {
         String title, desc;
 
-        tvAlarmaTitulo = findViewById(R.id.tvAlarmaTitulo);
-        tvDesc = findViewById(R.id.tvDesc);
+        TextView tvAlarmaTitulo = findViewById(R.id.tvAlarmaTitulo);
+        TextView tvDesc = findViewById(R.id.tvDesc);
         long num = alarm.getNum();
         title = alarm.getTitle();
         desc = alarm.getDescription();
@@ -72,6 +85,9 @@ public class InfoAlarmaActivity extends AppCompatActivity {
         tvDesc.setText(desc);
     }
 
+    /**
+     * Establece las imágenes de la alarma para mostrarlas en la pantalla.
+     */
     private void fillImages() {
 
         DisplayMetrics metrics = new DisplayMetrics();
@@ -89,7 +105,7 @@ public class InfoAlarmaActivity extends AppCompatActivity {
             image.setLayoutParams(llParams);
             int resImage = alarms.getDiccImages().get(nameImage);
             image.setImageResource(resImage);
-            pAttacher = new PhotoViewAttacher(image);
+            new PhotoViewAttacher(image);
             llImages.addView(image);
         }
     }

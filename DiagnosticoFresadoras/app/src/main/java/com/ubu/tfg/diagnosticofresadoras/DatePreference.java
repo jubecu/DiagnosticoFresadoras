@@ -8,36 +8,65 @@ import android.graphics.drawable.ColorDrawable;
 import android.preference.DialogPreference;
 import android.support.annotation.NonNull;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
+/**
+ * Clase que implementa el elemento interactivo que sirve para seleccionar la fecha en la sección de
+ * preferencias.
+ *
+ * @author Juan Francisco Benito Cuesta
+ */
 public class DatePreference extends DialogPreference {
+    /**
+     * Widget o elemento interactivo para seleccionar una fecha
+     */
+    private DatePicker datePicker;
+    /**
+     * Oyente que se utiliza cuando el usuario ha terminado de seleccionar una fecha
+     */
+    private DatePickerDialog.OnDateSetListener dateSetListener;
 
-    DatePicker datePicker;
-    DatePickerDialog.OnDateSetListener dateSetListener;
-
+    /**
+     * Constructor que inicializa el datePicker y le pasa el contexto y una colección de atributos.
+     *
+     * @param context Interfaz con información global sobre el entorno de la aplicación
+     * @param attrs   Una colección de atributos
+     */
     public DatePreference(Context context, AttributeSet attrs) {
         super(context, attrs);
         datePicker = new DatePicker(context, attrs);
     }
 
+    /**
+     * Diseña la interfaz de usuario del elemento interactivo por primera vez.
+     *
+     * @param parent Vista principal a la que se debe asociar la IU del elemento interactivo
+     * @return Vista para la interfaz de usuario del elemento interactivo
+     */
     @Override
     protected View onCreateView(ViewGroup parent) {
 
         super.onCreateView(parent);
         LayoutInflater inflater = (LayoutInflater)
                 getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        return inflater.inflate(R.layout.preference_date, parent, false);
+        if (inflater != null)
+            return inflater.inflate(R.layout.preference_date, parent, false);
+        else
+            return null;
     }
 
+    /**
+     * Vincula la vista creada a esta preferencia y añade los datos de la fecha a las preferencias
+     * compartidas.
+     *
+     * @param view La vista que muestra esta preferencia
+     */
     @Override
     protected void onBindView(@NonNull View view) {
 
@@ -56,7 +85,8 @@ public class DatePreference extends DialogPreference {
                         android.R.style.Theme_Holo_Light_Dialog_MinWidth,
                         dateSetListener,
                         year, month, day);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                if (dialog.getWindow() != null)
+                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.show();
                 datePicker = dialog.getDatePicker();
             }

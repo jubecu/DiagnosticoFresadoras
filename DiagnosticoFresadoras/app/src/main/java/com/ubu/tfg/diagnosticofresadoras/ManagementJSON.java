@@ -11,43 +11,70 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Locale;
 
-public class ManagementJSON {
+/**
+ * Clase que se encarga de transformsr un fichero JSON en un objeto Alarm.
+ *
+ * @author Juan Francisco Benito Cuesta
+ */
+class ManagementJSON {
+    /**
+     * Número de la alarma
+     */
     private String num;
+    /**
+     * Idioma del fichero JSON
+     */
     private String language;
 
-    public ManagementJSON(String num, String language) {
+    /**
+     * Constructor que inicializa el número y el idioma.
+     *
+     * @param num      Número de la alarma
+     * @param language Idioma del fichero JSON
+     */
+    ManagementJSON(String num, String language) {
         this.num = num;
         this.language = language;
     }
 
-    public String createJsonFromAssets(Context context) throws IOException {
-        String json;
+    /**
+     * Pasa el contenido de un fichero JSON a un String.
+     *
+     * @param context Contexto o Activity a partir del cual se busca el fichero
+     * @return String con el contenido del fichero JSON
+     * @throws IOException Excepción que regula las operaciones con el fichero
+     */
+    String createJsonFromAssets(Context context) throws IOException {
+        String json = null;
         InputStream is;
-        try {
-            if (language.isEmpty())
-                language = Locale.getDefault().getLanguage();
-            if (language.equals("es"))
-                is = context.getAssets().open("Alarma " + num + ".json");
-            else
-                is = context.getAssets().open("Alarm " + num + ".json");
-        } catch (FileNotFoundException ex) {
+        if (language.isEmpty())
+            language = Locale.getDefault().getLanguage();
+        if (language.equals("es"))
             is = context.getAssets().open("Alarma " + num + ".json");
-        }
+        else
+            is = context.getAssets().open("Alarm " + num + ".json");
+
         int size = is.available();
         byte[] buffer = new byte[size];
-        is.read(buffer);
+        int rd = is.read(buffer);
         is.close();
-        json = new String(buffer, "UTF-8");
-        Log.v("MainActivity", "Load json ok");
+        if (rd != -1)
+            json = new String(buffer, "UTF-8");
+        Log.v("INFO createJSON:", "Load json ok");
         return json;
     }
 
-    public Alarm getAlarm(String json) {
+    /**
+     * Crea y devuelve un objeto Alarm a partir del contenido de un String en formato JSON.
+     *
+     * @param json String en formato JSON con la información de una alarma
+     * @return Objeto Alarm
+     */
+    Alarm getAlarm(String json) {
         Alarm alarm = null;
         int num = Integer.parseInt(this.num);
         try {
