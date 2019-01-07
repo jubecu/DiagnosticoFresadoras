@@ -17,7 +17,7 @@ public class Answer {
     /**
      * Id de la pregunta con la que continua. Vale -1.0 en caso de que no haya continuación
      */
-    private double next;
+    private String next;
     /**
      * Mensaje que se muestra en caso de que no haya continuación
      */
@@ -30,7 +30,7 @@ public class Answer {
      * @param text Texto de la respuesta
      * @param next Id de la pregunta con la que continua
      */
-    public Answer(String id, String text, double next) {
+    public Answer(String id, String text, String next) {
         this.id = id;
         this.text = text;
         this.next = next;
@@ -68,7 +68,7 @@ public class Answer {
      *
      * @return Id de la pregunta con la que continua
      */
-    public double getNext() {
+    public String getNext() {
         return next;
     }
 

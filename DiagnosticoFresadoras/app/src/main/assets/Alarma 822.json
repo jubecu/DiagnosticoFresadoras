@@ -4,7 +4,7 @@
 	"Descripción":"PULSOS BLOQUEO HERRAMIENTA INSUFICIENTES",
 	"Preguntas":[
 		{
-			"Id":1.0,
+			"Id":"1.0",
 			"Texto":"1. La unidad KEYENCE, es la que se encarga de comprobar los pulsos de las turbinas para determinar el estado de la herramienta. ¿Qué color tiene la pantalla del KEYENCE? ¿Rojo ó Verde?",
 			"Imágenes":[
 				"keyence_red",
@@ -14,190 +14,190 @@
 				{
 					"Id":"A",
 					"Texto":"Roja.",
-					"Camino":1.1,
+					"Camino":"1.1",
 					"Mensaje":""
 				},
 				{
 					"Id":"B",
 					"Texto":"Verde.",
-					"Camino":2.0,
+					"Camino":"2.0",
 					"Mensaje":""
 				}			
 			]
 		},
 		{
-			"Id":1.1,
+			"Id":"1.1",
 			"Texto":"1.1. El módulo KEYENCE está parado. Es necesario ponerlo en modo RUN para que lea los pulsos generados por las turbinas. Esto se puede hacer mediante el programa 'Ladder Builder' o usando los propios botones en el frontal del mismo. ¿Desaparece la alarma?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Si, desaparece.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Si. El módulo KEYENCE estaba parado."
 				},
 				{
 					"Id":"B",
 					"Texto":"No, no desaparece.",
-					"Camino":2.0,
+					"Camino":"2.0",
 					"Mensaje":""
 				}			
 			]
 		},
 		{
-			"Id":2.0,
+			"Id":"2.0",
 			"Texto":"2. Independientemente de la herramiente que tenga el mandrino, ¿siempre sale la alarma?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"No, solo con algunas herramientas.",
-					"Camino":2.1,
+					"Camino":"2.1",
 					"Mensaje":""
 				},
 				{
 					"Id":"B",
 					"Texto":"Si, con todas las herramientas.",
-					"Camino":3.0,
+					"Camino":"3.0",
 					"Mensaje":""
 				}			
 			]
 		},
 		{
-			"Id":2.1,
+			"Id":"2.1",
 			"Texto":"2.1. Si el cono está muy desgastado o el tirante de la herrameinta flojo, podrían ocasionar este problema. Comprobar ambas cosas. ¿Desaparece la alarma?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Si, desaparece.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Si. El problema estaba en el cono o en el tirante de la herramienta."
 				},
 				{
 					"Id":"B",
 					"Texto":"No, no desaparece.",
-					"Camino":3.0,
+					"Camino":"3.0",
 					"Mensaje":""
 				}			
 			]
 		},
 		{
-			"Id":3.0,
+			"Id":"3.0",
 			"Texto":"3. ¿Es correcta la medida/expulsión de la pinza?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"No, no es correcta.",
-					"Camino":3.1,
+					"Camino":"3.1",
 					"Mensaje":""
 				},
 				{
 					"Id":"B",
 					"Texto":"Si, es correcta.",
-					"Camino":4.0,
+					"Camino":"4.0",
 					"Mensaje":""
 				}			
 			]
 		},
 		{
-			"Id":3.1,
+			"Id":"3.1",
 			"Texto":"3.1. Comprobar el tornillo de bloqueo de la pinza y la posición de la pinza del amarrador y, si es necesario, ajustarlo. ¿Desaparece la alarma?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Si, desaparece.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Si. La pinza del amarrador no estaba bien ajustada."
 				},
 				{
 					"Id":"B",
 					"Texto":"No, no desaparece.",
-					"Camino":4.0,
+					"Camino":"4.0",
 					"Mensaje":""
 				}			
 			]
 		},
 		{
-			"Id":4.0,
+			"Id":"4.0",
 			"Texto":"4. ¿Es correcta la presión de la central hidráulica o el nivel del mismo es bajo?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"No, no es correcta.",
-					"Camino":4.1,
+					"Camino":"4.1",
 					"Mensaje":""
 				},
 				{
 					"Id":"B",
 					"Texto":"Si, es correcta.",
-					"Camino":7.0,
+					"Camino":"5.0",
 					"Mensaje":""
 				}			
 			]
 		},
 		{
-			"Id":4.1,
+			"Id":"4.1",
 			"Texto":"4.1. Ajustar la presión y/o rellenar de aceite. ¿Desaparece la alarma?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Si, desaparece.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Problema resuelto: [ajuste o llenado de la CH]"
 				},
 				{
 					"Id":"B",
 					"Texto":"No, no desaparece.",
-					"Camino":7.0,
+					"Camino":"5.0",
 					"Mensaje":""
 				}			
 			]
 		},
 		{
-			"Id":7.0,
-			"Texto":"7. Ya que esta alarma indica que el pistón no ha hecho el recorrido completo, es posible que exista alguna fuga de aceite en el circuito del desbloquéo de herrameinta. ¿Problema de fuga de aceite del piston del sistema amarre o de algún latiguillo flojo?",
+			"Id":"5.0",
+			"Texto":"5. Ya que esta alarma indica que el pistón no ha hecho el recorrido completo, es posible que exista alguna fuga de aceite en el circuito del desbloquéo de herrameinta. ¿Problema de fuga de aceite del piston del sistema amarre o de algún latiguillo flojo?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Si, hay fuga",
-					"Camino":7.1,
+					"Camino":"5.1",
 					"Mensaje":""
 				},
 				{
 					"Id":"B",
 					"Texto":"No hay fuga.",
-					"Camino":6.0,
+					"Camino":"6.0",
 					"Mensaje":""
 				}			
 			]
 		},
 		{
-			"Id":7.1,
-			"Texto":"7.1. Apretar latiguillos y uniones de latiguillos con elementos. ¿Desaparece la fuga?",
+			"Id":"5.1",
+			"Texto":"5.1. Apretar latiguillos y uniones de latiguillos con elementos. ¿Desaparece la fuga?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Si, desaparece la fuga.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Problema resuelto: [latiguillos sueltos]"
 				},
 				{
 					"Id":"B",
 					"Texto":"No, no desaparece.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Cambiar los elementos necesarios para quitar la fuga."
 				}			
 			]
 		},
 		{
-			"Id":6.0,
+			"Id":"6.0",
 			"Texto":"6. Los pulsos leídos durante una operación de bloqueo de herramienta se ven en el DM810. Estos pulsos se comparan con ciertas constantes para saber en qué posición se encuentra el pistón. Para la alarma 822 los pulsos leídos tiene que ser menores que el DM0110 y mayores que el DM0104. ¿Los pulsos leidos en DM810 son un poco inferiores a 140 (valor teórico del DM0110)?",
 			"Imágenes":[
 				"a822q6"
@@ -206,58 +206,58 @@
 				{
 					"Id":"A",
 					"Texto":"Si, marca un poco menos de 140 pulsos.",
-					"Camino":6.1,
+					"Camino":"6.1",
 					"Mensaje":""
 				},
 				{
 					"Id":"B",
 					"Texto":"No, da más de 140 pulsos.",
-					"Camino":6.2,
+					"Camino":"6.2",
 					"Mensaje":""
 				},
 				{
 					"Id":"C",
 					"Texto":"No, está más cerca de 40 que de 140.",
-					"Camino":6.3,
+					"Camino":"6.3",
 					"Mensaje":""
 				}
 			]
 		},
 		{
-			"Id":6.1,
+			"Id":"6.1",
 			"Texto":"6.1. Si todos los puntos anteriores eran correctos, este problema es debido a que está mal ajustado los DM generales. Volver a tomar valores de los pulsos y ajustar los DM para las señales 'Hta. Bloqueada c/herramienta', 'Hta mal bloqueada' y 'Hta. Bloqueada s/herramienta'. ¿Desaparece la alarma?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Si, desaparece.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Si. Valores desajustados."
 				}	
 			]
 		},
 		{
-			"Id":6.2,
+			"Id":"6.2",
 			"Texto":"6.2. Modificar el valor del DM0110 a 140. ¿Desaparece la alarma?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Si, desaparece.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Si. Valor erróneo en el DM0110"
 				}	
 			]
 		},
 		{
-			"Id":6.3,
+			"Id":"6.3",
 			"Texto":"6.3. Si todos los puntos anteriores eran correctos, este problema es debido a algo interno en el amarrador de herramienta. Convendría revisar la mecánica del amarrador o cambiarlo. ¿Desaparece la alarma?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Si, correcto.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Si. El problema está en el amarrador."
 				}	
 			]

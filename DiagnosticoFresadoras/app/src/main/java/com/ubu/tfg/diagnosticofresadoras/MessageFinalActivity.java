@@ -1,10 +1,13 @@
 package com.ubu.tfg.diagnosticofresadoras;
 
 import android.content.Intent;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 import com.ubu.tfg.diagnosticofresadoras.modeloAlarmas.AlarmTable;
@@ -15,6 +18,9 @@ import com.ubu.tfg.diagnosticofresadoras.modeloAlarmas.AlarmTable;
  * @author Juan Francisco Benito Cuesta
  */
 public class MessageFinalActivity extends AppCompatActivity {
+
+    NavigationDrawer navDr;
+
     /**
      * Inicializa los dos botones y ejecuta el resto de métodos de la clase.
      *
@@ -25,9 +31,20 @@ public class MessageFinalActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message_final);
+        Toolbar myToolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(myToolbar);
 
         Button home = findViewById(R.id.bHome);
         Button choose = findViewById(R.id.bChoose);
+        navDr = NavigationDrawer.getInstance();
+        final DrawerLayout menu = findViewById(R.id.dlMenu);
+
+        ExpandableListView listMenu = findViewById(R.id.lvMenu);
+        ExpandableListAdapter adapterMenu =
+                new ExpandableListAdapter(this, navDr.getListGroup(), navDr.getListChildren());
+        listMenu.setAdapter(adapterMenu);
+        navDr.onItemClick(listMenu, this);
+        navDr.putImage(menu, myToolbar, this);
 
         fillData();
 

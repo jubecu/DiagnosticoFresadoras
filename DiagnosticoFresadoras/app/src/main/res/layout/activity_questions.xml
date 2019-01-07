@@ -1,91 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dlMenu"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.ubu.tfg.diagnosticofresadoras.QuestionsActivity">
+    android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:orientation="vertical">
-
-
-        <TextView
-            android:id="@+id/tvAlarmaTitulo"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginEnd="13dp"
-            android:layout_marginRight="13dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:text=""
-            android:textColor="#00395D"
-            android:textSize="20sp" />
-    </LinearLayout>
-
-    <ScrollView
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="80dp">
-        <RelativeLayout
+        tools:context="com.ubu.tfg.diagnosticofresadoras.QuestionsActivity">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
             android:orientation="vertical">
 
 
-                <TextView
-                    android:id="@+id/tvQues"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:text=""
-                    android:textSize="23sp"
-                    android:textColor="#000000"/>
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:elevation="4dp"
+                android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-                <HorizontalScrollView
-                    android:id="@+id/hsvImages"
+                <LinearLayout
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/tvQues"
-                    android:paddingTop="10dp">
-                    <LinearLayout
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvAlarmaTitulo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#00395D"
+                        android:textSize="16sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+            </android.support.v7.widget.Toolbar>
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="80dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/tvQues"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:orientation="horizontal"
-                        android:id="@+id/llImageQuestion" >
-                    </LinearLayout>
-                </HorizontalScrollView>
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:text=""
+                        android:textSize="23sp"
+                        android:textColor="#000000"/>
 
-                <ScrollView
-                    android:id="@+id/svAnswers"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_below="@+id/hsvImages"
-                    android:paddingTop="50dp"
-                    android:paddingBottom="10dp">
-
-                    <LinearLayout
-                        android:id="@+id/llKeypad"
+                    <HorizontalScrollView
+                        android:id="@+id/hsvImages"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                    </LinearLayout>
-                </ScrollView>
+                        android:layout_below="@+id/tvQues"
+                        android:paddingTop="10dp">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal"
+                            android:id="@+id/llImageQuestion" >
+                        </LinearLayout>
+                    </HorizontalScrollView>
 
-        </RelativeLayout>
-    </ScrollView>
+                    <ScrollView
+                        android:id="@+id/svAnswers"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/hsvImages"
+                        android:paddingTop="50dp"
+                        android:paddingBottom="10dp">
 
-</android.support.constraint.ConstraintLayout>
+                        <LinearLayout
+                            android:id="@+id/llKeypad"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                        </LinearLayout>
+                    </ScrollView>
+
+            </RelativeLayout>
+        </ScrollView>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <ExpandableListView android:id="@+id/lvMenu"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#FFFFFF"
+        android:groupIndicator="@null"/>
+
+</android.support.v4.widget.DrawerLayout>

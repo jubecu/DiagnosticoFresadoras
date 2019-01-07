@@ -4,26 +4,26 @@
 	"Descripción":"El flujostato G10-B11, ha detectado que no hay movimiento de aceite por el circuito 1 (5+6). NOTA: Siempre que aparezca una alarma en el circuito de engrase, se recomienda cambiar el aceite y comprobar los filtros.",
 	"Preguntas":[
 		{
-			"Id":1.0,
+			"Id":"1.0",
 			"Texto":"1. El circuito de engrase del cabezal funciona con aire y aceite. Si la presión del aire es baja, puede influir en la aparición de alguna alarma relacionada con el engrase.¿Ha aparecido, con anterioridad, la alarma 846 ó 969 (Fallo presión aire ó aceite de engrase)?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Si, algunas veces",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Comprobar las alarmas 846 y 969."
 				},
 				{
 					"Id":"B",
 					"Texto":"No, nunca.",
-					"Camino":2.0,
+					"Camino":"2.0",
 					"Mensaje":""
 				}			
 			]
 		},
 		{
-			"Id":2.0,
+			"Id":"2.0",
 			"Texto":"2. En la foto se puede ver los manómetros donde se ve la presión del aire de los circuitos de engrase del cabezal. ¿Las presiones de aire y aceite al bloque de engrase AA3 son correctas?",
 			"Imágenes":[
 				"img_presion_circuito_engrase"
@@ -32,57 +32,57 @@
 				{
 					"Id":"A",
 					"Texto":"No, es mas baja.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Comprobar las alarmas 846 y 969."
 				},
 				{
 					"Id":"B",
 					"Texto":"Si, es la correcta.",
-					"Camino":3.0,
+					"Camino":"3.0",
 					"Mensaje":""
 				}			
 			]
 		},
 		{
-			"Id":3.0,
+			"Id":"3.0",
 			"Texto":"3. ¿Se ve circular el aceite a través del tubo que atraviesa el flujostato G10-B11?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"No, no se ve movimiento.",
-					"Camino":3.1,
+					"Camino":"3.1",
 					"Mensaje":""
 				},
 				{
 					"Id":"B",
 					"Texto":"Si, está moviéndose.",
-					"Camino":4.0,
+					"Camino":"4.0",
 					"Mensaje":""
 				}			
 			]
 		},
 		{
-			"Id":3.1,
+			"Id":"3.1",
 			"Texto":"3.1. Cambiar bloque distribuidor AA3. ¿Desaparece la alarma?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Si, desaparece.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Problema resuelto: [bloque distribuidor defectuoso]"
 				},
 				{
 					"Id":"B",
 					"Texto":"No, no desaparece.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Posible fallo en el interior del cabezal. Engrase obstruido."
 				}			
 			]
 		},
 		{
-			"Id":4.0,
+			"Id":"4.0",
 			"Texto":"4. En la foto se puede ver las luces de los detectores, cuando está bien (izquierda) y cuando falla (derecha). ¿Tiene alguna luz el flujostato G10-B11?",
 			"Imágenes":[
 				"img_sennales_detectores_flujo_aceite"
@@ -91,51 +91,51 @@
 				{
 					"Id":"A",
 					"Texto":"No, está apagado.",
-					"Camino":4.1,
+					"Camino":"4.1",
 					"Mensaje":""
 				},
 				{
 					"Id":"B",
 					"Texto":"Si, las luces son correctas.",
-					"Camino":4.2,
+					"Camino":"4.2",
 					"Mensaje":""
 				}			
 			]
 		},
 		{
-			"Id":4.1,
+			"Id":"4.1",
 			"Texto":"4.1. Comprobar cable alimentación. Se puede hacer la prueba usando el cable del detector G10-B12. ¿Desaparece la alarma?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Si, se apaga el G10-B12.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Comprobar cable desde el detector hasta el armario. Seguramente esté roto. Comprobar y cambiar."
 				},
 				{
 					"Id":"B",
 					"Texto":"No, sigue apagado el mismo.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Cambiar flujostato G10-B11."
 				}			
 			]
 		},
 		{
-			"Id":4.2,
+			"Id":"4.2",
 			"Texto":"4.2. Limpiar el interior del tubo transparente o cambiarlo. ¿Desaparece la alarma?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Si, desaparece.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Problema resuelto: [tubo sucio]"
 				},
 				{
 					"Id":"B",
 					"Texto":"No, no desaparece",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Cambiar flujostato G10-B11."
 				}			
 			]

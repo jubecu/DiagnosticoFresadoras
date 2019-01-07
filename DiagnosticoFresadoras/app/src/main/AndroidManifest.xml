@@ -22,7 +22,9 @@
         <activity android:name=".MessageFinalActivity" />
         <activity android:name=".PreferencesActivity" />
         <activity android:name=".ApiRestActivity" />
-        <activity android:name=".ChooseAlarmActivity"></activity>
+        <activity android:name=".ChooseAlarmActivity" />
+        <activity android:name=".VideoActivity" />
+        <activity android:name=".ImageActivity"></activity>
     </application>
 
 </manifest>

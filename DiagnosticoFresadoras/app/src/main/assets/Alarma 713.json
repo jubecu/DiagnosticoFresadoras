@@ -4,39 +4,39 @@
 	"Descripción":"La entrada E461 ha cambiado a 0, indicando que el térmico G11-Q21 se ha saltado.",
 	"Preguntas":[
 		{
-			"Id":1.0,
+			"Id":"1.0",
 			"Texto":"1. ¿Fisicamente, el térmico G11-Q21 se ha saltado por consumo?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Si, está saltado.",
-					"Camino":1.1,
+					"Camino":"1.1",
 					"Mensaje":""
 				},
 				{
 					"Id":"B",
 					"Texto":"No, no está saltado.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Comprobar cableado circuito auxiliar del térmico y la entrada del autómata."
 				}			
 			]
 		},
 		{
-			"Id":1.1,
+			"Id":"1.1",
 			"Texto":"1.1. Si se rearma a mano, ¿se vuelve a saltar de nuevo al poco tiempo?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Si, se vuelve a saltar.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Es necesario comprobar el consumo de la bomba de aspiración con una pinza amperimétrica. Si el consumo leído es superior al indicado en la placa de características habría que, cambiar el aceite del depósito de la bomba (cambiando los filtros) y volver a comprobar el consumo con la pinza, si sigue siendo elevado sería necesario cambiar la bomba entera."
 				},
 				{
 					"Id":"B",
 					"Texto":"No, no se vuelve a saltar.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Comprobar llenado de aceite del depósito de la bomba, cambiar filtros y dejar la bomba funcionando en observación."
 				}	
 			]

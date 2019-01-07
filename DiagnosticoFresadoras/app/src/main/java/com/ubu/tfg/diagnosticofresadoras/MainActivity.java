@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * Activity de la pantalla de inicio o pantalla principal.
@@ -31,6 +32,11 @@ public class MainActivity extends AppCompatActivity {
 
         Button chooseAlarm = findViewById(R.id.bSingleAlarm);
         Button getAlarms = findViewById(R.id.bManyAlarms);
+        TextView textView = findViewById(R.id.tvTitulo);
+
+        textView.setTextSize(getResources().getDimension(R.dimen.text_size));
+        chooseAlarm.setTextSize(getResources().getDimension(R.dimen.text_size_button));
+        getAlarms.setTextSize(getResources().getDimension(R.dimen.text_size_button));
 
         chooseAlarm.setOnClickListener(new View.OnClickListener() {
             @Override

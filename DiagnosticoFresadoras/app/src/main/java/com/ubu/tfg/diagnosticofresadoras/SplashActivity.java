@@ -7,6 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.WindowManager;
 
+import com.ubu.tfg.diagnosticofresadoras.modeloAlarmas.Alarm;
+import com.ubu.tfg.diagnosticofresadoras.modeloAlarmas.AlarmTable;
+
+import java.io.IOException;
+
 /**
  * Activity del splashscreen de la aplicación.
  *
@@ -23,6 +28,7 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -37,5 +43,29 @@ public class SplashActivity extends AppCompatActivity {
             }
         }, DURACION_SPLASH);
 
+        saveAlarms();
+
+    }
+
+    private void saveAlarms() {
+        Alarm alarmES, alarmEN;
+        String num, jsonES = null, jsonEN = null;
+        ManagementJSON managementJSON_es, managementJSON_en;
+        String[] alarms = getResources().getStringArray(R.array.alarmas);
+        for (int i = 0; i < alarms.length; i++) {
+            num = alarms[i].substring(0, 3);
+            managementJSON_es = new ManagementJSON(num, "es");
+            managementJSON_en = new ManagementJSON(num, "en");
+            try {
+                jsonES = managementJSON_es.createJsonFromAssets(this);
+                jsonEN = managementJSON_en.createJsonFromAssets(this);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            alarmES = managementJSON_es.getAlarm(jsonES);
+            alarmEN = managementJSON_en.getAlarm(jsonEN);
+            AlarmTable.getInstance().addAlarm(alarmES, "es");
+            AlarmTable.getInstance().addAlarm(alarmEN, "en");
+        }
     }
 }

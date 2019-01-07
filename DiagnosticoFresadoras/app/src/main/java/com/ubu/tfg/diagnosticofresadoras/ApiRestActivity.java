@@ -10,9 +10,6 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.ubu.tfg.diagnosticofresadoras.modeloAlarmas.Alarm;
-import com.ubu.tfg.diagnosticofresadoras.modeloAlarmas.AlarmTable;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,6 +19,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
+import java.util.Locale;
 
 /**
  * Activity de la pantalla que muestra las últimas alarmas que se han activado en un cierto
@@ -201,19 +199,10 @@ public class ApiRestActivity extends AppCompatActivity {
          */
         @Override
         public void onClick(View v) {
-            String lang, cod, json = null;
+            String lang, cod; //json = null;
             lang = getLanguage();
-            ManagementJSON managementJSON = new ManagementJSON(num, lang);
             cod = num + lang;
-            if (!AlarmTable.getInstance().containsAlarm(cod)) {
-                try {
-                    json = managementJSON.createJsonFromAssets(ApiRestActivity.this);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                Alarm alarm = managementJSON.getAlarm(json);
-                AlarmTable.getInstance().addAlarm(alarm, lang);
-            }
+
             Intent i = new Intent(ApiRestActivity.this, InfoAlarmaActivity.class);
             i.putExtra("codAlarm", cod);
             startActivity(i);
@@ -225,7 +214,15 @@ public class ApiRestActivity extends AppCompatActivity {
          * @return Idioma elegido en las preferencias
          */
         private String getLanguage() {
-            return preferences.getString("idioma", "");
+            String language;
+            language = preferences.getString("idioma", "");
+            if (language.compareTo("Español") == 0)
+                language = "es";
+            else if (language.compareTo("English") == 0)
+                language = "en";
+            else if (language.isEmpty())
+                language = Locale.getDefault().getLanguage();
+            return language;
         }
     }
 }

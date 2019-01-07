@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -13,13 +14,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ExpandableListView;
 import android.widget.Spinner;
-
-import com.ubu.tfg.diagnosticofresadoras.modeloAlarmas.Alarm;
-import com.ubu.tfg.diagnosticofresadoras.modeloAlarmas.AlarmTable;
 
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.util.Locale;
 
 /**
  * Activity de la pantalla donde se elige la alarma que se quiere consultar.
@@ -28,10 +28,6 @@ import java.io.OutputStreamWriter;
  */
 public class ChooseAlarmActivity extends AppCompatActivity {
     /**
-     * Botón para aceptar la alarma elegida y continuar a la siguiente pantalla
-     */
-    Button bInicio;
-    /**
      * Spinner o menú desplegable con todas las alarmas disponibles para elegir
      */
     Spinner alarmas;
@@ -39,6 +35,7 @@ public class ChooseAlarmActivity extends AppCompatActivity {
      * Preferencias compartidas de la aplicación
      */
     SharedPreferences preferences;
+    NavigationDrawer navDr;
 
     /**
      * Inicializa y da funcionalidad a todos los elementos de la pantalla.
@@ -53,9 +50,19 @@ public class ChooseAlarmActivity extends AppCompatActivity {
         Toolbar myToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
 
-        bInicio = findViewById(R.id.bInicio);
+        Button bInicio = findViewById(R.id.bInicio);
         alarmas = findViewById(R.id.spAlarmas);
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        navDr = NavigationDrawer.getInstance();
+        final DrawerLayout menu = findViewById(R.id.dlMenu);
+
+        ExpandableListView listMenu = findViewById(R.id.lvMenu);
+        ExpandableListAdapter adapterMenu =
+                new ExpandableListAdapter(this, navDr.getListGroup(), navDr.getListChildren());
+        listMenu.setAdapter(adapterMenu);
+
+        navDr.onItemClick(listMenu, this);
+        navDr.putImage(menu, myToolbar, this);
 
         createRegistryFile();
 
@@ -66,21 +73,11 @@ public class ChooseAlarmActivity extends AppCompatActivity {
         bInicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Alarm alarm;
-                String num, json = null, lang, cod;
+                String num, lang, cod;
                 num = alarmas.getSelectedItem().toString().substring(0, 3);
                 lang = getLanguage();
-                ManagementJSON managementJSON = new ManagementJSON(num, lang);
                 cod = num + lang;
-                if (!AlarmTable.getInstance().containsAlarm(cod)) {
-                    try {
-                        json = managementJSON.createJsonFromAssets(ChooseAlarmActivity.this);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    alarm = managementJSON.getAlarm(json);
-                    AlarmTable.getInstance().addAlarm(alarm, lang);
-                }
+
                 Intent i = new Intent(ChooseAlarmActivity.this, InfoAlarmaActivity.class);
                 i.putExtra("codAlarm", cod);
                 startActivity(i);
@@ -154,6 +151,14 @@ public class ChooseAlarmActivity extends AppCompatActivity {
      * @return Idioma elegido en las preferencias
      */
     private String getLanguage() {
-        return preferences.getString("idioma", "");
+        String language;
+        language = preferences.getString("idioma", "");
+        if (language.compareTo("Español") == 0)
+            language = "es";
+        else if (language.compareTo("English") == 0)
+            language = "en";
+        else if (language.isEmpty())
+            language = Locale.getDefault().getLanguage();
+        return language;
     }
 }

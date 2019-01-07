@@ -100,10 +100,10 @@ public class Alarm {
      * @param id Identificador de la pregunta a devolver
      * @return Una pregunta concreta
      */
-    public Question getQuestionById(double id) {
+    public Question getQuestionById(String id) {
         Question questionReturn = null;
         for (Question question : questions) {
-            if (question.getId() == id) {
+            if (question.getId().compareTo(id)==0) {
                 questionReturn = question;
                 break;
             }

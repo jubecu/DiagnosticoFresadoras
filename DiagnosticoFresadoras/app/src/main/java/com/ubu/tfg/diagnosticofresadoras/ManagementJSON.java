@@ -13,10 +13,9 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Locale;
 
 /**
- * Clase que se encarga de transformsr un fichero JSON en un objeto Alarm.
+ * Clase que se encarga de transformar un fichero JSON en un objeto Alarm.
  *
  * @author Juan Francisco Benito Cuesta
  */
@@ -51,8 +50,6 @@ class ManagementJSON {
     String createJsonFromAssets(Context context) throws IOException {
         String json = null;
         InputStream is;
-        if (language.isEmpty())
-            language = Locale.getDefault().getLanguage();
         if (language.equals("es"))
             is = context.getAssets().open("Alarma " + num + ".json");
         else
@@ -64,7 +61,7 @@ class ManagementJSON {
         is.close();
         if (rd != -1)
             json = new String(buffer, "UTF-8");
-        Log.v("INFO createJSON:", "Load json ok");
+        Log.v("INFO createJSON", "Load json ok");
         return json;
     }
 
@@ -88,7 +85,7 @@ class ManagementJSON {
             for (int i = 0; i < questions.length(); i++) {
                 JSONObject ques = questions.getJSONObject(i);
 
-                double idQues = ques.getDouble("Id");
+                String idQues = ques.getString("Id");
                 String textQues = ques.getString("Texto");
 
                 Question question = new Question(idQues, textQues);
@@ -106,7 +103,7 @@ class ManagementJSON {
 
                     String idAns = ans.getString("Id");
                     String textAns = ans.getString("Texto");
-                    double next = ans.getDouble("Camino");
+                    String next = ans.getString("Camino");
 
                     Answer answer = new Answer(idAns, textAns, next);
 

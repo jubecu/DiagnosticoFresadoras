@@ -4,64 +4,64 @@
 	"Descripción":"The suction vacuum gauge of the oil from the head shows that the suction vacuum is not enough. It is important to know where and how many vacuum switches the machine has. If It has more than one, It would have to check the one that gives the fault. NOTE: Whenever an alarm appears in the suction circuit, it is recommended to check the quality of the returned oil and, also, check the tank and vacuum pump filters.",
 	"Preguntas":[
 		{
-			"Id":0.0,
+			"Id":"0.0",
 			"Texto":"0. This alarm is given by the vacuum switch G11-B13. As a first simple check we will see how is the emptying tab key of the tank. Is the tab key open?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"It is open.",
-					"Camino":0.1,
+					"Camino":"0.1",
 					"Mensaje":""
 				},
 				{
 					"Id":"B",
 					"Texto":"It is closed.",
-					"Camino":1.0,
+					"Camino":"1.0",
 					"Mensaje":""
 				}			
 			]
 		},
 		{
-			"Id":0.1,
+			"Id":"0.1",
 			"Texto":"0.1. If the drain valve is open, the suction pump will not create sufficient vacuum pressure. Close the emptying key and try again. Does the alarm disapper?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Yes, it doesn't appear anymore.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Yes, the problem was that the emptying key was open."
 				},
 				{
 					"Id":"B",
 					"Texto":"No, it appears again.",
-					"Camino":2.0,
+					"Camino":"2.0",
 					"Mensaje":""
 				}			
 			]
 		},
 		{
-			"Id":1.0,
+			"Id":"1.0",
 			"Texto":"1. This alarm is given by the vacuum switch G11-B13. As a first check we will see how the vacuostat itself is. Does the vacuum switch screen shows something or is it off?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"It is OFF",
-					"Camino":1.1,
+					"Camino":"1.1",
 					"Mensaje":""
 				},
 				{
 					"Id":"B",
 					"Texto":"It is ON.",
-					"Camino":2.0,
+					"Camino":"2.0",
 					"Mensaje":""
 				}			
 			]
 		},
 		{
-			"Id":1.1,
+			"Id":"1.1",
 			"Texto":"1.1. Check that the connector that supply the power to the switch (and the output signals from it) is firmly connected and that the proper power is supplied. Does the alarm disapper?",
 			"Imágenes":[
 				"img_vacuostato_cable_eng"
@@ -70,82 +70,82 @@
 				{
 					"Id":"A",
 					"Texto":"Yes, it doesn't appear anymore.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Yes, the problem was that the connector was loose."
 				},
 				{
 					"Id":"B",
 					"Texto":"No, it appears again.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Change the vacuum switch with a new one."
 				}			
 			]
 		},
 		{
-			"Id":2.0,
+			"Id":"2.0",
 			"Texto":"2. Depending on the color as it is shown the values on the screen, indicate whether it is in alarm (red) or within the set limits (green). What color are the digits on the screen?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Green.",
-					"Camino":2.1,
+					"Camino":"2.1",
 					"Mensaje":""
 				},
 				{
 					"Id":"B",
 					"Texto":"Red.",
-					"Camino":4.0,
+					"Camino":"4.0",
 					"Mensaje":""
 				}			
 			]
 		},
 		{
-			"Id":2.1,
+			"Id":"2.1",
 			"Texto":"2.1. If the color is green, the vacuum switch is not showing any alarm. Being the problem between the vacuum switch and the electrical cabinet. Check cable from the vacuum switch to the electrical cabinet and change it if necessary. Does the alarm disapper?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Yes, it doesn't appear anymore.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Yes, the problem was in the cable from the vacuum switch to the cabinet."
 				},
 				{
 					"Id":"B",
 					"Texto":"No, it appears again.",
-					"Camino":4.0,
+					"Camino":"4.0",
 					"Mensaje":""
 				}			
 			]
 		},
 		{
-			"Id":4.0,
+			"Id":"4.0",
 			"Texto":"4. Depending on the configuration of the machine, it can have between 1 to 4 vacuum switches (check in the hydraulic schematic). How many vacuum switches the circuit has?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"One just in the recovery tank.",
-					"Camino":5.0,
+					"Camino":"5.0",
 					"Mensaje":""
 				},
 				{
 					"Id":"B",
 					"Texto":"One in the 'T' distribuitor.",
-					"Camino":7.0,
+					"Camino":"7.0",
 					"Mensaje":""
 				},
 				{
 					"Id":"C",
 					"Texto":"One on each circuit.",
-					"Camino":9.0,
+					"Camino":"9.0",
 					"Mensaje":""
 				}			
 			]
 		},
 		{
-			"Id":5.0,
+			"Id":"5.0",
 			"Texto":"5. Release the suction hose (transparent) coming from the machine and cover the tank outlet by hand, does the pressure of the manometer rise to approx. -90?",
 			"Imágenes":[
 				"img_vacio_1_vacuostato_deposito"
@@ -154,76 +154,76 @@
 				{
 					"Id":"A",
 					"Texto":"No, it just rise a little.",
-					"Camino":5.1,
+					"Camino":"5.1",
 					"Mensaje":""
 				},
 				{
 					"Id":"B",
 					"Texto":"Yes, it rise as -90",
-					"Camino":6.0,
+					"Camino":"6.0",
 					"Mensaje":""
 				}			
 			]
 		},
 		{
-			"Id":5.1,
+			"Id":"5.1",
 			"Texto":"5.1. The vacuum pressure generated by the suction pump is being lost. This loss of pressure can be in the cover seal of the oil recovery tank or in the blue suction filter. Check / change the tank seal and the filters. Does the alarm disapper?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Yes, it doesn't appear anymore.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Yes, the problem was because the seal was defect or the blue filter was dirty."
 				},
 				{
 					"Id":"B",
 					"Texto":"No, it appears again.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Replace the vacuum pump."
 				}			
 			]
 		},
 		{
-			"Id":6.0,
+			"Id":"6.0",
 			"Texto":"6. Replace the removed hose in point 5. Loosen the hoses 18 and 4 of the head and cover them with your fingers, does the pressure rise to -90?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"No, it just rise a little.",
-					"Camino":6.1,
+					"Camino":"6.1",
 					"Mensaje":""
 				},
 				{
 					"Id":"B",
 					"Texto":"Yes, it rise as -90",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Problem inside the head. It is necessary the intervention of Nicolás Correa (After-Sale) to investigate the failure inside the head. Notify After-Sale Dept."
 				}			
 			]
 		},
 		{
-			"Id":6.1,
+			"Id":"6.1",
 			"Texto":"6.1. If the fault is not in the suction pump (point 5), and at this point 6 the pressure does not raise, it would mean that the hose between the suction tank and the head is broken. Check hoses, taco distribution and transparent spiral tube, some are loose or broken. Does the alarm disapper?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Yes, it doesn't appear anymore.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Yes, the hose from the vacuum pump and the head was defect."
 				},
 				{
 					"Id":"B",
 					"Texto":"No, it appears again.",
-					"Camino":5.0,
+					"Camino":"5.0",
 					"Mensaje":""
 				}			
 			]
 		},
 		{
-			"Id":7.0,
+			"Id":"7.0",
 			"Texto":"7. Does the vacuum switch indicate a vacuum pressure between -60 and -90? (Clogged circuit).",
 			"Imágenes":[
 				"img_vacio_1_vacuostato_en_la_t"
@@ -232,38 +232,38 @@
 				{
 					"Id":"A",
 					"Texto":"Yes",
-					"Camino":7.1,
+					"Camino":"7.1",
 					"Mensaje":""
 				},
 				{
 					"Id":"B",
 					"Texto":"No.",
-					"Camino":8.0,
+					"Camino":"8.0",
 					"Mensaje":""
 				}			
 			]
 		},
 		{
-			"Id":7.1,
+			"Id":"7.1",
 			"Texto":"7.1. As the vacuum switch is after the tank, first we check at the end of the circuit (at the entrance to the head). Release hoses 18 and 4 from the head. Does the vacuum switch still show a value between -60 and -90?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Yes",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"If releasing the tubes (leaving the tube open) we still have excessive vacuum pressure, it would indicate a problem between the head and the distribuitor, where the manometer is. Check this hose and the T-distribuitor. Clogged hose between the head and the T-block."
 				},
 				{
 					"Id":"B",
 					"Texto":"No.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Problem inside the head. It is necessary the intervention of Nicolás Correa (After-Sale) to investigate the failure inside the head. Notify After-Sale Dept."
 				}			
 			]
 		},
 		{
-			"Id":8.0,
+			"Id":"8.0",
 			"Texto":"8. Does the vacuum switch shows a vacuum pressure between 0 and -25?",
 			"Imágenes":[
 				"img_vacio_1_vacuostato_en_la_t"
@@ -272,57 +272,57 @@
 				{
 					"Id":"A",
 					"Texto":"Yes",
-					"Camino":8.1,
+					"Camino":"8.1",
 					"Mensaje":""
 				},
 				{
 					"Id":"B",
 					"Texto":"No.",
-					"Camino":8.2,
+					"Camino":"8.2",
 					"Mensaje":""
 				}			
 			]
 		},
 		{
-			"Id":8.1,
+			"Id":"8.1",
 			"Texto":"8.1. As the vacuum switch is in the middle of the circuit, let's check if the circuit is open from the pressure switch to the suction pump. Loosen the hoses 18 and 4 of the T-block and plug the two inputs in the block with your hand. Does the vacuum switch indicate a pressure between -60 and -90?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Yes and the pressure rises very fast.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"If from the block to the pump is fine, it takes the pressure quickly, the problem has to be between the block and the head. Check the two circuits 4 and 18 to the head. If it's OK, the problem would be inside the head."
 				},
 				{
 					"Id":"B",
 					"Texto":"Yes, but it goes up slowly.",
-					"Camino":8.3,
+					"Camino":"8.3",
 					"Mensaje":""
 				},
 				{
 					"Id":"C",
 					"Texto":"No.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Problem inside the head. Notify After-Sale Dept."
 				}			
 			]
 		},
 		{
-			"Id":8.2,
+			"Id":"8.2",
 			"Texto":"8.2. Misinformation. Check the parameters adjusted in the vacuum switch. Repeat the process from point 7.",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Repeat.",
-					"Camino":7.0,
+					"Camino":"7.0",
 					"Mensaje":""
 				}			
 			]
 		},
 		{
-			"Id":8.3,
+			"Id":"8.3",
 			"Texto":"8.3. If it rises slowly, it indicates that the blue filter in the oil recovery tank is clogged. Change the filter and try again. See photo to know where the filters are",
 			"Imágenes":[
 				"img_filtros_deposito_recogida_aceite"
@@ -331,26 +331,26 @@
 				{
 					"Id":"A",
 					"Texto":"The end",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":""
 				}			
 			]
 		},
 		{
-			"Id":9.0,
+			"Id":"9.0",
 			"Texto":"9. Follow steps 7 and 8, but checking each circuit independently (it has one vacuum switch per circuit).",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Step 7.",
-					"Camino":7.0,
+					"Camino":"7.0",
 					"Mensaje":""
 				},
 				{
 					"Id":"B",
 					"Texto":"Step 8.",
-					"Camino":8.0,
+					"Camino":"8.0",
 					"Mensaje":""
 				}			
 			]

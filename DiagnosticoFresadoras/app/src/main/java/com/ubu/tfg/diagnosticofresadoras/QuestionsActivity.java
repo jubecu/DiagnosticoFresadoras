@@ -2,12 +2,15 @@ package com.ubu.tfg.diagnosticofresadoras;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -21,8 +24,6 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.text.DateFormat;
 import java.util.Date;
-
-import uk.co.senab.photoview.PhotoViewAttacher;
 
 /**
  * Activity de la pantalla donde se muestran las preguntas de la alarma.
@@ -46,6 +47,7 @@ public class QuestionsActivity extends AppCompatActivity {
      * Código de la alarma
      */
     String cod;
+    NavigationDrawer navDr;
 
     /**
      * Rellena la pantalla con el contenido de la pregunta.
@@ -57,17 +59,28 @@ public class QuestionsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questions);
+        Toolbar myToolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(myToolbar);
 
-        double idQuestion = 0;
+        String idQuestion = null;
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             cod = extras.getString("codAlarm");
-            idQuestion = extras.getDouble("idQuestion");
+            idQuestion = extras.getString("idQuestion");
         }
 
         alarms = AlarmTable.getInstance();
         alarm = alarms.getAlarm(cod);
         question = alarm.getQuestionById(idQuestion);
+        navDr = NavigationDrawer.getInstance();
+        final DrawerLayout menu = findViewById(R.id.dlMenu);
+
+        ExpandableListView listMenu = findViewById(R.id.lvMenu);
+        ExpandableListAdapter adapterMenu =
+                new ExpandableListAdapter(this, navDr.getListGroup(), navDr.getListChildren());
+        listMenu.setAdapter(adapterMenu);
+        navDr.onItemClick(listMenu, this);
+        navDr.putImage(menu, myToolbar, this);
 
         fillData();
 
@@ -93,9 +106,16 @@ public class QuestionsActivity extends AppCompatActivity {
             for (String nameImage : question.getImages()) {
                 ImageView image = new ImageView(this);
                 image.setLayoutParams(llImageParams);
-                int resImage = alarms.getDiccImages().get(nameImage);
+                final int resImage = alarms.getDiccImages().get(nameImage);
                 image.setImageResource(resImage);
-                new PhotoViewAttacher(image);
+                image.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent i = new Intent(QuestionsActivity.this, ImageActivity.class);
+                        i.putExtra("resImage", resImage);
+                        startActivity(i);
+                    }
+                });
                 llImageQuestion.addView(image);
             }
         }
@@ -143,7 +163,7 @@ public class QuestionsActivity extends AppCompatActivity {
         /**
          * Id de la siguiente pregunta a mostrar
          */
-        double next;
+        String next;
         /**
          * Mensaje final y texto de la respuesta elegida
          */
@@ -157,7 +177,7 @@ public class QuestionsActivity extends AppCompatActivity {
          * @param finalMessage Mensaje final
          * @param text         Texto de la respuesta elegida
          */
-        ButtonsOnClickListener(double next, String finalMessage, String text) {
+        ButtonsOnClickListener(String next, String finalMessage, String text) {
             this.next = next;
             this.finalMessage = finalMessage;
             this.text = text;
@@ -170,7 +190,7 @@ public class QuestionsActivity extends AppCompatActivity {
          */
         @Override
         public void onClick(View v) {
-            if (next == -1.0) {
+            if (next.isEmpty()) {
                 Intent i = new Intent(QuestionsActivity.this,
                         MessageFinalActivity.class);
                 i.putExtra("codAlarm", cod);

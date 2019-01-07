@@ -4,40 +4,40 @@
 	"Descripción":"Flow switch G10-B11 has detected, twice consecutive, that the air/oil mix is not circulating throug the pipe (5+6). NOTE: we recommend to replace the filters periodically. ",
 	"Preguntas":[
 		{
-			"Id":1.0,
-			"Texto":"1. Has the alarm 970 (1st Fail lubrication of bearings / gears) appeared previously?",
-			"Imágenes":[],
-			"Respuestas":[
-				{
-					"Id":"A",
-					"Texto":"Yes.",
-					"Camino":-1.0,
-					"Mensaje":"Check alarm 970."
-				},
-				{
-					"Id":"B",
-					"Texto":"No, never.",
-					"Camino":-1.0,
-					"Mensaje":"Check alarm 970."
-				}			
-			]
-		},
-		{
-			"Id":2.0,
+			"Id":"1.0",
 			"Texto":"1. Has alarm 846 or 969 (Air pressure or lubrication oil failure) appeared previously?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Yes.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Check alarms 846 and 969"
 				},
 				{
 					"Id":"B",
 					"Texto":"No, never.",
-					"Camino":-1.0,
-					"Mensaje":"Check alarm 970."
+					"Camino":"2.0",
+					"Mensaje":""
+				}			
+			]
+		},
+		{
+			"Id":"2.0",
+			"Texto":"2. Has the alarm 970 (1st Fail lubrication of bearings / gears) appeared previously?",
+			"Imágenes":[],
+			"Respuestas":[
+				{
+					"Id":"A",
+					"Texto":"Yes.",
+					"Camino":"",
+					"Mensaje":"Check alarm 970 (from step 3)"
+				},
+				{
+					"Id":"B",
+					"Texto":"No, never.",
+					"Camino":"",
+					"Mensaje":"Check in the LOGBOOK that alarm 970 has actually appeared. Check alarm 970."
 				}			
 			]
 		}

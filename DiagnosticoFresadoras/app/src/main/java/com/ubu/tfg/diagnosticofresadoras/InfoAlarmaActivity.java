@@ -3,18 +3,19 @@ package com.ubu.tfg.diagnosticofresadoras;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.ubu.tfg.diagnosticofresadoras.modeloAlarmas.Alarm;
 import com.ubu.tfg.diagnosticofresadoras.modeloAlarmas.AlarmTable;
-
-import uk.co.senab.photoview.PhotoViewAttacher;
 
 /**
  * Activity de la pantalla donde se muestra la información principal de una alarma.
@@ -34,6 +35,7 @@ public class InfoAlarmaActivity extends AppCompatActivity {
      * Código de la alarma
      */
     String cod;
+    NavigationDrawer navDr;
 
     /**
      * Rellena la pantalla con toda la información de la alarma.
@@ -45,6 +47,8 @@ public class InfoAlarmaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio_alarma);
+        Toolbar myToolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(myToolbar);
 
         Button bComenzar = findViewById(R.id.bComenzar);
         Bundle extras = getIntent().getExtras();
@@ -53,6 +57,15 @@ public class InfoAlarmaActivity extends AppCompatActivity {
         }
         alarms = AlarmTable.getInstance();
         alarm = alarms.getAlarm(cod);
+        navDr = NavigationDrawer.getInstance();
+        final DrawerLayout menu = findViewById(R.id.dlMenu);
+
+        ExpandableListView listMenu = findViewById(R.id.lvMenu);
+        ExpandableListAdapter adapterMenu =
+                new ExpandableListAdapter(this, navDr.getListGroup(), navDr.getListChildren());
+        listMenu.setAdapter(adapterMenu);
+        navDr.onItemClick(listMenu, this);
+        navDr.putImage(menu, myToolbar, this);
 
         fillData();
 
@@ -85,6 +98,7 @@ public class InfoAlarmaActivity extends AppCompatActivity {
         tvDesc.setText(desc);
     }
 
+
     /**
      * Establece las imágenes de la alarma para mostrarlas en la pantalla.
      */
@@ -103,9 +117,16 @@ public class InfoAlarmaActivity extends AppCompatActivity {
         for (String nameImage : alarm.getImages()) {
             ImageView image = new ImageView(this);
             image.setLayoutParams(llParams);
-            int resImage = alarms.getDiccImages().get(nameImage);
+            final int resImage = alarms.getDiccImages().get(nameImage);
             image.setImageResource(resImage);
-            new PhotoViewAttacher(image);
+            image.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(InfoAlarmaActivity.this, ImageActivity.class);
+                    i.putExtra("resImage", resImage);
+                    startActivity(i);
+                }
+            });
             llImages.addView(image);
         }
     }

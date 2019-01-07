@@ -3,7 +3,9 @@ package com.ubu.tfg.diagnosticofresadoras.modeloAlarmas;
 
 import com.ubu.tfg.diagnosticofresadoras.R;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -140,5 +142,7 @@ public class AlarmTable {
         diccImages.put("keyence_red", R.drawable.keyence_red);
         diccImages.put("img_vacio_1_vacuostato_deposito",
                 R.drawable.img_vacio_1_vacuostato_deposito);
+        diccImages.put("img_presostato_aire_engrase_cabezal_off",
+                R.drawable.img_presostato_aire_engrase_cabezal_off);
     }
 }

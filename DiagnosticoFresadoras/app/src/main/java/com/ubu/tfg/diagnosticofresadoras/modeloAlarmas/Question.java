@@ -5,13 +5,13 @@ import java.util.ArrayList;
 /**
  * Clase que representa una pregunta.
  *
- * @author Juan Francisco Benio Cuesta
+ * @author Juan Francisco Benito Cuesta
  */
 public class Question {
     /**
      * Identificador de la pregunta
      */
-    private double id;
+    private String id;
     /**
      * Texto de la pregunta
      */
@@ -31,7 +31,7 @@ public class Question {
      * @param id   Identificador de la pregunta
      * @param text Texto de la pregunta
      */
-    public Question(double id, String text) {
+    public Question(String id, String text) {
         this.id = id;
         this.text = text;
         answers = new ArrayList<>();
@@ -43,7 +43,7 @@ public class Question {
      *
      * @return Identificador de la pregunta
      */
-    public double getId() {
+    public String getId() {
         return id;
     }
 

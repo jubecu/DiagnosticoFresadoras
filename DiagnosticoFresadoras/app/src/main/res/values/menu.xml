@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="menu">
+        <item>Inicio</item>
+        <item>Alarma 631</item>
+        <item>Alarma 712</item>
+        <item>Alarma 713</item>
+        <item>Alarma 821</item>
+        <item>Alarma 822</item>
+        <item>Alarma 846</item>
+        <item>Alarma 852</item>
+        <item>Alarma 928</item>
+        <item>Alarma 968</item>
+        <item>Alarma 969</item>
+        <item>Alarma 970</item>
+        <item>Alarma 971</item>
+        <item>Alarma 972</item>
+        <item>Alarma 973</item>
+        <item>Salir</item>
+    </string-array>
+</resources>

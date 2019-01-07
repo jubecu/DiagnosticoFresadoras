@@ -4,39 +4,39 @@
 	"Descripción":"The input E461 has changed to 0, so it looks like the circuit breaker G11-Q21 is triggered.",
 	"Preguntas":[
 		{
-			"Id":1.0,
+			"Id":"1.0",
 			"Texto":"1. Physically, the G11-Q21 circuit breaker is triggered by consumption?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Yes, it is triggered.",
-					"Camino":1.1,
+					"Camino":"1.1",
 					"Mensaje":""
 				},
 				{
 					"Id":"B",
 					"Texto":"No, it is not triggered.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Check the auxiliary circuit of the circuit breaker and the wiring of the PLC input."
 				}			
 			]
 		},
 		{
-			"Id":1.1,
+			"Id":"1.1",
 			"Texto":"1.1. If you rearm it by hand, does it trigger again in a short time?",
 			"Imágenes":[],
 			"Respuestas":[
 				{
 					"Id":"A",
 					"Texto":"Yes, it triggeres again.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"It is necessary to check the current of the vacuum pump with a clamp meter. If the current read is higher than the value showed in the nameplate, change the oil in the pump reservoir (changing the filters) and recheck the current again with the clamp. If it is still high, it would be necessary to change the entire pump."
 				},
 				{
 					"Id":"B",
 					"Texto":"No, it does't trigger again.",
-					"Camino":-1.0,
+					"Camino":"",
 					"Mensaje":"Check the oil of the pump reservoir, change filters and leave the pump running under observation."
 				}	
 			]

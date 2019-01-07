@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -30,9 +31,8 @@
             android:layout_marginRight="15dp"
             android:layout_weight="2"
             android:gravity="center_vertical|center"
-            android:text="Diagnóstico de fallos en fresadoras"
+            android:text="Dr. Milling: Diagnóstico de fallos en fresadoras"
             android:textColor="#00395D"
-            android:textSize="40sp"
             android:textStyle="bold" />
 
         <Button
@@ -44,12 +44,12 @@
             android:layout_marginTop="20dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
+            android:layout_weight="0.25"
             android:paddingBottom="25dp"
             android:paddingTop="25dp"
             android:text="Elegir una alarma en concreto"
             android:textAllCaps="false"
-            android:textIsSelectable="false"
-            android:textSize="22sp" />
+            android:textIsSelectable="false"/>
 
         <Button
             android:id="@+id/bManyAlarms"
@@ -60,9 +60,9 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="20dp"
+            android:layout_weight="0.25"
             android:text="Obtener las últimas alarmas que se han activado"
-            android:textAllCaps="false"
-            android:textSize="22sp" />
+            android:textAllCaps="false"/>
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
