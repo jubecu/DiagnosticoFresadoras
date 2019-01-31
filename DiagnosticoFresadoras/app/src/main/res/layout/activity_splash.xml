@@ -14,7 +14,8 @@
             android:layout_height="match_parent"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/splash_screen" />
+            android:src="@drawable/splash_screen"
+            android:contentDescription="@string/imageSplash" />
 
     </RelativeLayout>
 

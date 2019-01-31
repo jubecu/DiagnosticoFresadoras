@@ -6,8 +6,19 @@ import android.widget.ImageView;
 
 import uk.co.senab.photoview.PhotoViewAttacher;
 
+/**
+ * Activity de la pantalla que muestra una imagen a tamaño completo.
+ *
+ * @author Juan Francisco Benito Cuesta
+ */
 public class ImageActivity extends AppCompatActivity {
 
+    /**
+     * Crea un ImageView y lo asocia con una imagen.
+     *
+     * @param savedInstanceState Paquete que contiene el estado de la instancia del Activity
+     *                           previamente guardado
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

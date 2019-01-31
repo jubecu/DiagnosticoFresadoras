@@ -34,9 +34,9 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="1"
                 android:gravity="center_vertical|center_horizontal|center"
-                android:text="Elige la alarma que se ha activado"
+                android:text="@string/choose"
                 android:textColor="#00395D"
-                android:textSize="30dp" />
+                android:textSize="30sp" />
 
             <Spinner
                 android:id="@+id/spAlarmas"
@@ -57,18 +57,8 @@
                 android:layout_weight="0.5"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
-                android:text="Aceptar"
+                android:text="@string/accept"
                 android:textSize="20sp" />
-            <!--<Button
-                android:id="@+id/bVideo"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_weight="0.5"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="10dp"
-                android:text="Ver vídeo"
-                android:textSize="20sp" />-->
 
         </LinearLayout>
 

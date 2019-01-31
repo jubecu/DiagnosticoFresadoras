@@ -34,20 +34,19 @@ public class QuestionsActivity extends AppCompatActivity {
     /**
      * Conjunto de todas las alarmas
      */
-    AlarmTable alarms;
+    private AlarmTable alarms;
     /**
      * Alarma de la cual se muestran sus preguntas en la pantalla
      */
-    Alarm alarm;
+    private Alarm alarm;
     /**
      * Pregunta que se muestra en la pantalla
      */
-    Question question;
+    private Question question;
     /**
      * Código de la alarma
      */
-    String cod;
-    NavigationDrawer navDr;
+    private String cod;
 
     /**
      * Rellena la pantalla con el contenido de la pregunta.
@@ -72,15 +71,15 @@ public class QuestionsActivity extends AppCompatActivity {
         alarms = AlarmTable.getInstance();
         alarm = alarms.getAlarm(cod);
         question = alarm.getQuestionById(idQuestion);
-        navDr = NavigationDrawer.getInstance();
+        NavigationDrawer navDr=new NavigationDrawer(this);
         final DrawerLayout menu = findViewById(R.id.dlMenu);
 
         ExpandableListView listMenu = findViewById(R.id.lvMenu);
         ExpandableListAdapter adapterMenu =
-                new ExpandableListAdapter(this, navDr.getListGroup(), navDr.getListChildren());
+                new ExpandableListAdapter(this);
         listMenu.setAdapter(adapterMenu);
-        navDr.onItemClick(listMenu, this);
-        navDr.putImage(menu, myToolbar, this);
+        navDr.onItemClick(listMenu);
+        navDr.initialize(menu, myToolbar);
 
         fillData();
 
@@ -111,7 +110,8 @@ public class QuestionsActivity extends AppCompatActivity {
                 image.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent i = new Intent(QuestionsActivity.this, ImageActivity.class);
+                        Intent i = new Intent(QuestionsActivity.this,
+                                ImageActivity.class);
                         i.putExtra("resImage", resImage);
                         startActivity(i);
                     }

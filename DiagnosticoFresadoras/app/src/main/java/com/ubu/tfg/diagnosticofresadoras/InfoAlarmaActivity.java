@@ -26,16 +26,15 @@ public class InfoAlarmaActivity extends AppCompatActivity {
     /**
      * Conjunto de todas las alarmas
      */
-    AlarmTable alarms;
+    private AlarmTable alarms;
     /**
      * Alarma de la cual se muestra la información en la pantalla
      */
-    Alarm alarm;
+    private Alarm alarm;
     /**
      * Código de la alarma
      */
-    String cod;
-    NavigationDrawer navDr;
+    private String cod;
 
     /**
      * Rellena la pantalla con toda la información de la alarma.
@@ -57,15 +56,16 @@ public class InfoAlarmaActivity extends AppCompatActivity {
         }
         alarms = AlarmTable.getInstance();
         alarm = alarms.getAlarm(cod);
-        navDr = NavigationDrawer.getInstance();
+        NavigationDrawer navDr=new NavigationDrawer(this);
         final DrawerLayout menu = findViewById(R.id.dlMenu);
 
         ExpandableListView listMenu = findViewById(R.id.lvMenu);
         ExpandableListAdapter adapterMenu =
-                new ExpandableListAdapter(this, navDr.getListGroup(), navDr.getListChildren());
+                new ExpandableListAdapter(this);
         listMenu.setAdapter(adapterMenu);
-        navDr.onItemClick(listMenu, this);
-        navDr.putImage(menu, myToolbar, this);
+
+        navDr.onItemClick(listMenu);
+        navDr.initialize(menu, myToolbar);
 
         fillData();
 

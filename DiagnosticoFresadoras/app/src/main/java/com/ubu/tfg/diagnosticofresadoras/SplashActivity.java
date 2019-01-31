@@ -47,13 +47,17 @@ public class SplashActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Parsea todos los ficheros JSON de las alarmas, crea sus respectivos objetos Alarm y los
+     * almacena en el Map alarms. Utiliza la clase ManagementJSON para ello.
+     */
     private void saveAlarms() {
         Alarm alarmES, alarmEN;
         String num, jsonES = null, jsonEN = null;
         ManagementJSON managementJSON_es, managementJSON_en;
         String[] alarms = getResources().getStringArray(R.array.alarmas);
-        for (int i = 0; i < alarms.length; i++) {
-            num = alarms[i].substring(0, 3);
+        for (String alarm : alarms) {
+            num = alarm.substring(0, 3);
             managementJSON_es = new ManagementJSON(num, "es");
             managementJSON_en = new ManagementJSON(num, "en");
             try {

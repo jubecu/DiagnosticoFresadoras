@@ -35,7 +35,6 @@ public class ChooseAlarmActivity extends AppCompatActivity {
      * Preferencias compartidas de la aplicación
      */
     SharedPreferences preferences;
-    NavigationDrawer navDr;
 
     /**
      * Inicializa y da funcionalidad a todos los elementos de la pantalla.
@@ -53,16 +52,16 @@ public class ChooseAlarmActivity extends AppCompatActivity {
         Button bInicio = findViewById(R.id.bInicio);
         alarmas = findViewById(R.id.spAlarmas);
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        navDr = NavigationDrawer.getInstance();
+        NavigationDrawer navDr=new NavigationDrawer(this);
         final DrawerLayout menu = findViewById(R.id.dlMenu);
 
         ExpandableListView listMenu = findViewById(R.id.lvMenu);
         ExpandableListAdapter adapterMenu =
-                new ExpandableListAdapter(this, navDr.getListGroup(), navDr.getListChildren());
+                new ExpandableListAdapter(this);
         listMenu.setAdapter(adapterMenu);
 
-        navDr.onItemClick(listMenu, this);
-        navDr.putImage(menu, myToolbar, this);
+        navDr.onItemClick(listMenu);
+        navDr.initialize(menu, myToolbar);
 
         createRegistryFile();
 
@@ -78,7 +77,8 @@ public class ChooseAlarmActivity extends AppCompatActivity {
                 lang = getLanguage();
                 cod = num + lang;
 
-                Intent i = new Intent(ChooseAlarmActivity.this, InfoAlarmaActivity.class);
+                Intent i = new Intent(ChooseAlarmActivity.this,
+                        InfoAlarmaActivity.class);
                 i.putExtra("codAlarm", cod);
                 startActivity(i);
             }

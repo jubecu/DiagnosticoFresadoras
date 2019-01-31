@@ -15,7 +15,7 @@ public class Answer {
      */
     private String text;
     /**
-     * Id de la pregunta con la que continua. Vale -1.0 en caso de que no haya continuación
+     * Id de la pregunta con la que continua. Es una cadena vacía en caso de que no haya continuación
      */
     private String next;
     /**

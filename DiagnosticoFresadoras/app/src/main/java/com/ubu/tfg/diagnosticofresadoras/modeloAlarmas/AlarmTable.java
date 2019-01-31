@@ -3,9 +3,7 @@ package com.ubu.tfg.diagnosticofresadoras.modeloAlarmas;
 
 import com.ubu.tfg.diagnosticofresadoras.R;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -70,16 +68,6 @@ public class AlarmTable {
      */
     public Alarm getAlarm(String cod) {
         return alarms.get(cod);
-    }
-
-    /**
-     * Devuelve true si ya hay un registro en el Map con una clave concreta.
-     *
-     * @param cod Clave a comprobar si se encuentra en el Map
-     * @return True si la clave se encuentra en el Map, false si no
-     */
-    public boolean containsAlarm(String cod) {
-        return alarms.containsKey(cod);
     }
 
     /**

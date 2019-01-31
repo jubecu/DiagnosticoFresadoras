@@ -71,7 +71,7 @@
                 android:layout_weight="0.25"
                 android:layout_gravity="center_horizontal"
                 android:textAllCaps="false"
-                android:text="Inicio"
+                android:text="@string/initiation"
                 android:textSize="25sp" />
 
             <Button
@@ -81,7 +81,7 @@
                 android:layout_weight="0.25"
                 android:layout_gravity="center_horizontal"
                 android:textAllCaps="false"
-                android:text="Elegir alarma"
+                android:text="@string/select"
                 android:textSize="25sp" />
 
 

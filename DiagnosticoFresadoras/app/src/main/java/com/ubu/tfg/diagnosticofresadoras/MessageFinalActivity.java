@@ -19,8 +19,6 @@ import com.ubu.tfg.diagnosticofresadoras.modeloAlarmas.AlarmTable;
  */
 public class MessageFinalActivity extends AppCompatActivity {
 
-    NavigationDrawer navDr;
-
     /**
      * Inicializa los dos botones y ejecuta el resto de métodos de la clase.
      *
@@ -36,15 +34,15 @@ public class MessageFinalActivity extends AppCompatActivity {
 
         Button home = findViewById(R.id.bHome);
         Button choose = findViewById(R.id.bChoose);
-        navDr = NavigationDrawer.getInstance();
+        NavigationDrawer navDr=new NavigationDrawer(this);
         final DrawerLayout menu = findViewById(R.id.dlMenu);
 
         ExpandableListView listMenu = findViewById(R.id.lvMenu);
         ExpandableListAdapter adapterMenu =
-                new ExpandableListAdapter(this, navDr.getListGroup(), navDr.getListChildren());
+                new ExpandableListAdapter(this);
         listMenu.setAdapter(adapterMenu);
-        navDr.onItemClick(listMenu, this);
-        navDr.putImage(menu, myToolbar, this);
+        navDr.onItemClick(listMenu);
+        navDr.initialize(menu, myToolbar);
 
         fillData();
 

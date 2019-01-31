@@ -76,4 +76,17 @@
 
     <string name="menu_open">Abrir menú lateral</string>
     <string name="menu_close">Cerrar menú lateral</string>
+
+    <string name="image">Imagen a pantalla completa</string>
+    <string name="choose">Elige la alarma que se ha activado</string>
+    <string name="accept">Aceptar</string>
+    <string name="start">Comenzar</string>
+    <string name="title">Dr. Milling: Diagnóstico de fallos en fresadoras</string>
+    <string name="buttonChoose">Elegir una alarma en concreto</string>
+    <string name="buttonManyAlarms">Obtener las últimas alarmas que se han activado</string>
+    <string name="initiation">Inicio</string>
+    <string name="select">Elegir alarma</string>
+    <string name="imageSplash">Splash screen con el logo</string>
+    <string name="date">Fecha límite para la obtención de las alarmas</string>
+    <string name="settings">Ajustes</string>
 </resources>
