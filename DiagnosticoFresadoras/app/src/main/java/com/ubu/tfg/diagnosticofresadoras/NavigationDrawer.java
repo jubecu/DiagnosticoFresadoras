@@ -173,6 +173,9 @@ class NavigationDrawer {
                             case 17:
                                 goToQuestionActivity(codAlarm, "8.3");
                                 break;
+                            case 18:
+                                goToQuestionActivity(codAlarm, "9.0");
+                                break;
                         }
                         break;
                     case 3:
